@@ -270,4 +270,7 @@ footer p {
 .current {
     background-color: rgb(240, 197, 197);
 }
+.current-for-start {
+    background-color: rgb(94, 173, 197);
+}
 

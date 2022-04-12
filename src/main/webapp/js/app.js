@@ -18,5 +18,15 @@ cancelBtn.onclick = ()=>{
 }
 
 window.onscroll = ()=>{
-    this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    if (this.scrollY < 20) {
+        navbar.classList.remove("sticky");
+        let element = document.getElementById("startPage");
+        element.classList.add("current-for-start");
+        element.classList.remove("current");
+    } else {
+        navbar.classList.add("sticky");
+        let element = document.getElementById("startPage");
+        element.classList.add("current");
+        element.classList.remove("current-for-start");
+    }
 }
