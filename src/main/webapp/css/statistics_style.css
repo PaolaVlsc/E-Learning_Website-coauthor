@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(to bottom, rgb(255, 243, 238) 15%, rgb(230, 245, 253) 100%);
+    background-attachment: fixed;
+}
 .left-side {
     position: fixed;
     top: 60px;
