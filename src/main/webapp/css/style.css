@@ -237,7 +237,7 @@ footer h3 {
 footer p {
     margin-top: 2px;
     margin-left: 80px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .dropdown {

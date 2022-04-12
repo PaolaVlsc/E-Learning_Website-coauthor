@@ -1,8 +1,9 @@
 body {
-    background: linear-gradient(to bottom, rgb(255, 243, 238) 15%, rgb(230, 245, 253) 100%);
-    background-attachment: fixed;
+    background: linear-gradient(to bottom, rgb(255, 243, 238) 15%, rgb(230, 245, 253) 100%) fixed;
 }
 .left-side {
+    /*background: lightcoral;
+    color: white;*/
     position: fixed;
     top: 60px;
     bottom: 80px;
@@ -12,7 +13,8 @@ body {
 }
 a{
     text-decoration: none;
-    color:#000;
+    color: #000;
+    /*color: white;*/
 }
 a:visited { text-decoration: none; }
 .right-side {
