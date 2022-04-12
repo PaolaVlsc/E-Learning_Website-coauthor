@@ -1,0 +1,87 @@
+.banner-area {
+    height: 30%;
+}
+.content-area {
+    /*background-color: red;*/
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.content-area .sidebar {
+    /*background-color: yellow;*/
+    width: 400px;
+    height: 400px;
+    float: left;
+    min-height: 300px;
+}
+
+.content-area .sidebar .wrapper {
+    /*background-color: lawngreen;*/
+    margin: auto;
+    padding: 20px 50px 20px 50px;
+    height: 50vh;
+}
+
+.content-area .sidebar .wrapper h4 {
+    padding: 0px 30px;
+    text-align: justify;
+}
+
+
+.content-area .column2 {
+    height: 100vh;
+    /*background-color: grey;*/
+    min-height: 600px;
+    margin-left: 400px;
+    margin-top: 1px;
+    /*make the container grid*/
+    display: grid;
+
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*1 fraction of the total remaining space*/
+    /* repeat(3, 1fr); */
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    grid-template-columns:  minmax(0,1fr) 200px;
+    /*
+    grid-template: 50px 1fr 1fr 100px / repeat(3, 1fr);
+    */
+
+    gap: 10px; /* for the edges use padding and boxsize? */
+    padding: 100px 30px;
+    box-sizing: border-box;
+}
+.content-area .column2 div {
+
+    padding: 10px;
+    border: 1px solid black;
+
+}
+
+.column2a {
+    grid-row-start: 1;
+    grid-row-end: 3; /*span 2*/
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.column2b {
+
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column-start: 5;
+    grid-column-end: span 2;
+}
+.column2c {
+
+    grid-row-start: 3;
+    grid-row-end: span 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.column2d {
+    grid-row-start: 3;
+    grid-row-end: span 2;
+    grid-column-start: 5;
+    grid-column-end: span 2;
+}

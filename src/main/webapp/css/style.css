@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    padding: 25px 0;
+    /*transition: all 0.3s ease;*/
+}
+
+.logout a {
+    color: aliceblue;
+    padding: 22px 10px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14.3px;
+}
+
+.logout a:hover {
+    color: rgb(201, 106, 106); /*rgb(89, 153, 227);*/
+    background-color: rgb(240, 197, 197); /*rgb(205, 222, 241);*/
+}
+
+.navbar.sticky {
+    background: lightcoral;
+    padding: 10px 0;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar .menu-list {
+    display: inline-flex;
+}
+
+.menu-list li {
+    list-style: none;
+}
+
+.menu-list li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px 8px;
+    margin-left: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: rgb(201, 106, 106);
+    background-color: rgb(240, 197, 197);
+}
+
+body {
+    text-align: center;
+}
+
+.banner-area {
+    background: url("../assets/header_mainpage.jpg") no-repeat;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.banner-area h2 {
+    position: center;
+    padding: 250px;
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.content-area {
+    padding: 30px 0;
+}
+
+.content-area .quote {
+    padding: 150px;
+}
+
+.content-area .title {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.content-area p {
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.icon {
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    color: #fff;
+}
+
+.icon a {
+    padding: 20px 46px;
+    color: #fff;
+}
+
+.icon a:hover {
+    padding: 20px 46px;
+    color: rgb(201, 106, 106);
+    background-color: rgb(240, 197, 197);
+}
+
+.menu-list .cancel-btn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+
+@media (max-width: 1230px) {
+    .wrapper {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 868px) {
+
+    .icon {
+        display: block;
+    }
+
+    .dropdown-content {
+        visibility: hidden;
+    }
+
+    /* body.disabled{
+      overflow: hidden;
+    }
+    .icon.hide{
+      display: none;
+    }*/
+    .navbar .menu-list {
+        position: fixed;
+        /*height: 50vh;*/
+        width: 100%;
+        max-width: 250px;
+        left: -100%;
+        top: 65px;
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+        background: lightcoral;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.show .menu-list {
+        left: 0%;
+    }
+
+    .navbar .menu-list li {
+        margin-top: 20px;
+    }
+
+    .navbar .menu-list li a {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-left: -100%;
+    }
+
+    .navbar.show .menu-list li a {
+        margin-left: 0px;
+    }
+
+    .banner-area h2 {
+        position: center;
+        padding: 200px;
+        font-size: 60px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .navbar .logo a {
+        font-size: 27px;
+    }
+}
+
+footer {
+    opacity: 0.5;
+    text-align: left;
+    background-color: #DCDCDC;
+    font-size: small;
+    width: 100%;
+}
+
+footer h3 {
+    margin-left: 80px;
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 2px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    background-color: lightcoral;
+    min-width: 95px; /*min-width: 140px;*/
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(240, 197, 197);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.current {
+    background-color: rgb(240, 197, 197);
+}
+
