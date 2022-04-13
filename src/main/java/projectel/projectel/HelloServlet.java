@@ -1,6 +1,7 @@
 package projectel.projectel;
 
 import java.io.*;
+import java.sql.*;
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -11,6 +12,15 @@ public class HelloServlet extends HttpServlet {
 
     public void init() {
         message = "Hello World!";
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bookstore_sinp", "root", "");
+            message=conn.toString();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
