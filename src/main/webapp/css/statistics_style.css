@@ -1,0 +1,35 @@
+body {
+    background: linear-gradient(to bottom, rgb(255, 243, 238) 15%, rgb(230, 245, 253) 100%) fixed;
+}
+.left-side {
+    /*background: lightcoral;
+    color: white;*/
+    position: fixed;
+    top: 60px;
+    bottom: 80px;
+	width:180px;
+	display: table-cell;
+	border-right: 2px solid black;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    /*color: white;*/
+}
+a:visited { text-decoration: none; }
+.right-side {
+    position: fixed;
+    top: 100px;
+	left: 250px;
+	width:80%;/*to be centered*/
+	display: table-cell;
+}
+
+.main-wrap {
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    width: 100%;
+	text-align: left;
+}
+body { overflow-x: hidden; }

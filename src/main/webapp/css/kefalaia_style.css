@@ -1,0 +1,17 @@
+.content-area {
+    /*background-color: red;*/
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 50vh;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.content-area div {
+    padding: 50px;
+    border: 1px solid black ;
+}
