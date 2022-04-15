@@ -1,92 +1,114 @@
-.banner-area1{
-    background: url("../assets/header_mainpage.jpg") no-repeat;
-    height: 66px;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+body {
+    background: #f1f1f1;
 }
 
-.banner-area1 h2 {
-    position: center;
-    padding: 250px;
-    font-size: 70px;
-    text-transform: uppercase;
+header {
+    background-color: #333333;
+    padding: 50px;
+    position: sticky;
+    top: 0px;
+}
+
+.mothership {
+    top: 50px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.container1 .my_header {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
     color: #fff;
-}
+    text-decoration: none;
+    background: skyblue;
+    padding: 20px;
+    transition: 0.5s;
+    position: sticky;
+    top: 66px;
+    text-space: 10px;
 
-.content-area {
-    /*background-color: red;*/
-    overflow: hidden;
-    min-height: 500px;
-}
-
-.content-area .sidebar {
-    background-color: #F8F8F8;
-    width: 400px;
-    height: 400px;
-    float: left;
-    min-height: 300px;
-    position: fixed;
-}
-
-.content-area .sidebar .wrapper {
-    /*background-color: lawngreen;*/
-    margin: auto;
-    padding: 20px 50px 20px 50px;
-    height: 50vh;    position: fixed;
+    font-family: 'Quicksand', sans-serif;
 
 }
 
-.content-area .sidebar .wrapper h4 {
-    padding: 0px 30px;
+.container1 .my_header2 {
+
+    text-decoration: none;
+    background: #f1f1f1;
+    padding: 0px;
+    transition: 0.5s;
+    position: sticky;
+    top: 140px;
+
+
+}
+
+.wrapper1 {
+    display: flex;
+}
+
+.container1 aside {
+    width: 30%;
+    margin: 35px 0;
+}
+
+.container1 aside .sidebar1 {
+    padding: 5px 50px;
+    position: sticky;
+    top: 300px;
+}
+
+.container1 aside .sidebar1 h4 {
+    padding: 0px 50px;
+    text-align: justify;
+}
+
+.container1 .mine {
+    width: 70%;
+    padding: 0 35px;
+    margin: 170px 0;
+    min-height: 1800px;
     text-align: justify;
 }
 
 
-.content-area .column2 {
-    height: 100vh;
-    background-color: grey;
-    min-height: 1200px;
-    margin-left: 400px;
-    margin-top: 1px;
-    /*make the container grid*/
-    display: grid;
-
-
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*1 fraction of the total remaining space*/
-    /* repeat(3, 1fr); */
-    grid-template-rows: 1fr 1fr 1fr 1fr ;
-    grid-template-columns:  minmax(0,1fr) 200px;
-    /*
-    grid-template: 50px 1fr 1fr 100px / repeat(3, 1fr);
-    */
-
-    gap: 10px; /* for the edges use padding and boxsize? */
-    padding: 100px 30px;
-    box-sizing: border-box;
+#theory {
+    background-color: red;
 }
-.content-area .column2 div {
 
-    padding: 10px;
-    border: 1px solid black;
+#exercises {
+    background-color: pink;
+}
 
+#tests {
+    background-color: blue;
+}
+
+.container1 aside .sidebar1 ul {
+    list-style: none;
+    padding-bottom: 50px;
 }
 
 
-.content-area .column2 .container {
-    background-color: deeppink;
-
-    width: 70vw;
-    font-family: 'Quicksand', sans-serif;
-    font-width: bold;
-    font-size: 20px;
+.container1 aside .sidebar1 ul li {
+    display: flex;
+}
 
 
-    display: grid;
+.container1 aside .sidebar1 ul li a {
+    display: flex;
+    text-decoration: none;
+    padding: 2px -1px;
+    color: black; /*text color*/
+    font-weight: bolder;
+}
 
-    grid-template: 50px 1fr 50px / repeat(1,1fr);
+.container1 aside .sidebar1 ul li.active {
+    background-color: skyblue;
+    transition: 0.3s ease background-color;
+}
 
-    gap: 10px;
-    padding: 10px;
-    box-sizing: border-box;
+.container1 aside .sidebar1 ul li.active a {
+    color: rgb(255, 255, 255);
 }

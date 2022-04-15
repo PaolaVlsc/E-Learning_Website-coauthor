@@ -1,105 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Κεφάλαια | SINP </title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/kef01.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ΠΡΟΣΘΕΣΗ | SINP </title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/copy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-<!-- Start Top Nav -->
+
+<!-- Start of navbar -->
 <nav class="navbar">
-    <div class="wrapper">
-        <div class="icon a menu-btn">
-            <a><i class="fa fa-list-ul"></i></a>
-        </div>
-        <div class="logo">
-            ΒΕΜΠΛΗΧΑ
-        </div>
-        <ul class="menu-list">
-            <div class="icon cancel-btn">
-                <i class="fa fa-close"></i>
-            </div>
-            <li><a href="../index.html">Αρχική</a></li>
-            <li>
-                <div class="dropdown">
-                    <a href="../html/kefalaia.html">Κεφάλαια Μαθηματικών</a>
-                    <div class="dropdown-content">
-                        <a href="#">Πρόσθεση και Αφαίρεση</a>
-                        <a href="#">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
-                        <a href="#">Κριτήρια διαιρετότητας</a>
-                        <a href="#">Διαίρεση στους φυσικούς</a>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="dropdown">
-                    <a href="../html/tests.html">Έλεγξε τις γνώσεις σου!</a>
-                    <div class="dropdown-content" style="width:100%;">
-                        <a href="#">Κεφάλαιο 1</a>
-                        <a href="#">Κεφάλαιο 2</a>
-                        <a href="#">Κεφάλαιο 3</a>
-                        <a href="#">Κεφάλαιο 4</a>
-                        <a href="#">Τελικό Τεστ</a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="../html/statistics.html">Στατιστικά</a></li>
-        </ul>
-        <div class="logout"><a href="#">
-            <i class="fa fa-user-circle"></i>Αποσύνδεση</a></div>
-
+  <div class="wrapper">
+    <div class="icon a menu-btn">
+      <a><i class="fa fa-list-ul"></i></a>
     </div>
+    <div class="logo">
+      ΒΕΜΠΛΗΧΑ
+    </div>
+    <ul class="menu-list">
+      <div class="icon cancel-btn">
+        <i class="fa fa-close"></i>
+      </div>
+      <li><a href="../index.html">Αρχική</a></li>
+      <li>
+        <div class="dropdown">
+          <a class="current" href="../html/kefalaia.html">Κεφάλαια Μαθηματικών</a>
+          <div class="dropdown-content">
+            <a href="#">Πρόσθεση και Αφαίρεση</a>
+            <a href="#">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
+            <a href="#">Κριτήρια διαιρετότητας</a>
+            <a href="#">Διαίρεση στους φυσικούς</a>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="dropdown">
+          <a href="../html/tests.html">Έλεγξε τις γνώσεις σου!</a>
+          <div class="dropdown-content" style="width:100%;">
+            <a href="#">Κεφάλαιο 1</a>
+            <a href="#">Κεφάλαιο 2</a>
+            <a href="#">Κεφάλαιο 3</a>
+            <a href="#">Κεφάλαιο 4</a>
+            <a href="#">Τελικό Τεστ</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../html/statistics.html">Στατιστικά</a></li>
+    </ul>
+    <div class="logout"><a href="#">
+      <i class="fa fa-user-circle"></i>Αποσύνδεση</a></div>
+
+  </div>
 </nav>
-<!-- Close Top Nav -->
 
-<!-- Start Header -->
-<div class="banner-area1">
-</div>
-<!-- Close Header -->
-
-<!-- Start Main Container -->
-<div class="content-area">
-    <div class="sidebar">
-        <div class="wrapper">
-            <h3>ΠΡΟΣΘΕΣΗ</h3>
-            <br>
-            <hr>
-            <br>
-            <h4>Θεωρία</h4><br>
-            <h4>Ασκήσεις</h4><br>
-            <h4>Τεστ</h4>
-        </div>
-    </div>
-    <div class="column2">
-        <div class="container">
-            <div class="column2-container-header">Header</div>
-            <div class="column2-container-body">Main Body</div>
-            <div class="column2-container-test-link">Click for test</div>
-        </div>
-    </div>
-
-</div>
-<!-- Close Main Container -->
-
-<!-- Start Footer -->
-<footer>
-    <hr>
-    <h3>Επικοινωνία</h3>
-    <p>
-        <i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
-        <i class="fa fa-phone"></i> Τηλ.: 211-401-0000
-    </p>
-</footer>
-<!-- Close Footer -->
-
-<!-- Start Script -->
 <script src="../js/app.js"></script>
-<!-- Close Script -->
+
+<!-- Background color sticky -->
+<script>
+  navbar.classList.add("sticky");
+
+  function toggleText(x) {
+    var texts = document.getElementsByClassName(x);
+    var i;
+    for (i = 0; i < texts.length; i++) {
+      var text = texts[i];
+      if (text.style.display === "none") {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    }
+  }
+
+</script>
+<!-- Close of navbar -->
+
+<div class="mothership">
+  <div class="container1">
+    <div class="my_header">
+      ΕΛΑ ΝΑ ΜΑΘΟΥΜΕ ΤΗΝ ΠΡΟΣΘΕΣΗ ΠΑΡΕΑ !
+    </div>
+    <div class="my_header2">
+      <pre> </pre>
+    </div>
+    <div class="wrapper1">
+      <aside>
+        <div class="sidebar1">
+          <h2>ΠΡΟΣΘΕΣΗ</h2>
+          <br>
+          <hr>
+          <br>
+          <ul>
+            <!--<li class="active"><a href="#">Home</a></li>-->
+            <li class="theory active"><a href="#theory"><h4>Θεωρία</h4></a></li>
+            <br>
+            <li class="exercises"><a href="#exercises"><h4>Ασκήσεις</h4></a></li>
+            <br>
+            <li class="tests"><a href="#tests"><h4>Τεστ</h4></a></li>
+          </ul>
+        </div>
+      </aside>
+      <div class="mine">
+        <section id="theory">
+          <h1>Title1</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </section>
+
+        <section id="exercises">
+          <h1>Title2</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </section>
+
+
+        <section id="tests">
+          <h1>Title2</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </section>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+</div>
+<!-- Link the js -->
+<script src="../js/copy.js"></script>
+
+<footer>
+  <hr>
+  <h3>Επικοινωνία</h3>
+  <p><i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
+    <i class="fa fa-phone"></i> Τηλ.: 211-401-0000</p>
+</footer>
 
 </body>
 </html>
