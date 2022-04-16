@@ -1,3 +1,27 @@
+.main-container {
+    /*background: lightcoral;
+    color: white;*/
+    position: fixed;
+    top: 60px;
+    bottom: 80px;
+    width: 100%;
+    display: table-cell;
+    /*border-right: 2px solid black;*/
+    padding-top: 150px;
+}
+
+.mother-ship {
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    width: 100%;
+    text-align: left;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 .content-area {
     /*background-color: red;*/
     overflow: hidden;
@@ -13,5 +37,14 @@
 
 .content-area div {
     padding: 50px;
-    border: 1px solid black ;
+    padding-top: 10px;
+    /*border: 1px solid black ;*/
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
