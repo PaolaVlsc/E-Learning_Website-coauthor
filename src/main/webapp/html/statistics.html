@@ -61,10 +61,10 @@
 <script>
     navbar.classList.add("sticky");
     function toggleText(x) {
-        var texts = document.getElementsByClassName(x);
-        var i;
+        let texts = document.getElementsByClassName(x);
+        let i;
         for (i = 0; i < texts.length; i++) {
-            var text = texts[i];
+            let text = texts[i];
             if (text.style.display === "none") {
                 text.style.display = "block";
             } else {
@@ -99,30 +99,30 @@
         <canvas id="myChart" style="width:70%;max-width:80%"></canvas>
         
         <script>
-        var xValues = ["Κεφάλαιο 1", "Κεφάλαιο 2", "Κεφάλαιο 3", "Κεφάλαιο 4","Επανάληψη"];
-        var yValues = [5, 6, 3, 10, 9];
-        var barColors = ["red", "green","blue","orange","pink"];
+            let xValues = ["Κεφάλαιο 1", "Κεφάλαιο 2", "Κεφάλαιο 3", "Κεφάλαιο 4","Επανάληψη"];
+            let yValues = [5, 6, 3, 10, 9];
+            let barColors = ["red", "green","blue","orange","pink"];
         
-        new Chart("myChart", {
-            type: "horizontalBar",
-            data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-            }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                display: true,
-                text: "Οι βαθμοί σου σε όλα τα κεφάλαια!"
+            new Chart("myChart", {
+                type: "horizontalBar",
+                data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
                 },
-                scales: {
-                xAxes: [{ticks: {min: 0, max:10}}]
+                options: {
+                    legend: {display: false},
+                    title: {
+                    display: true,
+                    text: "Οι βαθμοί σου σε όλα τα κεφάλαια!"
+                    },
+                    scales: {
+                    xAxes: [{ticks: {min: 0, max:10}}]
+                    }
                 }
-            }
-        });
+            });
         </script>
     
 <!--
@@ -130,7 +130,7 @@
     -->
 </div>
 </div>
-<footer style="position: fixed; bottom: 0%;">
+<footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
     <p><i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
