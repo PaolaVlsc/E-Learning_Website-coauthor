@@ -222,9 +222,8 @@ body {
 }
 
 footer {
-    opacity: 0.5;
     text-align: left;
-    background-color: #DCDCDC;
+    background-color: whitesmoke;
     font-size: small;
     width: 100%;
 }
@@ -232,12 +231,14 @@ footer {
 footer h3 {
     margin-left: 80px;
     text-decoration: underline;
+    opacity: 0.5;
 }
 
 footer p {
     margin-top: 2px;
     margin-left: 80px;
     padding-bottom: 10px;
+    opacity: 0.5;
 }
 
 .dropdown {
