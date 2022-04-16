@@ -94,7 +94,8 @@ body {
     padding: 250px;
     font-size: 70px;
     text-transform: uppercase;
-    color: #fff;
+    color: white;
+    text-shadow: 2px 2px 4px gray;
 }
 
 .content-area {
