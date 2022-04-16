@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
-	<head>	
+<html lang="el">
+<head>
+	<meta charset="UTF-8">
         <title>Μαθηματικά Ε - ΒΕΜΠΛΗΧΑ</title>  
 		<style>
 			body {
@@ -11,17 +12,18 @@
 			}
 
 			form {
+				background: rgba(200, 129, 90, 0.3);
 				position: absolute;
 				border: 2px solid #de5454;
-				bottom: 18%;
-				left: 38%;
-				width: 25%;
+				top: 18%;
+				left: 25%;
+				width: 50%;
 			}
 
 			input[type=text], input[type=password] {
 				width: 100%;
 				padding: 12px 20px;
-				margin: 8px 0;
+				margin: 2px 0;
 				display: inline-block;
 				border: 1px solid #ccc;
 				box-sizing: border-box;
@@ -31,7 +33,7 @@
 				background-color: rgb(44, 121, 165);
 				color: white;
 				padding: 14px 20px;
-				margin: 8px 0;
+				margin: 2px 0;
 				border: none;
 				cursor: pointer;
 				width: 100%;
@@ -51,15 +53,15 @@
 				left:38%;
 				bottom:3%;
             }
-			.imgcontainer {
+			.img-container {
 				text-align: center;
-				margin: 24px 0 0 0;
+				margin: 2px 0 0 0;
 			}
 			a, a:visited {
 				color: inherit;
 			}
 			img.avatar {
-				width: 15%;
+				width: 12%;
 				border-radius: 50%;
 			}
 
@@ -67,26 +69,40 @@
 				padding: 16px;
 			}
 
-			
+
+			@media (max-width: 680px){
+				form {
+					left: 10%;
+					width: 80%;
+				}
+			}
+			@media (max-height: 590px){
+				form {
+					width: 80%;
+				}
+				.img-container {
+					display: none;
+				}
+			}
 		</style>
 	</head>
 		<body>
 			<form action="" method="post">
-				<div class="imgcontainer">
-					<img src="cat_glasses.jpg" alt="Avatar" class="avatar">
+				<div class="img-container">
+					<img src="../assets/cat_glasses.jpg" alt="Avatar" class="avatar">
 				</div>
 
 				<div class="container">
-					Συμπλήρωσε τα παρακάτω για να δημιουργήσεις έναν λογαρισμό!
+					Συμπλήρωσε τα παρακάτω για να δημιουργήσεις έναν λογαριασμό!
 					<br>
 					<br>
-					<label for="uname"><b>Όνομα χρήστη</b></label>
+					<label><b>Όνομα χρήστη</b></label>
 					<input type="text" placeholder="Εισαγωγή ονόματος χρήστη" name="uname" required>
 					<br>
-					<label for="name"><b>Το όνομά σου</b></label>
+					<label><b>Το όνομά σου</b></label>
 					<input type="text" placeholder="Εισαγωγή του ονόματός σου" name="name" required>
 					<br>
-					<label for="password"><b>Κωδικός</b></label>
+					<label><b>Κωδικός</b></label>
 					<input type="password" placeholder="Εισαγωγή κωδικού" name="password" required>
 					<br>
 					<button type="submit">Δημιουργία Λογαριασμού</button>
