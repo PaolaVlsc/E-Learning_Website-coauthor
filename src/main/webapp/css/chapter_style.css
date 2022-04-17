@@ -25,13 +25,14 @@ header {
     padding: 20px;
     transition: 0.5s;
     position: sticky;
-    top: 66px;
+    top: 62px;
     text-space: 10px;
 
     font-family: 'Quicksand', sans-serif;
 
 }
 
+/*
 .container1 .my_header2 {
 
     text-decoration: none;
@@ -40,9 +41,8 @@ header {
     transition: 0.5s;
     position: sticky;
     top: 140px;
-
-
 }
+*/
 
 .wrapper1 {
     display: flex;
@@ -64,7 +64,7 @@ header {
     text-align: justify;
 }
 
-.container1 .mine {
+.container1 .main-body-chapter {
     width: 70%;
     padding: 0 35px;
     margin: 170px 0;
