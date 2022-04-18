@@ -103,8 +103,8 @@
             <img src="../assets/cat_glasses.jpg" alt="Avatar" class="avatar">
         </div>
 
-        <label><b>Όνομα χρήστη</b></label>
-        <input type="text" placeholder="Εισαγωγή ονόματος χρήστη" name="email" required>
+        <label><b>Email χρήστη</b></label>
+        <input type="text" placeholder="Εισαγωγή email χρήστη" name="email" required>
         <br>
         <label><b>Κωδικός</b></label>
         <input type="password" placeholder="Εισαγωγή κωδικού" name="password" required>
