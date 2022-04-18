@@ -103,11 +103,11 @@
             <img src="../assets/cat_glasses.jpg" alt="Avatar" class="avatar">
         </div>
 
-        <label><b>Email χρήστη</b></label>
-        <input type="text" placeholder="Εισαγωγή email χρήστη" name="email" required>
+        <label for="email"><b>Email χρήστη</b></label>
+        <input type="text" placeholder="Εισαγωγή email χρήστη" name="email" id="email" required>
         <br>
-        <label><b>Κωδικός</b></label>
-        <input type="password" placeholder="Εισαγωγή κωδικού" name="password" required>
+        <label for="password"><b>Κωδικός</b></label>
+        <input type="password" placeholder="Εισαγωγή κωδικού" name="password" id="password" required>
         <br>
         <%
             request.setCharacterEncoding("UTF-8");
