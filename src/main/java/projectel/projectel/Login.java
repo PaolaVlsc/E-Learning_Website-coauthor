@@ -1,6 +1,7 @@
 package projectel.projectel;
 
 import jakarta.servlet.http.HttpSession;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,7 +30,7 @@ public class Login {
         return null; //Αποτυχία σύνδεσης με βάση ή τα στοιχεία δεν είναι σωστά
     }
 
-    static public boolean isLoggedIn(final HttpSession session){
+    static public boolean isLoggedIn(final @NotNull HttpSession session){
         return session.getAttribute("userId")!=null;
     }
 }
