@@ -2,7 +2,7 @@
 DROP DATABASE IF EXISTS projectELDb;
 CREATE DATABASE projectELDb;
 USE projectELDb;
-CREATE TABLE users ( id INT NOT NULL, name VARCHAR(25) NOT NULL, password VARCHAR(32) NOT NULL, email VARCHAR(100) NOT NULL, average FLOAT, PRIMARY KEY (id) );
+CREATE TABLE users ( id INT NOT NULL AUTO_INCREMENT, name VARCHAR(25) NOT NULL, password VARCHAR(32) NOT NULL, email VARCHAR(100) NOT NULL, average FLOAT, PRIMARY KEY (id) );
 CREATE TABLE chapter ( id INT NOT NULL, name VARCHAR(100), PRIMARY KEY (id) );
 CREATE TABLE grades ( id INT NOT NULL AUTO_INCREMENT, chapter_id INT, user_id INT, grade INT, PRIMARY KEY(id), FOREIGN KEY(chapter_id) REFERENCES chapter(id), FOREIGN KEY(user_id) REFERENCES users(id) );
 -- Δεν έχει δοκιμαστεί
@@ -21,7 +21,7 @@ delimiter ;
 -- Dummy Data insertion commands
 
 -- Instert Dummy Data for users table
-INSERT INTO users VALUES (0,'Βεμπληχα','Βεμπληχα321','Beblixa@gmail.com',NULL),(1,'Πάολα','BestEngineer321','Paola@gmail.com',NULL),(2,'Νίκος','ILoveFortNite','Nikos@gmail.com',NULL),(3,'Σοφία','HandCleanerGel','Sofia@gmail.com',NULL),(4,'Ιάσονας','Iasonas123','Iasonas@gmail.com',NULL),(5,'Παναγιώτης','TankDriver7','Panagioths@gmail.com',NULL),(6,'Μαίρη','ILoveBTS','Mairh@gmail.com',NULL),(7,'Μάρκος','HarryPoter21','Petros@gmail.com',NULL),(8,'Αθηνά','1234ac','Athina@gmail.com',NULL),(9,'Γιάννης','JohnPro','John@gmail.com',NULL),(10,'Κίκη','JustinBieber','Kikh@gmail.com',NULL);
+INSERT INTO users (name,password,email,average) VALUES ('Βεμπληχα','Βεμπληχα321','Beblixa@gmail.com',NULL),('Πάολα','BestEngineer321','Paola@gmail.com',NULL),('Νίκος','ILoveFortNite','Nikos@gmail.com',NULL),('Σοφία','HandCleanerGel','Sofia@gmail.com',NULL),('Ιάσονας','Iasonas123','Iasonas@gmail.com',NULL),('Παναγιώτης','TankDriver7','Panagioths@gmail.com',NULL),('Μαίρη','ILoveBTS','Mairh@gmail.com',NULL),('Μάρκος','HarryPoter21','Petros@gmail.com',NULL),('Αθηνά','1234ac','Athina@gmail.com',NULL),('Γιάννης','JohnPro','John@gmail.com',NULL),('Κίκη','JustinBieber','Kikh@gmail.com',NULL);
 
 -- Instert Dummy Data for chapter table
 INSERT INTO chapter VALUES (1,'Κεφαλαιο 1'),(2,'Κεφαλαιο 2'),(3,'Κεφαλαιο 3'),(4,'Κεφαλαιο 4'),(5,'Τελικό Τεστ');
