@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DbConnection {
 
-    static Connection getConnection() {
+    static public Connection getConnection() {
         final String dbDriver = "org.mariadb.jdbc.Driver";
         final String dbURL = "jdbc:mariadb://localhost:3306/";
         final String dbName = "projectELDb";
