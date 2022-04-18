@@ -32,6 +32,7 @@
 &emsp;>**file>project structure>libraries** και στο αριστερό τμήμα πατάμε το **'+'**<br>
 &emsp;>διαλέγουμε **from maven** και γράφουμε στο πλαίσιο **org.mariadb.jdbc**<br>
 &emsp;>από τις διαθέσιμες επιλογές παίρνουμε την **org.mariadb.jdbc:mariadb-java-client:2.7.0**<br>
+Μη ξεχάσεις το download to<br>
 Πατάμε **Apply** και κλείνουμε την καρτέλα.<br>
 Ξανανοίγουμε τα **file>project structure** και αυτή τη φορά διαλέγουμε το **artifacts**<br>
 Επιλέγουμε το projectname:**war exploded** και κοιτάμε αν δεξιά, κάτω από το **available elements** υπάρχει η mariadb, εάν δεν υπάρχει τελειώνει η διαδικασία, εάν υπάρχει, τότε πατάμε δεξί κλικ πάνω της και επιλέγουμε put into /WEB-INF
