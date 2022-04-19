@@ -83,21 +83,79 @@
     }
 
 </script>
-
+<%
+    int chapter = Integer.parseInt(request.getParameter("chapter"));
+%>
 <div class="main-wrap">
     <div class="left-side">
         <br><br><h3>Τα κεφάλαια σου:</h3>
-        <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
-        <a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
+        <%
+            if(chapter == 1){
+        %>
+                <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 1</u></a>
+                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText1" >Βαθμοί</a>
+        <%
+            }else{
+        %>
+                <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
+                <a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
+        <%
+            }
+        %>
         <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
-        <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em;"><u>Κεφάλαιο 2</u></a>
-        <a href="#" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
-        <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
-        <a href="#" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
-        <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
-        <a href="#" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
-        <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επανάληψη</u></a>
-        <a href="#" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
+
+        <%
+            if(chapter == 2){
+        %>
+                <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 2</u></a>
+                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText2">Βαθμοί</a>
+        <%
+            }else{
+        %>
+                <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em;"><u>Κεφάλαιο 2</u></a>
+                <a href="#" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
+        <%
+            }
+        %>
+        <%
+            if(chapter == 3){
+        %>
+                <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;  color: #064e61"><u>Κεφάλαιο 3</u></a>
+                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText3">Βαθμοί</a>
+        <%
+            }else{
+        %>
+                <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
+                <a href="#" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
+        <%
+            }
+        %>
+        <%
+            if(chapter == 4){
+        %>
+                <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 4</u></a>
+                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText4">Βαθμοί</a>
+        <%
+            }else{
+        %>
+                <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
+                <a href="#" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
+        <%
+            }
+        %>
+        <%
+            if(chapter == 5){
+        %>
+                <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;  color: #064e61"><u>Επανάληψη</u></a>
+                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText5">Βαθμοί</a>
+        <%
+            }else{
+        %>
+                <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επανάληψη</u></a>
+                <a href="#" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
+        <%
+            }
+        %>
     </div>
     <div class="right-side">
 
@@ -108,38 +166,19 @@
             let xValues=[];
             let yValues=[];
             <%
-                int chapter = Integer.parseInt(request.getParameter("chapter"));
                 request.setCharacterEncoding("UTF-8");
                 int i=1;
-                List<Integer> list = Statistics.getAllChapterGrades(5,chapter);
+                List<Integer> list = Statistics.getAllChapterGrades(1,chapter);
+                if(!list.isEmpty()){
+                    for (Integer j : list){
             %>
-            console.log("list=",<%=list.size()%>);
-            //console.log(xValues);<%
-            for (Integer j : list){
-                %>
-                    yValues.push(<%=j%>);
-                    xValues.push("Προσπάθεια <%=i%>");
-                    console.log(yValues);
-                    console.log(xValues);
-                <%
-                i++;
-            }
-                if(list.isEmpty()){
-                //}else{
-                   for (i=0;i<3;i++) {
-                        %>
-                        yValues.push(<%=i%>);
-                        xValues.push(<%=i%>);
-                        console.log(yValues);
-            //console.log(xValues);<%
-                        //i++;
+            yValues.push(<%=j%>);
+            xValues.push("Προσπάθεια <%=i%>");
+            <%
+                        i++;
                     }
                 }
-    %>
-
-            //let xValues = [50,60,70,80,90,100,110,120,130,140,150];
-            //let yValues = [7,8,8,9,9,9,10,11,14,14,15];
-
+            %>
             new Chart("myChart", {
                 type: "line",
                 data: {
@@ -179,15 +218,13 @@
             });
         </script>
 
-        <!--
-                <img src="header_mainpage.jpg" alt="ew11" width="500" height="333">
-            -->
+
     </div>
 </div>
 <footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
-    <p><i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
+    <p> <i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
         <i class="fa fa-phone"></i> Τηλ.: 211-401-0000</p>
 </footer>
 

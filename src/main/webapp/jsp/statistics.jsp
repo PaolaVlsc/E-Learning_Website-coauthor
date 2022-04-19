@@ -143,7 +143,12 @@
                         text: "Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!"
                     },
                     scales: {
-                        xAxes: [{ticks: {min: 0, max:10}}]
+                        xAxes: [{
+                            ticks: {min: 0, max:10},
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Βαθμός'
+                            }}]
                     }
                 }
             });
@@ -154,7 +159,7 @@
             -->
     </div>
 </div>
-<footer style="position: fixed;">
+<footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
     <p><i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
