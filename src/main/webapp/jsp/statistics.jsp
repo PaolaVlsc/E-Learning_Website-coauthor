@@ -60,7 +60,8 @@
             <li><a class="current" href="../html/statistics.html">Στατιστικά</a></li>
         </ul>
         <div class="logout"><a href="#">
-            <i class="fa fa-user-circle"></i>Αποσύνδεση</a></div>
+            <i class="fa fa-user-circle"></i>Αποσύνδεση</a>
+        </div>
 
     </div>
 </nav>
@@ -80,7 +81,6 @@
             }
         }
     }
-
 </script>
 
 <div class="main-wrap">
@@ -89,12 +89,16 @@
         <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
         <a href="statisticsChap1.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
         <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
+
         <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em;"><u>Κεφάλαιο 2</u></a>
         <a href="statisticsChap1.jsp?chapter=2" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
+
         <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
         <a href="#" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
+
         <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
         <a href="#" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
+
         <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επανάληψη</u></a>
         <a href="#" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
     </div>
@@ -105,23 +109,24 @@
         <script>
             let array =[];
             <%
-            int i;
-            request.setCharacterEncoding("UTF-8");
-            int gradesChapters[]=new int[5];
-            try{
-                for (i=1;i<=5;i++){
-                    //String gradesChapters = Statistics.getMaxGrades(Integer.parseInt(request.getParameter("StudentId")),i);
-                    String grades = Statistics.getMaxGrades(1,i);
-                    if(grades==null){
-                        gradesChapters[i-1] = 0;
-                    }else{
-                        gradesChapters[i-1] = Integer.parseInt(grades);
+                int i;
+                request.setCharacterEncoding("UTF-8");
+                int gradesChapters[]=new int[5];
+                try{
+                    for (i=1;i<=5;i++){
+                        //String gradesChapters = Statistics.getMaxGrades(Integer.parseInt(request.getParameter("StudentId")),i);
+                        String grades = Statistics.getMaxGrades(1,i);
+                        if(grades==null){
+                            gradesChapters[i-1] = 0;
+                        }else{
+                            gradesChapters[i-1] = Integer.parseInt(grades);
+                        }
+            %>
+            array[<%= i-1 %>] = "<%= gradesChapters[i-1]%>";
+            <%
                     }
-                    %>
-                    array[<%= i-1 %>] = "<%= gradesChapters[i-1]%>";
-                <%}
-            } catch (NumberFormatException e) {
-            }
+                } catch (NumberFormatException e) {
+                }
             %>
             let xValues = ["Κεφάλαιο 1", "Κεφάλαιο 2", "Κεφάλαιο 3", "Κεφάλαιο 4","Επανάληψη"];
             let yValues = [array[0], array[1], array[2], array[3], array[4]];
@@ -148,21 +153,18 @@
                             scaleLabel: {
                                 display: true,
                                 labelString: 'Βαθμός'
-                            }}]
+                            }
+                        }]
                     }
                 }
             });
         </script>
-
-        <!--
-                <img src="header_mainpage.jpg" alt="ew11" width="500" height="333">
-            -->
     </div>
 </div>
 <footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
-    <p><i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
+    <p> <i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
         <i class="fa fa-phone"></i> Τηλ.: 211-401-0000</p>
 </footer>
 
