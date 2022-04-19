@@ -1,4 +1,5 @@
-<%@ page import="projectel.projectel.Statistics" %><%--
+<%@ page import="projectel.projectel.Statistics" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 18/4/2022
@@ -6,9 +7,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<!DOCTYPE html>
 <html lang="en">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,10 +88,10 @@
     <div class="left-side">
         <br><br><h3>Τα κεφάλαια σου:</h3>
         <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
-        <a href="statisticsChap1.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
+        <a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
         <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
         <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em;"><u>Κεφάλαιο 2</u></a>
-        <a href="statisticsChap1.jsp?chapter=2" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
+        <a href="#" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
         <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
         <a href="#" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
         <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
@@ -104,46 +105,75 @@
 
         <script>
             let array =[];
+            let xValues=[];
+            let yValues=[];
             <%
-            int i;
-            request.setCharacterEncoding("UTF-8");
-            int gradesChapters[]=new int[5];
-            try{
-                for (i=1;i<=5;i++){
-                    //String gradesChapters = Statistics.getMaxGrades(Integer.parseInt(request.getParameter("StudentId")),i);
-                    String grades = Statistics.getMaxGrades(1,i);
-                    if(grades==null){
-                        gradesChapters[i-1] = 0;
-                    }else{
-                        gradesChapters[i-1] = Integer.parseInt(grades);
-                    }
-                    %>
-                    array[<%= i-1 %>] = "<%= gradesChapters[i-1]%>";
-                <%}
-            } catch (NumberFormatException e) {
-            }
+                int chapter = Integer.parseInt(request.getParameter("chapter"));
+                request.setCharacterEncoding("UTF-8");
+                int i=1;
+                List<Integer> list = Statistics.getAllChapterGrades(5,chapter);
             %>
-            let xValues = ["Κεφάλαιο 1", "Κεφάλαιο 2", "Κεφάλαιο 3", "Κεφάλαιο 4","Επανάληψη"];
-            let yValues = [array[0], array[1], array[2], array[3], array[4]];
-            let barColors = ["red", "green", "blue", "orange", "pink"];
+            console.log("list=",<%=list.size()%>);
+            //console.log(xValues);<%
+            for (Integer j : list){
+                %>
+                    yValues.push(<%=j%>);
+                    xValues.push("Προσπάθεια <%=i%>");
+                    console.log(yValues);
+                    console.log(xValues);
+                <%
+                i++;
+            }
+                if(list.isEmpty()){
+                //}else{
+                   for (i=0;i<3;i++) {
+                        %>
+                        yValues.push(<%=i%>);
+                        xValues.push(<%=i%>);
+                        console.log(yValues);
+            //console.log(xValues);<%
+                        //i++;
+                    }
+                }
+    %>
+
+            //let xValues = [50,60,70,80,90,100,110,120,130,140,150];
+            //let yValues = [7,8,8,9,9,9,10,11,14,14,15];
 
             new Chart("myChart", {
-                type: "horizontalBar",
+                type: "line",
                 data: {
                     labels: xValues,
                     datasets: [{
-                        backgroundColor: barColors,
-                        data: yValues
+                        fill: false,
+                        lineTension: 0,
+                        backgroundColor: "rgba(0,0,255,1.0)",
+                        borderColor: "rgba(0,0,255,0.1)",
+                        data: yValues,
+                        pointRadius: 8,
+                        pointHoverRadius: 8
                     }]
                 },
                 options: {
                     legend: {display: false},
                     title: {
                         display: true,
-                        text: "Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!"
+                        text: "Οι βαθμοί σου στο κεφάλαιο <%=chapter%>!"
                     },
                     scales: {
-                        xAxes: [{ticks: {min: 0, max:10}}]
+                        yAxes: [{
+                            ticks: {min: 0, max:10},
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Βαθμοί'
+                            }
+                        }],
+                        /*xAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Προσπάθειες'
+                            }
+                        }],*/
                     }
                 }
             });
@@ -154,7 +184,7 @@
             -->
     </div>
 </div>
-<footer style="position: fixed;">
+<footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
     <p><i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
