@@ -81,7 +81,6 @@
             }
         }
     }
-
 </script>
 <%
     int chapter = Integer.parseInt(request.getParameter("chapter"));
@@ -217,8 +216,6 @@
                 }
             });
         </script>
-
-
     </div>
 </div>
 <footer style="position: fixed; bottom: 0;">
