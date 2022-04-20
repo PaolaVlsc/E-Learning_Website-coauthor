@@ -128,7 +128,7 @@
                             dbStmt.setString(2,request.getParameter("password"));
                             dbStmt.setString(3,request.getParameter("email"));
                             dbStmt.executeUpdate();
-                            response.sendRedirect("../index.html");
+                            response.sendRedirect("../index.jsp");
                         }
                     } catch (SQLException e) {
                         response.sendRedirect("../html/error.html");

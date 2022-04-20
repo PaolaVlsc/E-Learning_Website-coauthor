@@ -115,7 +115,7 @@
                 String userId = Login.checkCredentials(request.getParameter("email"),request.getParameter("password"));
                 if (userId != null){
                     session.setAttribute("userId",userId);
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("../index.jsp");
                 }else{
                     out.println("<FONT COLOR=\"#ff0000\">Λάθος στοιχεία</FONT><br>");
                 }
