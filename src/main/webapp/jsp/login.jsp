@@ -104,10 +104,10 @@
         </div>
 
         <label for="email"><b>Email χρήστη</b></label>
-        <input type="text" placeholder="Εισαγωγή email χρήστη" name="email" id="email" required>
+        <input type="text" placeholder="Εισαγωγή email χρήστη" name="email" id="email" required maxlength="100">
         <br>
         <label for="password"><b>Κωδικός</b></label>
-        <input type="password" placeholder="Εισαγωγή κωδικού" name="password" id="password" required>
+        <input type="password" placeholder="Εισαγωγή κωδικού" name="password" id="password" required maxlength="32">
         <br>
         <%
             request.setCharacterEncoding("UTF-8");

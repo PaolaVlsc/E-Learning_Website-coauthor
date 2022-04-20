@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.sql.Connection" %>
+<%@ page import="projectel.projectel.DbConnection" %>
+<%@ page import="java.sql.PreparedStatement" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 18/4/2022
@@ -103,7 +105,7 @@
     <div class="container">
         Συμπλήρωσε τα παρακάτω για να δημιουργήσεις έναν λογαριασμό!
         <br><br>
-        <label for="email"><b>Όνομα χρήστη</b></label>
+        <label for="email"><b>Email χρήστη</b></label>
         <input type="text" placeholder="Εισαγωγή email χρήστη" name="email" id="email" required maxlength="100">
         <br>
         <label for="name"><b>Το όνομά σου</b></label>
@@ -118,4 +120,13 @@
 <button class="button1" type="submit">Γύρνα πίσω στην αρχική</button>
 </body>
 </html>
+<%
+    request.setCharacterEncoding("UTF-8");
+    if ("POST".equalsIgnoreCase(request.getMethod())){
+        Connection conn = DbConnection.getConnection();
+        PreparedStatement dbStmt = conn.prepareStatement("SELECT 1 FROM users WHERE email=?;");
+        //PreparedStatement dbStmt = conn.prepareStatement("INSERT INTO users (name,password,email) VALUES (?,?,?);");
+        request.getAttribute("email");
+    }
+%>
 
