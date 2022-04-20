@@ -1,6 +1,8 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="projectel.projectel.DbConnection" %>
-<%@ page import="java.sql.PreparedStatement" %><%--
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 18/4/2022
@@ -106,6 +108,37 @@
         Συμπλήρωσε τα παρακάτω για να δημιουργήσεις έναν λογαριασμό!
         <br><br>
         <label for="email"><b>Email χρήστη</b></label>
+        <%
+            request.setCharacterEncoding("UTF-8");
+            if ("POST".equalsIgnoreCase(request.getMethod())){
+                Connection conn = DbConnection.getConnection();
+                if (conn!=null) {
+                    PreparedStatement dbStmt = null;
+                    try {
+                        dbStmt = conn.prepareStatement("SELECT 1 FROM users WHERE email=?;");
+                        String email = request.getParameter("email");
+                        dbStmt.setString(1,email);
+                        dbStmt.execute();
+                        final ResultSet dbRs = dbStmt.executeQuery();
+                        if (dbRs.next()) {
+                            out.println("<FONT COLOR=\"#ff0000\"> Υπάρχει ήδη λογαριασμός με αυτή την διεύθυνση email</FONT>");
+                        }else{
+                            dbStmt = conn.prepareStatement("INSERT INTO users (name,password,email) VALUES (?,?,?);");
+                            dbStmt.setString(1,request.getParameter("name"));
+                            dbStmt.setString(2,request.getParameter("password"));
+                            dbStmt.setString(3,request.getParameter("email"));
+                            dbStmt.executeUpdate();
+                            response.sendRedirect("../index.html");
+                        }
+                    } catch (SQLException e) {
+                        response.sendRedirect("../html/error.html");
+                    }
+                    //PreparedStatement dbStmt = conn.prepareStatement("INSERT INTO users (name,password,email) VALUES (?,?,?);");
+                }else{
+                    response.sendRedirect("../html/error.html");
+                }
+            }
+        %>
         <input type="text" placeholder="Εισαγωγή email χρήστη" name="email" id="email" required maxlength="100">
         <br>
         <label for="name"><b>Το όνομά σου</b></label>
@@ -120,13 +153,5 @@
 <button class="button1" type="submit">Γύρνα πίσω στην αρχική</button>
 </body>
 </html>
-<%
-    request.setCharacterEncoding("UTF-8");
-    if ("POST".equalsIgnoreCase(request.getMethod())){
-        Connection conn = DbConnection.getConnection();
-        PreparedStatement dbStmt = conn.prepareStatement("SELECT 1 FROM users WHERE email=?;");
-        //PreparedStatement dbStmt = conn.prepareStatement("INSERT INTO users (name,password,email) VALUES (?,?,?);");
-        request.getAttribute("email");
-    }
-%>
+
 
