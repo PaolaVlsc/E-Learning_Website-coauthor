@@ -49,15 +49,15 @@
                 <div class="dropdown">
                     <a href="../html/tests.html">Έλεγξε τις γνώσεις σου!</a>
                     <div class="dropdown-content" style="width:100%;">
-                        <a href="#">Κεφάλαιο 1</a>
-                        <a href="#">Κεφάλαιο 2</a>
-                        <a href="#">Κεφάλαιο 3</a>
-                        <a href="#">Κεφάλαιο 4</a>
-                        <a href="#">Τελικό Τεστ</a>
+                        <a href="#">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                        <a href="#">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                        <a href="#">Τεστ: Κριτήρια διαιρετότητας</a>
+                        <a href="#">Τεστ: Διαίρεση στους φυσικούς</a>
+                        <a href="#">Τεστ: Επαναληπτικό</a>
                     </div>
                 </div>
             </li>
-            <li><a class="current" href="../html/statistics.html">Στατιστικά</a></li>
+            <li><a class="current" href="../jsp/statistics.jsp">Στατιστικά</a></li>
         </ul>
         <div class="logout"><a href="#">
             <i class="fa fa-user-circle"></i>Αποσύνδεση</a>
@@ -94,13 +94,13 @@
         <a href="statisticsChap1.jsp?chapter=2" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
 
         <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
-        <a href="#" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
+        <a href="statisticsChap1.jsp?chapter=3" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
 
         <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
-        <a href="#" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
+        <a href="statisticsChap1.jsp?chapter=4" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
 
         <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επανάληψη</u></a>
-        <a href="#" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
+        <a href="statisticsChap1.jsp?chapter=5" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
     </div>
     <div class="right-side">
 

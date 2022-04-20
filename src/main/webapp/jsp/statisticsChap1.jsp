@@ -50,15 +50,15 @@
                 <div class="dropdown">
                     <a href="../html/tests.html">Έλεγξε τις γνώσεις σου!</a>
                     <div class="dropdown-content" style="width:100%;">
-                        <a href="#">Κεφάλαιο 1</a>
-                        <a href="#">Κεφάλαιο 2</a>
-                        <a href="#">Κεφάλαιο 3</a>
-                        <a href="#">Κεφάλαιο 4</a>
-                        <a href="#">Τελικό Τεστ</a>
+                        <a href="#">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                        <a href="#">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                        <a href="#">Τεστ: Κριτήρια διαιρετότητας</a>
+                        <a href="#">Τεστ: Διαίρεση στους φυσικούς</a>
+                        <a href="#">Τεστ: Επαναληπτικό</a>
                     </div>
                 </div>
             </li>
-            <li><a class="current" href="../html/statistics.html">Στατιστικά</a></li>
+            <li><a class="current" href="../jsp/statistics.jsp">Στατιστικά</a></li>
         </ul>
         <div class="logout"><a href="#">
             <i class="fa fa-user-circle"></i>Αποσύνδεση</a></div>
@@ -92,12 +92,12 @@
             if(chapter == 1){
         %>
                 <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 1</u></a>
-                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText1" >Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=1" style="padding-left:6em; color: #5cafc6" class="hiddenText1" >Βαθμοί</a>
         <%
             }else{
         %>
                 <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
-                <a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
         <%
             }
         %>
@@ -107,12 +107,12 @@
             if(chapter == 2){
         %>
                 <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 2</u></a>
-                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText2">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=2" style="padding-left:6em; color: #5cafc6" class="hiddenText2">Βαθμοί</a>
         <%
             }else{
         %>
                 <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em;"><u>Κεφάλαιο 2</u></a>
-                <a href="#" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=2" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
         <%
             }
         %>
@@ -120,12 +120,12 @@
             if(chapter == 3){
         %>
                 <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;  color: #064e61"><u>Κεφάλαιο 3</u></a>
-                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText3">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=3" style="padding-left:6em; color: #5cafc6" class="hiddenText3">Βαθμοί</a>
         <%
             }else{
         %>
                 <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
-                <a href="#" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=3" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
         <%
             }
         %>
@@ -133,12 +133,12 @@
             if(chapter == 4){
         %>
                 <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 4</u></a>
-                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText4">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=4" style="padding-left:6em; color: #5cafc6" class="hiddenText4">Βαθμοί</a>
         <%
             }else{
         %>
                 <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
-                <a href="#" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=4" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
         <%
             }
         %>
@@ -146,28 +146,34 @@
             if(chapter == 5){
         %>
                 <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;  color: #064e61"><u>Επανάληψη</u></a>
-                <a href="#" style="padding-left:6em; color: #5cafc6" class="hiddenText5">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=5" style="padding-left:6em; color: #5cafc6" class="hiddenText5">Βαθμοί</a>
         <%
             }else{
         %>
                 <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επανάληψη</u></a>
-                <a href="#" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
+                <a href="statisticsChap1.jsp?chapter=5" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
         <%
             }
         %>
     </div>
-    <div class="right-side">
 
+    <div class="right-side">
+        <%
+            request.setCharacterEncoding("UTF-8");
+            int i=1;
+            List<Integer> list = Statistics.getAllChapterGrades(1,chapter);
+            if(list.isEmpty()){
+        %>
+                <div><h1 style="color:#ef7f80;width:80%;">Δεν έχεις γράψει κάποιο διαγώνισμα σε αυτό το κεφάλαιο!</h1></div>
+        <%
+            }
+        %>
         <canvas id="myChart" style="width:70%;max-width:80%"></canvas>
 
         <script>
-            let array =[];
             let xValues=[];
             let yValues=[];
             <%
-                request.setCharacterEncoding("UTF-8");
-                int i=1;
-                List<Integer> list = Statistics.getAllChapterGrades(1,chapter);
                 if(!list.isEmpty()){
                     for (Integer j : list){
             %>
@@ -176,10 +182,12 @@
             <%
                         i++;
                     }
-                }
             %>
             new Chart("myChart", {
                 type: "line",
+                padding: {
+                    left: 50,
+                },
                 data: {
                     labels: xValues,
                     datasets: [{
@@ -196,7 +204,7 @@
                     legend: {display: false},
                     title: {
                         display: true,
-                        text: "Οι βαθμοί σου στο κεφάλαιο <%=chapter%>!"
+                        text: "Οι βαθμοί σου στο κεφάλαιο <%=chapter%>!",
                     },
                     scales: {
                         yAxes: [{
@@ -215,8 +223,12 @@
                     }
                 }
             });
+            <%
+                }
+            %>
         </script>
     </div>
+
 </div>
 <footer style="position: fixed; bottom: 0;">
     <hr>
