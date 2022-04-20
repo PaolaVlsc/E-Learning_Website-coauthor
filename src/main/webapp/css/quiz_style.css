@@ -63,7 +63,7 @@ button:hover{
     z-index: 2;
 }
 .quiz-container{
-    position: relative;
+    position: sticky;
     height: 200px;
     margin-top: 40px;
 }

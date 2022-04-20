@@ -1,6 +1,6 @@
 (function(){
     // Functions
-    function buildQuiz(){
+    function buildQuiz(flag){
         // variable to store the HTML output
         const output = [];
         //Shuffle quiz questions
@@ -10,21 +10,36 @@
             (currentQuestion, questionNumber) => {
 
                 // variable to store the list of possible answers
-                const answers = [];
+                let answers = [];
 
                 // and for each available answer...
                 for(letter in currentQuestion.answers){
 
                     // ...add an HTML radio button
-                    answers.push(
-                        `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-                    );
-                }
+                    if(flag===1){
 
+                        answers.push(
+                            `<label>
+                  <input type="radio" name="question${questionNumber}" id="multipleChoice" value="${letter}" >
+                  ${letter} :
+                  ${currentQuestion.answers[letter]}
+                </label>`
+                        );
+
+                    }
+                    else{
+                        while(answers.length > 0) {
+                            answers.pop();
+                        }
+                        answers.push(
+                            `<label>
+                  <input type="radio" name="question${questionNumber}" id="multipleChoice" value="${letter}" disabled>
+                  ${letter} :
+                  ${currentQuestion.answers[letter]}
+                </label>`
+                        );
+                    }
+                }
                 // add this question and its answers to the output
                 output.push(
                     `<div class="slide">
@@ -34,11 +49,20 @@
                 );
             }
         );
-
         // finally combine our output list into one string of HTML and put it on the page
         quizContainer.innerHTML = output.join('');
-    }
+        //document.getElementById("multipleChoice").disabled = true;
+        //disableAnswer();
 
+
+    }
+    function disableAnswer(){
+        var radio=document.getElementById("multipleChoice");
+
+        for (var i=0, iLen=radios.length; i<iLen; i++) {
+            radio[i].disabled = true;
+        }
+    }
     function showResults(){
 
         // gather answer containers from our quiz
@@ -71,7 +95,8 @@
         });
 
         // show number of correct answers out of total
-        resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+        resultsContainer.innerHTML = `${numCorrect} Από ${myQuestions.length}`;
+        buildQuiz(0);
     }
 
     function showSlide(n) {
@@ -151,7 +176,7 @@
     ];
 
     //Start quiz
-    buildQuiz();
+    buildQuiz(1);
 
     // Navigation
     const previousButton = document.getElementById("previous");
