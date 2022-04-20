@@ -1,6 +1,6 @@
 (function(){
     // Functions
-    function buildQuiz(flag){
+    function buildQuiz(){
         // variable to store the HTML output
         const output = [];
         //Shuffle quiz questions
@@ -11,34 +11,19 @@
 
                 // variable to store the list of possible answers
                 let answers = [];
-
+                let i=0;
                 // and for each available answer...
                 for(letter in currentQuestion.answers){
 
                     // ...add an HTML radio button
-                    if(flag===1){
-
+                i++;
                         answers.push(
                             `<label>
-                  <input type="radio" name="question${questionNumber}" id="multipleChoice" value="${letter}" >
+                  <input type="radio" name="question${questionNumber}" id=${questionNumber} value="${letter}" >
                   ${letter} :
                   ${currentQuestion.answers[letter]}
                 </label>`
                         );
-
-                    }
-                    else{
-                        while(answers.length > 0) {
-                            answers.pop();
-                        }
-                        answers.push(
-                            `<label>
-                  <input type="radio" name="question${questionNumber}" id="multipleChoice" value="${letter}" disabled>
-                  ${letter} :
-                  ${currentQuestion.answers[letter]}
-                </label>`
-                        );
-                    }
                 }
                 // add this question and its answers to the output
                 output.push(
@@ -51,16 +36,15 @@
         );
         // finally combine our output list into one string of HTML and put it on the page
         quizContainer.innerHTML = output.join('');
-        //document.getElementById("multipleChoice").disabled = true;
-        //disableAnswer();
+
 
 
     }
     function disableAnswer(){
-        var radio=document.getElementById("multipleChoice");
-
-        for (var i=0, iLen=radios.length; i<iLen; i++) {
-            radio[i].disabled = true;
+        var x = document.getElementsByTagName("input")
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].disabled = true;
         }
     }
     function showResults(){
@@ -79,6 +63,7 @@
             const selector = `input[name=question${questionNumber}]:checked`;
             const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
+
             // if answer is correct
             if(userAnswer === currentQuestion.correctAnswer){
                 // add to the number of correct answers
@@ -95,8 +80,8 @@
         });
 
         // show number of correct answers out of total
-        resultsContainer.innerHTML = `${numCorrect} Από ${myQuestions.length}`;
-        buildQuiz(0);
+        resultsContainer.innerHTML = `${numCorrect} Απο ${myQuestions.length}`;
+        disableAnswer();
     }
 
     function showSlide(n) {
@@ -176,7 +161,7 @@
     ];
 
     //Start quiz
-    buildQuiz(1);
+    buildQuiz();
 
     // Navigation
     const previousButton = document.getElementById("previous");
