@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz | SINP </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quiz_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!----------------------------------------- Start of navbar ------------------------------------------>
+    <nav class="navbar">
+        <div class="wrapper">
+            <div class="icon a menu-btn">
+                <a><i class="fa fa-list-ul"></i></a>
+            </div>
+            <div class="logo">
+                ΒΕΜΠΛΗΧΑ
+            </div>
+            <ul class="menu-list">
+                <li>
+                    <div class="icon cancel-btn">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </li>
+                <li><a href="../index.html">Αρχική</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a  class="../html/chapters.html" href="../html/chapters.html">Κεφάλαια Μαθηματικών</a>
+                        <div class="dropdown-content">
+                            <a href="sub-chapters/chapter01.html">Πρόσθεση και Αφαίρεση</a>
+                            <a href="sub-chapters/chapter02.html">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
+                            <a href="sub-chapters/chapter03.html">Κριτήρια διαιρετότητας</a>
+                            <a href="sub-chapters/chapter04.html">Διαίρεση στους φυσικούς</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <a href="current">Έλεγξε τις γνώσεις σου!</a>
+                        <div class="dropdown-content" style="width:100%;">
+                            <a href="quiz.html">Κεφάλαιο 1</a>
+                            <a href="quiz.html">Κεφάλαιο 2</a>
+                            <a href="quiz.html">Κεφάλαιο 3</a>
+                            <a href="quiz.html">Κεφάλαιο 4</a>
+                            <a href="quiz.html">Τελικό Τεστ</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../html/statistics.html">Στατιστικά</a></li>
+            </ul>
+            <div class="logout"><a href="#">
+                <i class="fa fa-user-circle"></i>Αποσύνδεση</a></div>
+
+        </div>
+    </nav>
+    <!--------- Start: Js navbar ---------->
+    <script src="../js/app.js"></script>
+    <script>
+        navbar.classList.add("sticky");
+
+        function toggleText(x) {
+            var texts = document.getElementsByClassName(x);
+            var i;
+            for (i = 0; i < texts.length; i++) {
+                var text = texts[i];
+                if (text.style.display === "none") {
+                    text.style.display = "block";
+                } else {
+                    text.style.display = "none";
+                }
+            }
+        }
+
+    </script>
+    <!---------- End: Js navbar ----------->
+    <!---------------------------------------- Close of navbar ------------------------------------------->
+    <h1>Τέσταρε τις γνώσεις σου !</h1>
+    <div class="quiz-container">
+        <div id="quiz"></div>
+    </div>
+    <button id="previous">Προηγούμενη ερώτηση</button>
+    <button id="next">Επόμενη ερώτηση</button>
+    <button id="submit">Καταχώρηση απαντήσεων</button>
+    <div id="results"></div>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>
