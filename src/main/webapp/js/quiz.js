@@ -5,16 +5,26 @@
         const output = [];
         //Shuffle quiz questions
         Shuffle(myQuestions);
+
         // for each question...
         myQuestions.forEach(
             (currentQuestion, questionNumber) => {
-
                 // variable to store the list of possible answers
                 let answers = [];
                 let i=0;
+                console.log(currentQuestion.answers)
+
+                currentQuestion.answers = Object.keys(currentQuestion.answers)
+                    .map((key) => ({key, value: currentQuestion.answers[key]}))
+                    .sort((a, b) => b.key.localeCompare(a.key))
+                    .reduce((acc, e) => {
+                        acc[e.key] = e.value;
+                        return acc;
+                    }, {});
+                console.log(currentQuestion.answers)
+
                 // and for each available answer...
                 for(letter in currentQuestion.answers){
-
                     // ...add an HTML radio button
                 i++;
                         answers.push(
@@ -51,10 +61,10 @@
         const answerContainers = quizContainer.querySelectorAll('.answers');
         // keep track of user's answers
         numCorrect = 0;
-
+        let x;
+        let i;
         // for each question...
         myQuestions.forEach( (currentQuestion, questionNumber) => {
-
             // find selected answer
             const answerContainer = answerContainers[questionNumber];
             const selector = `input[name=question${questionNumber}]:checked`;
@@ -65,16 +75,22 @@
                 // add to the number of correct answers
                 numCorrect++;
 
-                // color the answers green
-                answerContainers[questionNumber].style.color = 'lightgreen';
+                x = document.getElementsByName("question"+questionNumber);
+
+                for (i = 0; i < x.length; i++) {
+                    if(x[i].value===currentQuestion.correctAnswer){
+                        answerContainer.children[i].style.color = "green";
+                    }
+                }
+
             }
             // if answer is wrong or blank
             else{
                 // color the answers red
                 answerContainers[questionNumber].style.color = 'red';
 
-                let x = document.getElementsByName("question"+questionNumber);
-                let i;
+                x = document.getElementsByName("question"+questionNumber);
+
                 for (i = 0; i < x.length; i++) {
                     if(x[i].value===currentQuestion.correctAnswer){
                         answerContainer.children[i].style.color = "green";
