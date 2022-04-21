@@ -41,7 +41,7 @@
 
     }
     function disableAnswer(){
-        var x = document.getElementsByTagName("input")
+        var x = document.getElementsByTagName("input");
         var i;
         for (i = 0; i < x.length; i++) {
             x[i].disabled = true;
@@ -53,7 +53,7 @@
         const answerContainers = quizContainer.querySelectorAll('.answers');
 
         // keep track of user's answers
-        let numCorrect = 0;
+        numCorrect = 0;
 
         // for each question...
         myQuestions.forEach( (currentQuestion, questionNumber) => {
@@ -63,24 +63,36 @@
             const selector = `input[name=question${questionNumber}]:checked`;
             const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-
             // if answer is correct
             if(userAnswer === currentQuestion.correctAnswer){
                 // add to the number of correct answers
                 numCorrect++;
 
                 // color the answers green
-                answerContainers[questionNumber].style.color = 'lightgreen';
+                //answerContainers[questionNumber].style.color = 'lightgreen';
             }
             // if answer is wrong or blank
             else{
                 // color the answers red
-                answerContainers[questionNumber].style.color = 'red';
+                //answerContainers[questionNumber].style.color = 'red';
+
+
+                //answerContainers[1].style.color = 'blue';
+
+
+            }
+            var x = document.getElementsByName("question"+questionNumber);
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.color="blue";
+                var style = window.getComputedStyle(x[i]),
+                    color = style.getPropertyValue('color');
+                alert(color);
             }
         });
 
         // show number of correct answers out of total
-        resultsContainer.innerHTML = `${numCorrect} Απο ${myQuestions.length}`;
+        resultsContainer.innerHTML = `${currentSlide+1} Απο ${myQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${myQuestions.length}`
         disableAnswer();
     }
 
@@ -88,7 +100,12 @@
         slides[currentSlide].classList.remove('active-slide');
         slides[n].classList.add('active-slide');
         currentSlide = n;
-        resultsContainer.innerHTML = `${currentSlide+1} Απο ${myQuestions.length}`;
+        if(numCorrect===-1){
+            resultsContainer.innerHTML = `${currentSlide+1} Απο ${myQuestions.length}`;
+        }
+        else if (numCorrect>=0){
+            resultsContainer.innerHTML = `${currentSlide+1} Απο ${myQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${myQuestions.length}`
+        }
         if(currentSlide === 0){
             previousButton.style.display = 'none';
         }
@@ -159,6 +176,8 @@
             correctAnswer: "d"
         }
     ];
+
+    let numCorrect = -1;
 
     //Start quiz
     buildQuiz();
