@@ -36,9 +36,6 @@
         );
         // finally combine our output list into one string of HTML and put it on the page
         quizContainer.innerHTML = output.join('');
-
-
-
     }
     function disableAnswer(){
         var x = document.getElementsByTagName("input");
@@ -47,11 +44,11 @@
             x[i].disabled = true;
         }
     }
+
     function showResults(){
 
         // gather answer containers from our quiz
         const answerContainers = quizContainer.querySelectorAll('.answers');
-
         // keep track of user's answers
         numCorrect = 0;
 
@@ -69,25 +66,20 @@
                 numCorrect++;
 
                 // color the answers green
-                //answerContainers[questionNumber].style.color = 'lightgreen';
+                answerContainers[questionNumber].style.color = 'lightgreen';
             }
             // if answer is wrong or blank
             else{
                 // color the answers red
-                //answerContainers[questionNumber].style.color = 'red';
+                answerContainers[questionNumber].style.color = 'red';
 
-
-                //answerContainers[1].style.color = 'blue';
-
-
-            }
-            var x = document.getElementsByName("question"+questionNumber);
-            var i;
-            for (i = 0; i < x.length; i++) {
-                x[i].style.color="blue";
-                var style = window.getComputedStyle(x[i]),
-                    color = style.getPropertyValue('color');
-                alert(color);
+                let x = document.getElementsByName("question"+questionNumber);
+                let i;
+                for (i = 0; i < x.length; i++) {
+                    if(x[i].value===currentQuestion.correctAnswer){
+                        answerContainer.children[i].style.color = "green";
+                    }
+                }
             }
         });
 
