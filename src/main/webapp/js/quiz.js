@@ -11,30 +11,20 @@
             (currentQuestion, questionNumber) => {
                 // variable to store the list of possible answers
                 let answers = [];
-                let i=0;
-                console.log(currentQuestion.answers)
 
-                currentQuestion.answers = Object.keys(currentQuestion.answers)
-                    .map((key) => ({key, value: currentQuestion.answers[key]}))
-                    .sort((a, b) => b.key.localeCompare(a.key))
-                    .reduce((acc, e) => {
-                        acc[e.key] = e.value;
-                        return acc;
-                    }, {});
-                console.log(currentQuestion.answers)
+                var keys = Object.keys(currentQuestion.answers);
+                keys.sort(function() {return Math.random() - 0.5;});
 
                 // and for each available answer...
-                for(letter in currentQuestion.answers){
+                keys.forEach(function(letter) {
                     // ...add an HTML radio button
-                i++;
                         answers.push(
                             `<label>
                   <input type="radio" name="question${questionNumber}" id=${questionNumber} value="${letter}" >
-                  ${letter} :
                   ${currentQuestion.answers[letter]}
                 </label>`
                         );
-                }
+                });
                 // add this question and its answers to the output
                 output.push(
                     `<div class="slide">
