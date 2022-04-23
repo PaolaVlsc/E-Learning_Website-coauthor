@@ -3,6 +3,7 @@
     function buildQuiz(){
         // variable to store the HTML output
         const output = [];
+        let x,y,z;
         //Shuffle quiz questions
         Shuffle(myQuestions);
 
@@ -12,8 +13,22 @@
                 // variable to store the list of possible answers
                 let answers = [];
 
+                //Shuffle answers for multiple choice questions
                 var keys = Object.keys(currentQuestion.answers);
-                keys.sort(function() {return Math.random() - 0.5;});
+                if(!currentQuestion.type.localeCompare("multipleChoice")){
+                    keys.sort(function() {return Math.random() - 0.5;});
+                }
+                else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+                    x=getRandomInt(0,50);
+                    y=getRandomInt(0,50);
+                    currentQuestion.question=x+" + "+y+" = "+(x+y);
+                }
+                else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+                    x=getRandomInt(0,50);
+                    y=getRandomInt(0,50);
+                    while(!(z=getRandomInt(-10,10))){}
+                    currentQuestion.question=x+" + "+y+" = "+(x+y+z);
+                }
 
                 // and for each available answer...
                 keys.forEach(function(letter) {
@@ -27,10 +42,18 @@
                 });
                 // add this question and its answers to the output
                 output.push(
-                    `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-          </div>`
+
+            if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+                `<div class="slide">
+                <div class="question"> ${currentQuestion.question}<input type="number" name="question${questionNumber}" ></div>
+                </div>`
+            }
+            else{
+              `<div class="slide">
+                    <div class="question"> ${currentQuestion.question}</div>
+                    <div class="answers"> ${answers.join("")} </div>
+               </div>`
+            }
                 );
             }
         );
@@ -127,7 +150,9 @@
     function showPreviousSlide() {
         showSlide(currentSlide - 1);
     }
-
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
     function Shuffle(myQuestions) {
         var currentIndex = myQuestions.length, temporaryValue, randomIndex;
         while (0 !== currentIndex) {
@@ -146,6 +171,7 @@
     const submitButton = document.getElementById('submit');
     const myQuestions = [
         {
+            type:"multipleChoice",
             question: "Who invented JavaScript?",
             answers: {
                 a: "Douglas Crockford",
@@ -155,6 +181,7 @@
             correctAnswer: "c"
         },
         {
+            type:"multipleChoice",
             question: "Which one of these is a JavaScript package manager?",
             answers: {
                 a: "Node.js",
@@ -164,6 +191,7 @@
             correctAnswer: "c"
         },
         {
+            type:"multipleChoice",
             question: "Which tool can you use to ensure code quality?",
             answers: {
                 a: "Angular",
@@ -172,6 +200,40 @@
                 d: "ESLint"
             },
             correctAnswer: "d"
+        },
+        {
+            type:"Right/Wrong",
+            question: "Ο γατης αγαπαει τον ιασονα πιο πολυ απο την Σοφια",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong Generated Wrong",
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Right/Wrong Generated Right",
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Fill the Gaps",
+            question: "",
+            answers: {
+            },
+            correctAnswer: "a"
         }
     ];
 
