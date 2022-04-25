@@ -1,0 +1,158 @@
+body {
+    background: white;
+}
+
+header {
+    background-color: #333333;
+    padding: 50px;
+    position: sticky;
+    top: 0px;
+}
+
+.mothership {
+    top: 50px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.container1 .my_header {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: skyblue;
+    padding: 20px;
+    transition: 0.5s;
+    position: sticky;
+    top: 62px;
+    text-space: 10px;
+
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+/*
+.container1 .my_header2 {
+
+    text-decoration: none;
+    background: #f1f1f1;
+    padding: 0px;
+    transition: 0.5s;
+    position: sticky;
+    top: 140px;
+}
+*/
+
+.wrapper1 {
+    display: flex;
+}
+
+.container1 aside {
+    width: 30%;
+    margin: 35px 0;
+}
+
+.container1 aside .sidebar1 {
+    padding: 5px 50px;
+    position: sticky;
+    top: 300px;
+}
+
+.container1 aside .sidebar1 h4 {
+    padding: 0px 10px;
+    text-align: justify;
+}
+
+
+.container1 aside .sidebar1 ul {
+    list-style: none;
+    padding-bottom: 50px;
+}
+
+
+.container1 aside .sidebar1 ul li {
+    display: flex;
+}
+
+
+.container1 aside .sidebar1 ul a li{
+    display: flex;
+    text-decoration: none;
+    color: black; /*text color*/
+    font-weight: bolder;
+    padding: 10px;
+    margin: 15px;
+}
+
+.container1 aside .sidebar1 ul li.active {
+    background-color: skyblue;
+    transition: 0.3s ease background-color;
+}
+
+.container1 aside .sidebar1 ul a li.active  {
+    color: rgb(255, 255, 255);
+}
+
+.sidebar1 li:hover{
+    transition: 0.5s all;
+    background-color: pink;
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    cursor: pointer;
+}
+
+.container1 .main-body-chapter {
+    width: 70%;
+    padding: 0 35px;
+    margin: 170px 0;
+    min-height: 1800px;
+    text-align: justify;
+}
+
+#theory {
+}
+
+#theory h4 {
+    background-color: darkseagreen;
+    border-radius: 10px;
+}
+
+.content-table-antim-proset {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table-antim-proset thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table-antim-proset th,
+.content-table-antim-proset td {
+    padding: 12px 15px;
+}
+
+.content-table-antim-proset tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+#exercises {
+    /*background-color: pink;*/
+}
+
+#tests {
+    /*background-color: blue; */
+}
+
+section {
+    scroll-margin-top: 170px;
+}
