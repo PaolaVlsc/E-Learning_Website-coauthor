@@ -33,7 +33,7 @@
                     <i class="fa fa-close"></i>
                 </div>
             </li>
-            <li><a href="../index.html">Αρχική</a></li>
+            <li><a href="../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
                     <a href="chapters.html">Κεφάλαια Μαθηματικών</a>

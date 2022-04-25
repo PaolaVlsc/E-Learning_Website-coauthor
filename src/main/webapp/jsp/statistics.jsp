@@ -32,10 +32,10 @@
                     <i class="fa fa-close"></i>
                 </div>
             </li>
-            <li><a href="../index.html">Αρχική</a></li>
+            <li><a href="../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="chapters.html">Κεφάλαια Μαθηματικών</a>
+                    <a href="../html/chapters.html">Κεφάλαια Μαθηματικών</a>
                     <div class="dropdown-content">
                         <a href="sub-chapters/chapter01.html">Πρόσθεση και Αφαίρεση</a>
                         <a href="sub-chapters/chapter02.html">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
