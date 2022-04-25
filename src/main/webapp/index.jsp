@@ -1,9 +1,9 @@
 <%@ page import="projectel.projectel.Login" %><%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 20/4/2022
-  Time: 3:52 μ.μ.
-  To change this template use File | Settings | File Templates.
+Created by IntelliJ IDEA.
+User: user
+Date: 20/4/2022
+Time: 3:52 μ.μ.
+To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
@@ -60,7 +60,7 @@
             </li>
             <li><a href="jsp/statistics.jsp">Στατιστικά</a></li>
         </ul>
-        <div class="logout"><a href="<%=Login.isLoggedIn(session)?"../logout-servlet":"jsp/login.jsp"%>">
+        <div class="logout"><a href="<%=Login.isLoggedIn(session)?"logout-servlet":"login.jsp"%>">
             <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%></a></div>
 
     </div>
@@ -80,7 +80,7 @@
         <div class="title">Μαθηματικά Ε΄ Δημοτικού</div>
         <p>Περιγραφή του site??? </p>
         <a href="html/chapters.html"><img src="assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
-                                          style="width:250px;height:350px;"></a>
+                                             style="width:250px;height:350px;"></a>
         <div>
             <a href="html/chapters.html">Έλα να μάθουμε Μαθηματικά</a>
         </div>
