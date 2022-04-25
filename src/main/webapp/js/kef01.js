@@ -6,7 +6,7 @@ const navLi = document.querySelectorAll('.container1 aside .sidebar1 ul li');
 function activeMenu() {
 
     let len = sections.length;
-    while (--len && window.scrollY + 250< sections[len].offsetTop) {
+    while (--len && window.scrollY + 350< sections[len].offsetTop) {
     }
     navLi.forEach(li => li.classList.remove('active'));
     navLi[len].classList.add("active");

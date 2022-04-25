@@ -113,9 +113,12 @@ header {
 #theory {
 }
 
-#theory h4 {
+#theory h4, #exercises h4 {
     background-color: darkseagreen;
     border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 2px;
 }
 
 .content-table-antim-proset {
