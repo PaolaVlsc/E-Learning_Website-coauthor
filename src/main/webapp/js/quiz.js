@@ -15,22 +15,26 @@
                 let abc="a";
                 //Shuffle answers for multiple choice questions
                 var keys = Object.keys(currentQuestion.answers);
+                if(currentQuestion.type.search("BigNumber")!=-1){
+                    console.log(currentQuestion.type)
+                    x=getRandomInt(1000,1000000);
+                    y=getRandomInt(1000,1000000);
+                    currentQuestion.type=currentQuestion.type.replace(" BigNumber","")
+                }
+                else{
+                    x=getRandomInt(0,100);
+                    y=getRandomInt(0,100);
+                }
                 if(currentQuestion.shuffle){
                     keys.sort(function() {return Math.random() - 0.5;});
                 }
                 else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
-                    x=getRandomInt(0,50);
-                    y=getRandomInt(0,50);
                     currentQuestion.question=x+" + "+y+" = "+(x+y);
                 }
                 else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-                    x=getRandomInt(0,50);
-                    y=getRandomInt(0,50);
                     while(!(z=getRandomInt(-10,10))){}
                     currentQuestion.question=x+" + "+y+" = "+(x+y+z);
                 }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-                    x=getRandomInt(0,50);
-                    y=getRandomInt(0,50);
                     currentQuestion.question=x+" + "+y+" = ";
                     currentQuestion.correctAnswer=x+y;
                 }
@@ -77,7 +81,7 @@
                                 
                                 <div class="slide">
                                 <div class="question"> ${currentQuestion.question}
-                                <input type="text" id="FtG${questionNumber}" style="height:2em; font-size: 30px; -webkit-appearance: none; width: 3em" onkeydown ="return /^[0-9\\b]+$/.test(String.fromCharCode(event.keyCode || event.which))" name="question${questionNumber}" >                        
+                                <input type="text" id="FtG${questionNumber}" style="height:2em; font-size: 30px; -webkit-appearance: none; width: 5em" onkeydown ="return /^[0-9\\b]+$/.test(String.fromCharCode(event.keyCode || event.which))" name="question${questionNumber}" >                        
                                 </div>
                                 <div><br><label id="RightAnswer${questionNumber}"></label></div>                         
                                 <div class="answers"> ${answers.join("")} </div>
@@ -330,6 +334,16 @@
             correctAnswer: "b"
         },
         {
+            type:"Right/Wrong Generated Wrong BigNumber",
+            shuffle : false,
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
             type:"Right/Wrong Generated Right",
             shuffle : false,
             question: "",
@@ -340,7 +354,25 @@
             correctAnswer: "a"
         },
         {
+            type:"Right/Wrong Generated Right BigNumber",
+            shuffle : false,
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
             type:"Fill the Gaps",
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Fill the Gaps BigNumber",
             shuffle : false,
             question: "",
             answers: {
