@@ -94,73 +94,23 @@
     <div class="left-side">
         <br><br><h3>Τα κεφάλαια σου:</h3>
         <a href="statistics.jsp" style="padding-left:3em;"><u>Όλα τα κεφάλαια</u></a>
-        <%
-            if(chapter == 1){
-        %>
-                <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 1</u></a>
-                <a href="statisticsChapters.jsp?chapter=1" style="padding-left:6em; color: #5cafc6" class="hiddenText1" >Βαθμοί</a>
-        <%
-            }else{
-        %>
-                <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
-                <a href="statisticsChapters.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
-        <%
-            }
-        %>
-        <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
+        <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em; <%if(chapter == 1) out.print("color: #064e61");%>"><u>Κεφάλαιο 1</u></a>
+        <a href="statisticsChapters.jsp?chapter=1" style="padding-left:6em; <%if(chapter == 1) out.print("color: #5cafc6");else out.print("display:none;");%>" class="hiddenText1" >Βαθμοί</a>
 
-        <%
-            if(chapter == 2){
-        %>
-                <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 2</u></a>
-                <a href="statisticsChapters.jsp?chapter=2" style="padding-left:6em; color: #5cafc6" class="hiddenText2">Βαθμοί</a>
-        <%
-            }else{
-        %>
-                <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em;"><u>Κεφάλαιο 2</u></a>
-                <a href="statisticsChapters.jsp?chapter=2" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
-        <%
-            }
-        %>
-        <%
-            if(chapter == 3){
-        %>
-                <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;  color: #064e61"><u>Κεφάλαιο 3</u></a>
-                <a href="statisticsChapters.jsp?chapter=3" style="padding-left:6em; color: #5cafc6" class="hiddenText3">Βαθμοί</a>
-        <%
-            }else{
-        %>
-                <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
-                <a href="statisticsChapters.jsp?chapter=3" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
-        <%
-            }
-        %>
-        <%
-            if(chapter == 4){
-        %>
-                <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em; color: #064e61"><u>Κεφάλαιο 4</u></a>
-                <a href="statisticsChapters.jsp?chapter=4" style="padding-left:6em; color: #5cafc6" class="hiddenText4">Βαθμοί</a>
-        <%
-            }else{
-        %>
-                <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
-                <a href="statisticsChapters.jsp?chapter=4" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
-        <%
-            }
-        %>
-        <%
-            if(chapter == 5){
-        %>
-                <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;  color: #064e61"><u>Επαναληπτικό</u></a>
-                <a href="statisticsChapters.jsp?chapter=5" style="padding-left:6em; color: #5cafc6" class="hiddenText5">Βαθμοί</a>
-        <%
-            }else{
-        %>
-                <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
-                <a href="statisticsChapters.jsp?chapter=5" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
-        <%
-            }
-        %>
+        <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
+        <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em; <%if(chapter == 2) out.print("color: #064e61");%>"><u>Κεφάλαιο 2</u></a>
+        <a href="statisticsChapters.jsp?chapter=2" style="padding-left:6em; <%if(chapter == 2) out.print("color: #5cafc6");else out.print("display:none;");%>" class="hiddenText2">Βαθμοί</a>
+
+        <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em; <%if(chapter == 3) out.print("color: #064e61");%>"><u>Κεφάλαιο 3</u></a>
+        <a href="statisticsChapters.jsp?chapter=3" style="padding-left:6em; <%if(chapter == 3) out.print("color: #5cafc6");else out.print("display:none;");%>" class="hiddenText3">Βαθμοί</a>
+
+        <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em; <%if(chapter == 4) out.print("color: #064e61");%>"><u>Κεφάλαιο 4</u></a>
+        <a href="statisticsChapters.jsp?chapter=4" style="padding-left:6em; <%if(chapter == 4) out.print("color: #5cafc6");else out.print("display:none;");%>" class="hiddenText4">Βαθμοί</a>
+
+
+        <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;  <%if(chapter == 5) out.print("color: #064e61"); %>"><u>Επαναληπτικό</u></a>
+        <a href="statisticsChapters.jsp?chapter=5" style="padding-left:6em; <%if(chapter == 5) out.print("color: #5cafc6"); else out.print("display:none;");%>" class="hiddenText5">Βαθμοί</a>
+
     </div>
 
     <div class="right-side">
