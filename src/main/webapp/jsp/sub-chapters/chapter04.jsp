@@ -282,7 +282,6 @@ To change this template use File | Settings | File Templates.
 
     </div>
 </div>
-</div>
 <!-- Link the js -->
 <script src="../../js/kef01.js"></script>
 

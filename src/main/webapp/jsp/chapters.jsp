@@ -126,7 +126,7 @@
 
 
 <!----------------------------------------- Start of footer ------------------------------------------>
-<footer style="position: fixed; bottom: 0%;">
+<footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
     <p><i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>

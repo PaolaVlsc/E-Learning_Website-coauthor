@@ -48,7 +48,7 @@ To change this template use File | Settings | File Templates.
 
                 <li>
                     <div class="dropdown">
-                        <a href="current">Έλεγξε τις γνώσεις σου!</a>
+                        <a class="current" href="tests.jsp">Έλεγξε τις γνώσεις σου!</a>
                         <div class="dropdown-content" style="width:100%;">
                             <a href="quiz.jsp">Τεστ: Πρόσθεση και Αφαίρεση</a>
                             <a href="quiz.jsp">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>

@@ -117,7 +117,7 @@
             <%
                 int i;
                 request.setCharacterEncoding("UTF-8");
-                int gradesChapters[]=new int[5];
+                int[] gradesChapters=new int[5];
                 try{
                     for (i=1;i<=5;i++){
                         //String gradesChapters = Statistics.getMaxGrades(Integer.parseInt(request.getParameter("StudentId")),i);
@@ -132,6 +132,7 @@
             <%
                     }
                 } catch (NumberFormatException e) {
+                    response.sendRedirect("../html/error.html");
                 }
             %>
             let xValues = ["Κεφάλαιο 1", "Κεφάλαιο 2", "Κεφάλαιο 3", "Κεφάλαιο 4","Επανάληψη"];
