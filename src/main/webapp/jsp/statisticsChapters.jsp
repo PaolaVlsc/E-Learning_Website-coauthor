@@ -88,6 +88,7 @@
 <div class="main-wrap">
     <div class="left-side">
         <br><br><h3>Τα κεφάλαια σου:</h3>
+        <a href="statistics.jsp" style="padding-left:3em;"><u>Όλα τα κεφάλαια</u></a>
         <%
             if(chapter == 1){
         %>
@@ -145,12 +146,12 @@
         <%
             if(chapter == 5){
         %>
-                <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;  color: #064e61"><u>Επανάληψη</u></a>
+                <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;  color: #064e61"><u>Επαναληπτικό</u></a>
                 <a href="statisticsChapters.jsp?chapter=5" style="padding-left:6em; color: #5cafc6" class="hiddenText5">Βαθμοί</a>
         <%
             }else{
         %>
-                <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επανάληψη</u></a>
+                <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
                 <a href="statisticsChapters.jsp?chapter=5" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
         <%
             }
@@ -161,14 +162,18 @@
         <%
             request.setCharacterEncoding("UTF-8");
             int i=1;
-            List<Integer> list = Statistics.getAllChapterGrades(5,chapter);
+            List<Integer> list = Statistics.getAllChapterGrades(3,chapter);
             if(list.isEmpty()){
         %>
                 <div><h1 style="color:#ef7f80;width:80%;">Δεν έχεις γράψει κάποιο διαγώνισμα σε αυτό το κεφάλαιο!</h1></div>
         <%
-            }else{
+            }else if(chapter!=5){
         %>
             <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι βαθμοί σου στο κεφάλαιο <%=chapter%>!</h2>
+        <%
+            }else{
+        %>
+            <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι βαθμοί σου στο επαναληπτικό κεφάλαιο!</h2>
         <%
             }
         %>

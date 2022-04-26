@@ -86,6 +86,8 @@
 <div class="main-wrap">
     <div class="left-side">
         <br><br><h3>Τα κεφάλαια σου:</h3>
+        <a href="statistics.jsp" style="padding-left:3em; color: #064e61"><u>Όλα τα κεφάλαια</u></a>
+
         <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
         <a href="statisticsChapters.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
         <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
@@ -99,11 +101,11 @@
         <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
         <a href="statisticsChapters.jsp?chapter=4" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
 
-        <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επανάληψη</u></a>
+        <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
         <a href="statisticsChapters.jsp?chapter=5" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
     </div>
     <div class="right-side">
-
+        <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!</h2>
         <canvas id="myChart" style="width:70%;max-width:80%"></canvas>
 
         <script>
@@ -145,7 +147,7 @@
                     legend: {display: false},
                     title: {
                         display: true,
-                        text: "Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!"
+                        //text: "Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!"
                     },
                     scales: {
                         xAxes: [{
