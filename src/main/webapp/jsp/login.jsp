@@ -125,7 +125,7 @@
         <br>
         <div style="text-align: center;">Ή</div>
         Εάν είναι η πρώτη σου φορά εδώ, πάτα το παρακάτω κουμπί για να δημιουργήσεις έναν λογαριασμό!
-        <button type="button">Δημιουργία Λογαριασμού</button>
+        <button type="button" onclick="location.href='newAccount.jsp'">Δημιουργία Λογαριασμού</button>
     </div>
 
 </form>
