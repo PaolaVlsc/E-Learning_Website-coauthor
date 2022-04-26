@@ -75,20 +75,6 @@ To change this template use File | Settings | File Templates.
 <script src="../../js/app.js"></script>
 <script>
     navbar.classList.add("sticky");
-
-    function toggleText(x) {
-        var texts = document.getElementsByClassName(x);
-        var i;
-        for (i = 0; i < texts.length; i++) {
-            var text = texts[i];
-            if (text.style.display === "none") {
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
-        }
-    }
-
 </script>
 <!---------- End: Js navbar ----------->
 <!---------------------------------------- Close of navbar ------------------------------------------->
