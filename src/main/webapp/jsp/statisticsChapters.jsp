@@ -1,5 +1,7 @@
 <%@ page import="projectel.projectel.Statistics" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="projectel.projectel.Login" %>
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: user
   Date: 18/4/2022
@@ -36,33 +38,36 @@
             <li><a href="../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="chapters.html">Κεφάλαια Μαθηματικών</a>
+                    <a href="chapters.jsp">Κεφάλαια Μαθηματικών</a>
                     <div class="dropdown-content">
-                        <a href="sub-chapters/chapter01.html">Πρόσθεση και Αφαίρεση</a>
-                        <a href="sub-chapters/chapter02.html">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
-                        <a href="sub-chapters/chapter03.html">Κριτήρια διαιρετότητας</a>
-                        <a href="sub-chapters/chapter04.html">Διαίρεση στους φυσικούς</a>
+                        <a href="sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
+                        <a href="sub-chapters/chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
+                        <a href="sub-chapters/chapter03.jsp">Κριτήρια διαιρετότητας</a>
+                        <a href="sub-chapters/chapter04.jsp">Διαίρεση στους φυσικούς</a>
                     </div>
                 </div>
             </li>
 
             <li>
                 <div class="dropdown">
-                    <a href="../html/tests.html">Έλεγξε τις γνώσεις σου!</a>
+                    <a href="tests.jsp">Έλεγξε τις γνώσεις σου!</a>
                     <div class="dropdown-content" style="width:100%;">
-                        <a href="#">Τεστ: Πρόσθεση και Αφαίρεση</a>
-                        <a href="#">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
-                        <a href="#">Τεστ: Κριτήρια διαιρετότητας</a>
-                        <a href="#">Τεστ: Διαίρεση στους φυσικούς</a>
-                        <a href="#">Τεστ: Επαναληπτικό</a>
+                        <a href="quiz.jsp">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                        <a href="quiz.jsp">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                        <a href="quiz.jsp">Τεστ: Κριτήρια διαιρετότητας</a>
+                        <a href="quiz.jsp">Τεστ: Διαίρεση στους φυσικούς</a>
+                        <a href="quiz.jsp">Τεστ: Επαναληπτικό</a>
                     </div>
                 </div>
             </li>
             <li><a class="current" href="../jsp/statistics.jsp">Στατιστικά</a></li>
         </ul>
-        <div class="logout"><a href="#">
-            <i class="fa fa-user-circle"></i>Αποσύνδεση</a></div>
 
+        <div class="logout">
+            <a href="<%=Login.isLoggedIn(session)?"logout-servlet":"login.jsp"%>">
+                <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
+            </a>
+        </div>
     </div>
 </nav>
 <script src="../js/app.js"></script>

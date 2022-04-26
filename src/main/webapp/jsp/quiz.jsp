@@ -1,3 +1,12 @@
+<%@ page import="projectel.projectel.Login" %>
+<%--
+Created by IntelliJ IDEA.
+User: user
+Date: 18/4/2022
+Time: 2:14 μ.μ.
+To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,15 +33,15 @@
                         <i class="fa fa-close"></i>
                     </div>
                 </li>
-                <li><a href="../index.html">Αρχική</a></li>
+                <li><a href="../index.jsp">Αρχική</a></li>
                 <li>
                     <div class="dropdown">
-                        <a  class="../html/chapters.html" href="../html/chapters.html">Κεφάλαια Μαθηματικών</a>
+                        <a  class="../jsp/chapters.jsp" href="../jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
                         <div class="dropdown-content">
-                            <a href="sub-chapters/chapter01.html">Πρόσθεση και Αφαίρεση</a>
-                            <a href="sub-chapters/chapter02.html">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
-                            <a href="sub-chapters/chapter03.html">Κριτήρια διαιρετότητας</a>
-                            <a href="sub-chapters/chapter04.html">Διαίρεση στους φυσικούς</a>
+                            <a href="../jsp/sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
+                            <a href="../jsp/sub-chapters/chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
+                            <a href="../jsp/sub-chapters/chapter03.jsp">Κριτήρια διαιρετότητας</a>
+                            <a href="../jsp/sub-chapters/chapter04.jsp">Διαίρεση στους φυσικούς</a>
                         </div>
                     </div>
                 </li>
@@ -41,18 +50,22 @@
                     <div class="dropdown">
                         <a href="current">Έλεγξε τις γνώσεις σου!</a>
                         <div class="dropdown-content" style="width:100%;">
-                            <a href="quiz.html">Κεφάλαιο 1</a>
-                            <a href="quiz.html">Κεφάλαιο 2</a>
-                            <a href="quiz.html">Κεφάλαιο 3</a>
-                            <a href="quiz.html">Κεφάλαιο 4</a>
-                            <a href="quiz.html">Τελικό Τεστ</a>
+                            <a href="quiz.jsp">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                            <a href="quiz.jsp">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                            <a href="quiz.jsp">Τεστ: Κριτήρια διαιρετότητας</a>
+                            <a href="quiz.jsp">Τεστ: Διαίρεση στους φυσικούς</a>
+                            <a href="quiz.jsp">Τεστ: Επαναληπτικό</a>
                         </div>
                     </div>
                 </li>
-                <li><a href="../html/statistics.html">Στατιστικά</a></li>
+                <li><a href="../jsp/statistics.jsp">Στατιστικά</a></li>
             </ul>
-            <div class="logout"><a href="#">
-                <i class="fa fa-user-circle"></i>Αποσύνδεση</a></div>
+
+            <div class="logout">
+                <a href="<%=Login.isLoggedIn(session)?"logout-servlet":"login.jsp"%>">
+                    <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
+                </a>
+            </div>
 
         </div>
     </nav>

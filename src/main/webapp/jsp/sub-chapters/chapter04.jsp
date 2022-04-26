@@ -1,10 +1,19 @@
+<%@ page import="projectel.projectel.Login" %>
+<%--
+Created by IntelliJ IDEA.
+User: user
+Date: 18/4/2022
+Time: 2:14 μ.μ.
+To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ΠΟΛΛΑΠΛΑΣΙΑΣΜΟΣ | SINP </title>
+    <title>ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ | SINP </title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/chapter_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,32 +38,36 @@
             <li><a href="../../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
-                <a  class="current" href="../chapters.html">Κεφάλαια Μαθηματικών</a>
+                    <a  class="current" href="../../jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
                     <div class="dropdown-content">
-                        <a href="chapter01.html">Πρόσθεση και Αφαίρεση</a>
-                        <a href="chapter02.html">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
-                        <a href="chapter03.html">Κριτήρια διαιρετότητας</a>
-                        <a href="chapter04.html">Διαίρεση στους φυσικούς</a>
+                        <a href="../../jsp/sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
+                        <a href="../../jsp/sub-chapters/chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
+                        <a href="../../jsp/sub-chapters/chapter03.jsp">Κριτήρια διαιρετότητας</a>
+                        <a href="chapter04.jsp">Διαίρεση στους φυσικούς</a>
                     </div>
                 </div>
             </li>
 
             <li>
                 <div class="dropdown">
-                    <a href="../tests.html">Έλεγξε τις γνώσεις σου!</a>
+                    <a href="../../jsp/tests.jsp">Έλεγξε τις γνώσεις σου!</a>
                     <div class="dropdown-content" style="width:100%;">
-                        <a href="#">Κεφάλαιο 1</a>
-                        <a href="#">Κεφάλαιο 2</a>
-                        <a href="#">Κεφάλαιο 3</a>
-                        <a href="#">Κεφάλαιο 4</a>
-                        <a href="#">Τελικό Τεστ</a>
+                        <a href="../quiz.jsp">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                        <a href="../quiz.jsp">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                        <a href="../quiz.jsp">Τεστ: Κριτήρια διαιρετότητας</a>
+                        <a href="../quiz.jsp">Τεστ: Διαίρεση στους φυσικούς</a>
+                        <a href="../quiz.jsp">Τεστ: Επαναληπτικό</a>
                     </div>
                 </div>
             </li>
             <li><a href="../../jsp/statistics.jsp">Στατιστικά</a></li>
         </ul>
-        <div class="logout"><a href="#">
-            <i class="fa fa-user-circle"></i>Αποσύνδεση</a></div>
+
+        <div class="logout">
+            <a href="<%=Login.isLoggedIn(session)?"logout-servlet":"../login.jsp"%>">
+                <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
+            </a>
+        </div>
 
     </div>
 </nav>
@@ -83,7 +96,7 @@
 <div class="mothership">
     <div class="container1">
         <div class="my_header">
-            ΜΑΘΑΙΝΟΥΜΕ ΤΟΝ ΠΟΛΛΑΠΛΑΣΙΑΣΜΟ ΣΤΟΥΣ ΦΥΣΙΚΟΥΣ ΑΡΙΘΜΟΥΣ!
+            ΕΛΑ ΝΑ ΜΑΘΟΥΜΕ ΤΑ ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ ΠΑΡΕΑ !
         </div>
         <!--<div class="my_header2">
           <pre> </pre>
@@ -92,8 +105,7 @@
         <div class="wrapper1">
             <aside>
                 <div class="sidebar1">
-                    <h2>ΠΟΛΛΑΠΛΑΣΙΑΣΜΟΣ ΣΤΟΥΣ ΦΥΣΙΚΟΥΣ ΑΡΙΘΜΟΥΣ
-                    </h2>
+                    <h2>ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ</h2>
                     <br>
                     <hr>
                     <br>

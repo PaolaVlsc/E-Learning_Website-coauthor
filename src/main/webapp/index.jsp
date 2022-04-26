@@ -36,32 +36,35 @@ To change this template use File | Settings | File Templates.
 
             <li>
                 <div class="dropdown">
-                    <a href="html/chapters.html">Κεφάλαια Μαθηματικών</a>
+                    <a href="jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
                     <div class="dropdown-content">
-                        <a href="#">Πρόσθεση και Αφαίρεση</a>
-                        <a href="#">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
-                        <a href="#">Κριτήρια διαιρετότητας</a>
-                        <a href="#">Διαίρεση στους φυσικούς</a>
+                        <a href="jsp/sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
+                        <a href="jsp/sub-chapters/chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
+                        <a href="jsp/sub-chapters/chapter03.jsp">Κριτήρια διαιρετότητας</a>
+                        <a href="jsp/sub-chapters/chapter04.jsp">Διαίρεση στους φυσικούς</a>
                     </div>
                 </div>
             </li>
 
             <li>
                 <div class="dropdown">
-                    <a href="html/tests.html">Έλεγξε τις γνώσεις σου!</a>
+                    <a href="jsp/tests.jsp">Έλεγξε τις γνώσεις σου!</a>
                     <div class="dropdown-content" style="width:100%;">
-                        <a href="#">Κεφάλαιο 1</a>
-                        <a href="#">Κεφάλαιο 2</a>
-                        <a href="#">Κεφάλαιο 3</a>
-                        <a href="#">Κεφάλαιο 4</a>
-                        <a href="#">Τελικό Τεστ</a>
+                        <a href="jsp/quiz.jsp">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                        <a href="jsp/quiz.jsp">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                        <a href="jsp/quiz.jsp">Τεστ: Κριτήρια διαιρετότητας</a>
+                        <a href="jsp/quiz.jsp">Τεστ: Διαίρεση στους φυσικούς</a>
+                        <a href="jsp/quiz.jsp">Τεστ: Επαναληπτικό</a>
                     </div>
                 </div>
             </li>
             <li><a href="jsp/statistics.jsp">Στατιστικά</a></li>
         </ul>
-        <div class="logout"><a href="<%=Login.isLoggedIn(session)?"logout-servlet":"jsp/login.jsp"%>">
-            <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%></a></div>
+        <div class="logout">
+            <a href="<%=Login.isLoggedIn(session)?"logout-servlet":"jsp/login.jsp"%>">
+            <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
+            </a>
+        </div>
 
     </div>
 </nav>
@@ -79,10 +82,10 @@ To change this template use File | Settings | File Templates.
         <div class="quote">QUOTE FWTO ISWS? NAI</div>
         <div class="title">Μαθηματικά Ε΄ Δημοτικού</div>
         <p>Περιγραφή του site??? </p>
-        <a href="html/chapters.html"><img src="assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
-                                             style="width:250px;height:350px;"></a>
+        <a href="jsp/chapters.jsp"><img src="assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
+                                        style="width:250px;height:350px;"></a>
         <div>
-            <a href="html/chapters.html">Έλα να μάθουμε Μαθηματικά</a>
+            <a href="jsp/chapters.jsp">Έλα να μάθουμε Μαθηματικά</a>
         </div>
     </div>
 </div>
