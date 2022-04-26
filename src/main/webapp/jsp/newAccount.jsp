@@ -131,6 +131,7 @@
                             response.sendRedirect("../index.jsp");
                         }
                     } catch (SQLException e) {
+                        e.printStackTrace();
                         response.sendRedirect("../html/error.html");
                     }
                     //PreparedStatement dbStmt = conn.prepareStatement("INSERT INTO users (name,password,email) VALUES (?,?,?);");
