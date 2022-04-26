@@ -297,7 +297,7 @@ To change this template use File | Settings | File Templates.
                     <br>
                     <div class="test-prosthesh" style="padding-top: 25px;padding-bottom: 25px;   border: 2px solid skyblue;
   border-radius: 5px;">
-                        <center><a href="chapter02.jsp"><img src="../../assets/chapter01/ok1.jpg" style=" box-shadow: 2px 2px 4px #000000;  width: 50%;
+                        <center><a href="../quiz.jsp"><img src="../../assets/chapter01/ok1.jpg" style=" box-shadow: 2px 2px 4px #000000;  width: 50%;
   height: auto;"></a></center>
                     </div>
 
