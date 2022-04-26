@@ -6,7 +6,7 @@ header {
     background-color: #333333;
     padding: 50px;
     position: sticky;
-    top: 0px;
+    top: 0;
 }
 
 .mothership {
@@ -60,7 +60,7 @@ header {
 }
 
 .container1 aside .sidebar1 h4 {
-    padding: 0px 50px;
+    padding: 0 50px;
     text-align: justify;
 }
 
