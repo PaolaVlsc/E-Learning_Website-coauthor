@@ -81,7 +81,7 @@
                                 
                                 <div class="slide">
                                 <div class="question"> ${currentQuestion.question}
-                                <input type="text" id="FtG${questionNumber}" style="height:2em; font-size: 30px; -webkit-appearance: none; width: 5em" onkeydown ="return /^[0-9\\b]+$/.test(String.fromCharCode(event.keyCode || event.which))" name="question${questionNumber}" >                        
+                                <input type="text" id="FtG${questionNumber}" style="height:2em; font-size: 30px; -webkit-appearance: none; width: 5em" onkeydown =" if(event.keyCode !== 37 && event.keyCode !== 39) return /^[0-9\\b]+$/.test(String.fromCharCode(event.keyCode || event.which))" name="question${questionNumber}" >                        
                                 </div>
                                 <div><br><label id="RightAnswer${questionNumber}"></label></div>                         
                                 <div class="answers"> ${answers.join("")} </div>
