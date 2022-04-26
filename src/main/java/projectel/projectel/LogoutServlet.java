@@ -16,6 +16,6 @@ public class LogoutServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         session.removeAttribute("userId");
-        response.sendRedirect("jsp/index.jsp");
+        response.sendRedirect("index.jsp");
     }
 }

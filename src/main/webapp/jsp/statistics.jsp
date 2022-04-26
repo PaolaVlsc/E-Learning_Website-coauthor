@@ -115,7 +115,7 @@
                 try{
                     for (i=1;i<=5;i++){
                         //String gradesChapters = Statistics.getMaxGrades(Integer.parseInt(request.getParameter("StudentId")),i);
-                        String grades = Statistics.getMaxGrades(1,i);
+                        String grades = Statistics.getMaxGrades(5,i);
                         if(grades==null){
                             gradesChapters[i-1] = 0;
                         }else{
