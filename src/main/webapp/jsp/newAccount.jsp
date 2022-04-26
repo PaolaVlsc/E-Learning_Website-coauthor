@@ -151,7 +151,7 @@
         <button type="submit">Δημιουργία Λογαριασμού</button>
     </div>
 </form>
-<button class="button1" type="submit">Γύρνα πίσω στην αρχική</button>
+<button class="button1" onclick="location.href='../index.jsp'">Γύρνα πίσω στην αρχική</button>
 </body>
 </html>
 
