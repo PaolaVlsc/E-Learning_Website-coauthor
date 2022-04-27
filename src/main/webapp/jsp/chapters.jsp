@@ -79,45 +79,31 @@
 <!---------------------------------------- Close of navbar ------------------------------------------->
 
 <!------------------------------------ Start Main Container ------------------------------------------>
+<div class="mothership">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <div class="cards">
+        <div class="card">
+            <h2 class="card-title">ΠΡΟΣΘΕΣΗ & ΑΦΑΙΡΕΣΗ</h2>
+            <img src="../assets/addsub.png"
+                 alt="">
 
-<div class="mother-ship">
+        </div>
+        <div class="card">
+            <h2 class="card-title">ΠΟΛΛΑΠΛΑΣΙΑΣΜΟΣ ΣΤΟΥΣ ΦΥΣΙΚΟΥΣ</h2>
+            <img src="../assets/mul1.png"
+                 alt="">
 
-    <div class="main-container">
-        <!-- <div class="header-banner center">
-            <img src="../assets/kefalaia_banner.jpg" style="width:690px;height:300px;  ">
-        </div> -->
-        <div class="content-area">
-            <div class="column1">
-                <a href="sub-chapters/chapter01.jsp"><img src="../assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
-                                                           style="width:240px;height:300px;"></a>
-                <a href="sub-chapters/chapter01.jsp">
-                    <center> ΠΡΟΣΘΕΣΗ & ΑΦΑΙΡΕΣΗ </center>
-                </a>
-            </div>
-            <div class="column2">
-                <a href="sub-chapters/chapter02.jsp"><img src="../assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
-                                 style="width:240px;height:300px;"></a>
-                <a href="sub-chapters/chapter02.jsp">
-                    <center> ΠΟΛΛΑΠΛΑΣΙΑΣΜΟΣ </center>
-                </a>
-            </div>
-            <div class="column3">
-                <a href="sub-chapters/chapter03.jsp"><img src="../assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
-                                 style="width:240px;height:300px;"></a>
-                <a href="sub-chapters/chapter03.jsp">
-                    <center> ΠΟΛΛΑΠΛΑΣΙΑ & ΔΙΑΙΡΕΤΕΣ</center>
-                </a>
-            </div>
-            <div class="column4">
-                <a href="sub-chapters/chapter04.jsp"><img src="../assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
-                                 style="width:240px;height:300px;"></a>
-                <a href="sub-chapters/chapter04.jsp">
-                    <center> ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ </center>
-                </a>
-            </div>
+        </div>
+        <div class="card">
+            <h2 class="card-title">ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ</h2>
+            <img src="../assets/mul.png"
+                 alt="">
+        </div>
+        <div class="card" style="    margin-bottom: 250px;">
+            <a href="#"> <h2 class="card-title">ΔΙΑΙΡΕΣΗ ΣΤΟΥΣ ΦΥΣΙΚΟΥΣ</h2>
+                <img src="../assets/div.png"></a>
         </div>
     </div>
-
 </div>
 <!------------------------------------ Close Main Container ------------------------------------------>
 
