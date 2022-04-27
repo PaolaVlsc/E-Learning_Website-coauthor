@@ -159,3 +159,57 @@ header {
 section {
     scroll-margin-top: 170px;
 }
+
+/* Slide button styling */
+.center .slide {
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 30px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.center .slide i {
+    opacity: 0;
+    font-size: 13px;
+    transition: 0.2s;
+    position: absolute;
+    right: 10px;
+    top: 21px;
+}
+
+.center .slide div {
+    transition: transform 0.8s;
+}
+
+.center .slide:hover div {
+    transform: translateX(-6px);
+}
+
+.center .slide::after {
+    content: "";
+    background-color:#dcbaff;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+}
+
+.center .slide:hover i {
+    opacity: 1;
+    transform: translateX(-6px);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+/* End of Slide Button  */
