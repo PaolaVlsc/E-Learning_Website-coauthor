@@ -8,15 +8,14 @@
         Shuffle(myQuestions);
 
         // for each question...
-        myQuestions.forEach(
+        myQuestions.slice().forEach(
             (currentQuestion, questionNumber) => {
                 // variable to store the list of possible answers
                 let answers = [];
                 let abc="a";
                 //Shuffle answers for multiple choice questions
                 var keys = Object.keys(currentQuestion.answers);
-                if(currentQuestion.type.search("BigNumber")!=-1){
-                    console.log(currentQuestion.type)
+                if(currentQuestion.type.search("BigNumber")!==-1){
                     x=getRandomInt(1000,1000000);
                     y=getRandomInt(1000,1000000);
                     currentQuestion.type=currentQuestion.type.replace(" BigNumber","")
@@ -123,7 +122,7 @@
                     var keys = Object.keys(currentQuestion.answers)
                     var dropDown = (document.getElementsByName("dropDown"+questionNumber) || {});
                     let i,j=0;
-                    keys.forEach(function (letter) {
+                    keys.forEach(function () {
                         i=0;
                         keys.forEach(function (letter) {
                             var option = document.createElement("option");
@@ -198,8 +197,6 @@
                 for (let i = 0; i < tagTd.length-1; i+=tagTd.length/3) {
                     for(let j in currentQuestion.answers) {
                         document.getElementById(abc).style.backgroundColor="Tomato";
-                        //alert(currentQuestion.answers[j]+tagTd[i].innerHTML);
-                        tempText = tempText + tagTd[i].innerHTML
                         if(currentQuestion.answers[j]===tagTd[i].innerHTML){
                             if(j===document.getElementById(abc).options[document.getElementById(abc).selectedIndex].value){
                                 document.getElementById(abc).style.backgroundColor="LightGreen";
@@ -208,6 +205,7 @@
                                 flag=1;
                             }
                             abc = String.fromCharCode(abc.charCodeAt(0) + 1);
+                            tempText = tempText +" "+ j;
                             break;
                         }
                     }
@@ -301,8 +299,10 @@
     const resultsContainer = document.getElementById('results');
     const submitButton = document.getElementById('submit');
     const myQuestions = [
+        //Chapter 1 Questions
         {
             type:"multipleChoice",
+            chapter:1,
             shuffle : true,
             question: "Who invented JavaScript?",
             answers: {
@@ -314,6 +314,7 @@
         },
         {
             type:"multipleChoice",
+            chapter:1,
             shuffle : true,
             question: "Which one of these is a JavaScript package manager?",
             answers: {
@@ -325,6 +326,7 @@
         },
         {
             type:"multipleChoice",
+            chapter:1,
             shuffle : true,
             question: "Which tool can you use to ensure code quality?",
             answers: {
@@ -337,6 +339,7 @@
         },
         {
             type:"Right/Wrong",
+            chapter:1,
             shuffle : false,
             question: "Ο γατης αγαπαει τον ιασονα πιο πολυ απο την Σοφια",
             answers: {
@@ -347,6 +350,7 @@
         },
         {
             type:"Right/Wrong Generated Wrong",
+            chapter:1,
             shuffle : false,
             question: "",
             answers: {
@@ -357,6 +361,7 @@
         },
         {
             type:"Right/Wrong Generated Wrong BigNumber",
+            chapter:1,
             shuffle : false,
             question: "",
             answers: {
@@ -367,6 +372,7 @@
         },
         {
             type:"Right/Wrong Generated Right",
+            chapter:1,
             shuffle : false,
             question: "",
             answers: {
@@ -377,6 +383,7 @@
         },
         {
             type:"Right/Wrong Generated Right BigNumber",
+            chapter:1,
             shuffle : false,
             question: "",
             answers: {
@@ -387,6 +394,7 @@
         },
         {
             type:"Fill the Gaps",
+            chapter:1,
             shuffle : false,
             question: "",
             answers: {
@@ -395,6 +403,7 @@
         },
         {
             type:"Fill the Gaps BigNumber",
+            chapter:1,
             shuffle : false,
             question: "",
             answers: {
@@ -403,6 +412,7 @@
         },
         {
             type:"Matching Question",
+            chapter:1,
             shuffle : true,
             question: "Αντιστοίχησε τις σωστές απαντήσεις",
             answers: {
