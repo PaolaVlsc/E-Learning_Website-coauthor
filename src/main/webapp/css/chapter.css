@@ -32,18 +32,6 @@ header {
 
 }
 
-/*
-.container1 .my_header2 {
-
-    text-decoration: none;
-    background: #f1f1f1;
-    padding: 0px;
-    transition: 0.5s;
-    position: sticky;
-    top: 140px;
-}
-*/
-
 .wrapper1 {
     display: flex;
 }
