@@ -64,7 +64,7 @@ header {
 }
 
 
-.container1 aside .sidebar1 ul a li{
+.container1 aside .sidebar1 ul a li {
     display: flex;
     text-decoration: none;
     color: black; /*text color*/
@@ -78,11 +78,11 @@ header {
     transition: 0.3s ease background-color;
 }
 
-.container1 aside .sidebar1 ul a li.active  {
+.container1 aside .sidebar1 ul a li.active {
     color: rgb(255, 255, 255);
 }
 
-.sidebar1 li:hover{
+.sidebar1 li:hover {
     transition: 0.5s all;
     background-color: pink;
     border-top-right-radius: 10px 10px;
@@ -107,6 +107,30 @@ header {
     margin-bottom: 15px;
     margin-top: 15px;
     padding: 2px;
+}
+
+
+#theory h5, #exercises h5 {
+    background-color: #fff7f8;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 2px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-left: 20px;
+}
+
+#exercises h6 {
+    padding-left: 10px;
+    text-decoration-line: underline;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+#exercises .paradeigmata {
+    padding-left: 50px
+
 }
 
 .content-table-antim-proset {
@@ -180,7 +204,7 @@ section {
 
 .center .slide::after {
     content: "";
-    background-color:#dcbaff;
+    background-color: #dcbaff;
     width: 100%;
     z-index: -1;
     position: absolute;
@@ -200,4 +224,5 @@ section {
     align-items: center;
     height: 200px;
 }
+
 /* End of Slide Button  */

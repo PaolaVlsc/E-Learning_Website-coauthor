@@ -38,7 +38,7 @@ To change this template use File | Settings | File Templates.
             <li><a href="../../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
-                    <a  class="current" href="../../jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
+                    <a class="current" href="../../jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
                     <div class="dropdown-content">
                         <a href="../../jsp/sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
                         <a href="../../jsp/sub-chapters/chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
@@ -86,7 +86,7 @@ To change this template use File | Settings | File Templates.
         <div class="wrapper1">
             <aside>
                 <div class="sidebar1">
-                    <h2>ΠΡΟΣΘΕΣΗ ΚΑΙ ΑΦΑΙΡΕΣΗ
+                    <h2>ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ
                     </h2>
                     <br>
                     <hr>
@@ -114,49 +114,98 @@ To change this template use File | Settings | File Templates.
                     <h1 style="color: rgb(10, 132, 100)">Θεωρία</h1>
                     <hr style="color: rgb(10, 132, 100)">
                     <h4>
-                        <center>ΠΟΛΛΑΠΛΑΣΙΑΣΜΟΣ</center>
+                        <center>ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ</center>
                     </h4>
 
                     <b> Ορισμοί: </b>
                     <br>
                     <ul style="padding: 20px;">
-                        <li> Πρόσθεση είναι η πράξη με την οποία από δύο φυσικούς αριθμούς βρίσκουμε έναν τρίτο φυσικό
-                            αριθμό, ο οποίος λέγεται <b>άθροισμα</b>.
-                        </li>
-                        <li>Οι αριθμοί οι οποίοι προστίθενται λέγονται <b>προσθετέοι</b>.</li>
-                    </ul>
-                    <b> Παράδειγμα: </b><br>
-                    <div class="paradeigma-prosthesh-01" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/OK.png" style=" box-shadow: 2px 2px 4px #000000;  width: 35%;
-  height: auto;"></center>
-                    </div>
-
-                    <b>Ιδιότητες:</b><br>
-
-
-
-                    <h4>
-                        <center>ΑΦΑΙΡΕΣΗ</center>
-                    </h4>
-                    <b> Ορισμοί: </b>
-                    <br>
-                    <ul style="padding: 20px;">
-                        <li> Αφαίρεση είναι η πράξη με την οποία από δύο φυσικούς αριθμούς, τον μειωτέο και τον
-                            αφαιρετέο, βρίσκουμε έναν τρίτο φυσικό αριθμό, που λέγεται <b>διαφορά </b>.
+                        <li> . <b>Κριτήρια διαιρετότητας </b> λέγονται οι κανόνες με τους οποίους μπορώ να συμπεράνω
+                            χωρίς να κάνω τη διαίρεση, . <b>αν ένας φυσικός αριθμός διαιρείται με κάποιον άλλον </b>.
                         </li>
                     </ul>
-                    <b> Παράδειγμα: </b><br>
-                    <div class="paradeigma-sub-01" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/sub-example-01.png" style=" box-shadow: 2px 2px 4px #000000;  width: 35%;
-  height: auto;"></center>
-                    </div>
                     <br>
 
-                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για την πρόσθεση και την αφαίρεση</h4>
-                    <center><iframe style=" box-shadow: 2px 2px 4px #000000;"  width="560" height="315" src="https://www.youtube.com/embed/72ebUe-ONgw"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe></center>
+                    <h5>
+                        Κριτήριο διαιρετότητας του 2
+                    </h5>
+
+                    Ένας φυσικός αριθμός διαιρείται με το 2, <b>όταν το τελευταίο του ψηφίο είναι:
+                    0, 2, 4, 6 ή 8. (δηλαδή οι ζυγοί ή άρτιοι).</b>
+
+                    <!-- START image  -->
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-03.png" style=" border-radius: 25px;
+  border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 35%;
+  height: auto;"></center>
+                    </div>
+                    <!-- END image  -->
+
+                    <h5> Κριτήριο διαιρετότητας του 5</h5>
+
+                    Ένας φυσικός αριθμός διαιρείται με το 5, <b>όταν το τελευταίο του ψηφίο είναι:
+                    0 ή 5.</b>
+                    <!-- START image  -->
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-04.png" style=" border-radius: 25px;
+  border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
+  height: auto;"></center>
+                    </div>
+                    <!-- END image  -->
+
+                    <h5> Κριτήριο διαιρετότητας του 10, 100, 1.000</h5>
+
+                    Ένας φυσικός αριθμός διαιρείται με το 10, <b>όταν το τελευταίο του ψηφίο είναι: 0.</b>
+                    <!-- START image  -->
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-05.png" style=" border-radius: 25px;
+  border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
+  height: auto;"></center>
+                    </div>
+                    <!-- END image  -->
+
+                    <h5>Κριτήριο διαιρετότητας του 3 και 9</h5>
+                    Με το 3 διαιρούνται οι αριθμοί που <b>το άθροισμα των ψηφίων τους είναι 3,6 ή 9.</b> Με το 9
+                    διαιρούνται οι
+                    αριθμοί που <b>το άθροισμα των ψηφίων τους είναι 9.</b>
+                    <!-- START image  -->
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-06.png" style=" border-radius: 25px;
+  border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
+  height: auto;"></center>
+                    </div>
+                    <!-- END image  -->
+
+                    <h5>Κριτήριο διαιρετότητας του 4</h5>
+                    Με το 4 διαιρούνται οι αριθμοί που <b>τα δύο τελευταία τους ψηφία διαιρούνται με το 4 ή είναι
+                    00.</b>
+                    <!-- START image  -->
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-07.png" style=" border-radius: 25px;
+  border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
+  height: auto;"></center>
+                    </div>
+                    <!-- END image  -->
+
+                    <h5>Κριτήριο διαιρετότητας του 25</h5>
+                    Με το 25 διαιρούνται οι αριθμοί που <b>τα δύο τελευταία τους ψηφία διαιρούνται με το 25 ή είναι
+                    00.</b>
+                    <!-- START image  -->
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-08.png" style=" border-radius: 25px;
+  border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
+  height: auto;"></center>
+                    </div>
+                    <!-- END image  -->
+
+
+                    <h4>Δες το βίντεο για να εμβαθύνεις τις γνώσεις σου περισσότερο</h4>
+                    <center>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FL2ZkqdiaZY"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </center>
                 </section>
                 <br>
                 <!------- END A PART------>
@@ -164,38 +213,155 @@ To change this template use File | Settings | File Templates.
                 <section id="exercises">
                     <h1 style="color: rgb(10, 132, 100)">Ασκήσεις / Παραδείγματα</h1>
                     <hr style="color: rgb(10, 132, 100)">
-                    <h4 style="text-decoration: underline;">Πώς κάνω μια πρόσθεση;</h4>
-                    Για να προσθέσω φυσικούς αριθμούς πρέπει να προσθέσω τις μονάδες των αριθμών αυτών, μετά τις δεκάδες
-                    των αριθμώ, μετά τις εκατοντάδες κλπ. Η πρόσθεση φυσικών αριθμών μπορεί να γίνει ορίζονται και
-                    κάθετα.
-                    <div class="paradeigma-prosthesh-02" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/paradeigma.png" style=" box-shadow: 2px 2px 4px #000000;  width: 75%;
-  height: auto;"></center>
-                    </div>
-                    <h4 style="text-decoration: underline;">Πώς κάνω μια αφαίρεση;</h4>
-                    Για να αφαιρέσω φυσικούς αριθμούς πρέπει ο μειωτέος να είναι μεγαλύτερος από τον αφαιρετέο. Το
-                    αποτέλεσμα της πράξης λέγεται διαφορά. Αφαιρώ μονάδες από μονάδες, δεκάδες από δεκάδες κλπ. Η
-                    αφαίρεση μπορεί να γίνει οριζόντια ή κάθετα.
-                    <div class="sub-example-02" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/sub-example-02.png" style=" box-shadow: 2px 2px 4px #000000;  width: 75%;
-  height: auto;"></center>
-                    </div>
+
                     <h4>
                         Υποδειγματική εφαρμογή #1.
                     </h4>
 
                     <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
-                        <b><i>Εκφώνηση:</i></b><br>Μια πόλη έχει 245.890 κατοίκους. Από αυτούς οι 38.608 είναι παιδιά.
-                        Αν γνωρίζουμε πως οι γυναίκες είναι 342 περισσότερες από τους άντρες, πόσες είναι οι γυναίκες
-                        και πόσοι οι άντρες αυτής της πόλης.<br>
-                        <b>
-                            <i>Λύση:</i></b><br>
-                        <ul style="list-style: none;">
-                            <li>245.890 - 38.608 = 207.282 (άντρες-γυναίκες)</li>
-                            <li>(207.282 - 342) : 2 = <b>103.470 άντρες </b></li>
-                            <li>103.470 + 342 = <b>103.812 γυναίκες </b></li>
+                        <b><i>Τσεκάρω αυτά που είναι σωστά</i></b>
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 25px;">
+                            <center><img src="../../assets/chapter02/kritiria-diairetothtas-02.png"
+                                         style=" box-shadow: 2px 2px 4px #000000;  width: 80%;
+  height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+                    <!--NIOA-->
+                    <h4>
+                        Υποδειγματική εφαρμογή #2.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <h6>Παραδείγματα κριτήρια διαιρετότητας του 2</h6>
+
+                        <ul class="paradeigmata">
+                            <li> Ο αριθμός 254 διαιρείται με το 2, γιατί το τελευταίο ψηφίο του είναι 4.</li>
+                            <li> Ο αριθμός 3.256 διαιρείται με το 2, γιατί το τελευταίο ψηφίο του είναι 6.</li>
+                            <li> Ο αριθμός 1.258 διαιρείται με το 2, γιατί το τελευταίο ψηφίο του είναι 8.</li>
+                        </ul>
+
+                    </div>
+                    <!-- END NIAOU -->
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #3.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+
+                        <h6> Παραδείγματα κριτήρια διαιρετότητας του 5</h6>
+                        <ul class="paradeigmata">
+                            <li>Ο αριθμός 3.250 διαιρείται με το 5, γιατί το τελευταίο ψηφίο του είναι 0.</li>
+                            <li>Ο αριθμός 255 διαιρείται με το 5, γιατί το τελευταίο ψηφίο του είναι 5.</li>
                         </ul>
                     </div>
+
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #4.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+
+
+                        <h6>Παραδείγματα κριτήρια διαιρετότητας του 10, 100, 1.000</h6>
+                        <ul class="paradeigmata">
+                            <li>Ο αριθμός 250 διαιρείται με το 10, γιατί το τελευταίο ψηφίο του είναι 0.</li>
+                            <li> Ένας φυσικός αριθμός διαιρείται με το 100, όταν τα 2 τελευταία του ψηφία του είναι:
+                                00.
+                            </li>
+                            <li> Ένας φυσικός αριθμός διαιρείται με το 1.000, όταν τα 3 τελευταία του ψηφία του είναι:
+                                000.
+                            <li> Ένας φυσικός αριθμός διαιρείται με το 100, όταν τα 2 τελευταία του ψηφία του είναι:
+                                00.
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #5.
+                    </h4>
+                    <h6 style="margin-bottom: 5px;"> Παραδείγματα κριτήρια διαιρετότητας του 3</h6>
+
+                    <div class="app01"
+                         style="border: 2px solid skyblue; border-radius: 5px; padding: 5px; margin-bottom: 10px">
+
+                        Ο αριθμός 3.252 διαιρείται με το 3, γιατί το άθροισμα των ψηφίων του που είναι το 12 διαιρείται
+                        ακριβώς με το 3:
+                        <ul class="paradeigmata" style="list-style: none; padding-left: 30px">
+                            <li>3 + 2 + 5 + 2 = 12</li>
+                            <li>12 : 3 = 4</li>
+                        </ul>
+                    </div>
+                    <div class="app01"
+                         style="border: 2px solid skyblue; border-radius: 5px; padding: 5px; margin-bottom: 10px ">
+
+                        Ο αριθμός 450 διαιρείται με το 3, γιατί το άθροισμα των ψηφίων του που είναι το 9 διαιρείται
+                        ακριβώς με το 3:
+                        <ul class="paradeigmata" style="list-style: none; padding-left: 30px">
+                            <li>4 + 5 + 0 = 9</li>
+                            <li>9 : 3 = 3</li>
+                        </ul>
+                    </div>
+                    <div class="app01"
+                         style="border: 2px solid skyblue; border-radius: 5px; padding: 5px; margin-bottom: 10px;">
+
+                        Ο αριθμός 111 διαιρείται με το 3, γιατί το άθροισμα των ψηφίων του που είναι το 3 διαιρείται
+                        ακριβώς με το 3:
+                        <ul class="paradeigmata" style="list-style: none; padding-left: 30px">
+                            <li>1 + 1 + 1 = 3</li>
+                            <li>3 : 3 = 1</li>
+                        </ul>
+
+                    </div>
+
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #6.
+                    </h4>
+                    <h6 style="margin-bottom: 5px;"> Παραδείγματα κριτήρια διαιρετότητας του 9</h6>
+
+                    <div class="app01"
+                         style="border: 2px solid skyblue; border-radius: 5px; padding: 5px; margin-bottom: 10px">
+
+                        Ο αριθμός 9.252 διαιρείται με το 9, γιατί το άθροισμα των ψηφίων του που είναι το 18 διαιρείται
+                        ακριβώς με το 3:
+                        <ul class="paradeigmata" style="list-style: none; padding-left: 30px">
+                            <li>9 + 2 + 5 + 2 = 18
+
+                            </li>
+                            <li>18 : 9 = 2</li>
+                        </ul>
+                    </div>
+                    <div class="app01"
+                         style="border: 2px solid skyblue; border-radius: 5px; padding: 5px; margin-bottom: 10px ">
+
+                        Ο αριθμός 818.181 διαιρείται με το 9, γιατί το άθροισμα των ψηφίων του που είναι το 27
+                        διαιρείται ακριβώς με το 9:
+                        <ul class="paradeigmata" style="list-style: none; padding-left: 30px">
+                            <li>8 + 1 + 8 + 1 + 8 + 1 = 27</li>
+                            <li> 27 : 9 = 3</li>
+                        </ul>
+                    </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #7.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter02/kritiria-diairetothtas-01.png"
+                                         style=" box-shadow: 2px 2px 4px #000000;  width: 80%;
+  height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
                 </section>
                 <br>
 
@@ -212,7 +378,7 @@ To change this template use File | Settings | File Templates.
                 </section>
                 <div class="center">
 
-                    <button type="button" class="slide" onclick="location.href='chapter04.jsp'" >
+                    <button type="button" class="slide" onclick="location.href='chapter04.jsp'">
                         <div>Επόμενο Μάθημα !</div>
                     </button>
                     </divv>
