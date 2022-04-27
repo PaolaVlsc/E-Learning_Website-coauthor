@@ -138,15 +138,21 @@
                         String email = request.getParameter("email");
                         dbStmt.setString(1,email);
                         dbStmt.execute();
-                        final ResultSet dbRs = dbStmt.executeQuery();
+                        ResultSet dbRs = dbStmt.executeQuery();
                         if (dbRs.next()) {
                             out.println("<FONT COLOR=\"#ff0000\"> Υπάρχει ήδη λογαριασμός με αυτή την διεύθυνση email</FONT>");
                         }else{
                             dbStmt = conn.prepareStatement("INSERT INTO users (name,password,email) VALUES (?,?,?);");
                             dbStmt.setString(1,request.getParameter("name"));
                             dbStmt.setString(2,request.getParameter("password"));
-                            dbStmt.setString(3,request.getParameter("email"));
+                            dbStmt.setString(3,email);
                             dbStmt.executeUpdate();
+                            dbStmt = conn.prepareStatement("SELECT id FROM users WHERE email=?;");
+                            dbStmt.setString(1,email);
+                            dbStmt.execute();
+                            dbRs = dbStmt.executeQuery();
+                            dbRs.next();
+                            session.setAttribute("userId",dbRs.getString(1));
                             response.sendRedirect("../index.jsp");
                         }
                     } catch (SQLException e) {
