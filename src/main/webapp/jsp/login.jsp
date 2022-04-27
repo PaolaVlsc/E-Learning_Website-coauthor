@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <meta charset="UTF-8">
     <title>Μαθηματικά Ε - ΒΕΜΠΛΗΧΑ</title>
     <style>
@@ -28,13 +29,17 @@
             width: 33%;
         }
 
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 2px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+        input[type=text],input[type=password] {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 2px -30px 2px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+          }
+
+        i{
+            cursor: pointer;
         }
 
         .button1 {
@@ -93,6 +98,19 @@
     </style>
 </head>
 <body>
+<script>
+ function tooglePassword(c){
+     let type;
+     if (c.className == "bi bi-eye-slash") {
+         c.className = "bi bi-eye";
+         type="text";
+     } else {
+         c.className = "bi bi-eye-slash";
+         type="password";
+     }
+     document.getElementById("password").setAttribute('type',type);
+ }
+</script>
 <!--
 <div style = "position:absolute; left:18%; bottom:82%">
     <h1  style="color:rgb(44, 121, 165); font-size:70px;">Ας αρχίσουμε να μαθαίνουμε!</h1>
@@ -108,7 +126,8 @@
         <input type="text" placeholder="Εισαγωγή email χρήστη" name="email" id="email" required maxlength="100">
         <br>
         <label for="password"><b>Κωδικός</b></label>
-        <input type="password" placeholder="Εισαγωγή κωδικού" name="password" id="password" required maxlength="32">
+        <input type="password" placeholder="Εισαγωγή κωδικού" name="password" id="password" required maxlength="32"/>
+        <i class="bi bi-eye-slash" id="togglePassword" onclick="tooglePassword(this)"></i>
         <br>
         <%
             request.setCharacterEncoding("UTF-8");
