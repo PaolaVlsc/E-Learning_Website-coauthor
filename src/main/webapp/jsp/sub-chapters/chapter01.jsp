@@ -15,7 +15,7 @@ To change this template use File | Settings | File Templates.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ΠΡΟΣΘΕΣΗ & ΑΦΑΙΡΕΣΗ | SINP </title>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/chaptertest_style.css">
+    <link rel="stylesheet" href="../../css/chapter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -297,7 +297,7 @@ To change this template use File | Settings | File Templates.
                     <br>
                     <div class="test-prosthesh" style="padding-top: 25px;padding-bottom: 25px;   border: 2px solid skyblue;
   border-radius: 5px;">
-                        <center><a href="../quiz.jsp"><img src="../../assets/chapter01/ok1.jpg" style=" box-shadow: 2px 2px 4px #000000;  width: 50%;
+                        <center><a href="../quiz.jsp"><img src="../../assets/chapter01/ok1.png" style=" box-shadow: 2px 2px 4px #000000;  width: 70%;
   height: auto;"></a></center>
                     </div>
 
@@ -318,7 +318,7 @@ To change this template use File | Settings | File Templates.
     </div>
 </div>
 <!-- Link the js -->
-<script src="../../js/kef01.js"></script>
+<script src="../../js/subchapters.js"></script>
 
 
 <!----------------------------------------- Start of footer ------------------------------------------>
