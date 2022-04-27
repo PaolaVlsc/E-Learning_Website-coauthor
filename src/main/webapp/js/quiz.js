@@ -97,6 +97,7 @@
                                 ${answers.join("")}
                                 </table>
                             </div>
+                            <div><br><label id="RightAnswer${questionNumber}"></label></div>
                         </div>`
                     );
                 }else{
@@ -149,6 +150,12 @@
     }
 
     function showResults(){
+        //remove submit button
+        submitButton.style.display = 'none';
+        //add new buttons
+        backToTestsButton.style.display = 'inline-block';
+        nextQuizButton.style.display = 'inline-block';
+        tryAgainButton.style.display = 'inline-block';
         // gather answer containers from our quiz
         const answerContainers = quizContainer.querySelectorAll('.answers');
         // keep track of user's answers
@@ -186,18 +193,31 @@
 
             }else if(!currentQuestion.type.localeCompare("Matching Question")) {
                 let tagTd=document.getElementsByTagName("td");
+                let flag=0;
+                let tempText= "Η σωστή απάντηση είναι : ";
                 for (let i = 0; i < tagTd.length-1; i+=tagTd.length/3) {
                     for(let j in currentQuestion.answers) {
                         document.getElementById(abc).style.backgroundColor="Tomato";
                         //alert(currentQuestion.answers[j]+tagTd[i].innerHTML);
+                        tempText = tempText + tagTd[i].innerHTML
                         if(currentQuestion.answers[j]===tagTd[i].innerHTML){
                             if(j===document.getElementById(abc).options[document.getElementById(abc).selectedIndex].value){
                                 document.getElementById(abc).style.backgroundColor="LightGreen";
+                            }
+                            else{
+                                flag=1;
                             }
                             abc = String.fromCharCode(abc.charCodeAt(0) + 1);
                             break;
                         }
                     }
+                }
+                if(flag!==1){
+                    numCorrect++;
+                }
+                else{
+                    y = document.getElementById("RightAnswer"+questionNumber);
+                    y.innerText=tempText;
                 }
             }
             // if answer is wrong or blank
@@ -244,7 +264,9 @@
         }
         if(currentSlide === slides.length-1){
             nextButton.style.display = 'none';
-            submitButton.style.display = 'inline-block';
+            if(numCorrect===-1){
+                submitButton.style.display = 'inline-block';
+            }
         }
         else{
             nextButton.style.display = 'inline-block';
@@ -404,6 +426,15 @@
     // Navigation
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
+    //After submission buttons
+    const backToTestsButton = document.getElementById("backToTests");
+    const tryAgainButton = document.getElementById("tryAgain");
+    const nextQuizButton = document.getElementById("nextQuiz");
+    //Remove display of buttons
+    backToTestsButton.style.display = 'none';
+    nextQuizButton.style.display = 'none';
+    tryAgainButton.style.display = 'none';
+
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
 
