@@ -37,7 +37,7 @@
             <li><a href="../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
-                    <a  class="current" href="chapters.jsp">Κεφάλαια Μαθηματικών</a>
+                    <a class="current" href="chapters.jsp">Κεφάλαια Μαθηματικών</a>
                     <div class="dropdown-content">
                         <a href="sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
                         <a href="sub-chapters/chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
@@ -64,7 +64,7 @@
 
         <div class="logout">
             <a href="<%=Login.isLoggedIn(session)?"logout-servlet":"login.jsp"%>">
-                <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
+                <i class="fa fa-user-circle"></i><%=Login.isLoggedIn(session) ? "Αποσύνδεση" : "Σύνδεση"%>
             </a>
         </div>
 
@@ -83,24 +83,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <div class="cards">
         <div class="card">
-            <h2 class="card-title">ΠΡΟΣΘΕΣΗ & ΑΦΑΙΡΕΣΗ</h2>
-            <img src="../assets/addsub.png"
-                 alt="">
+            <a href="../jsp/sub-chapters/chapter01.jsp"><h2 class="card-title">ΠΡΟΣΘΕΣΗ & ΑΦΑΙΡΕΣΗ</h2>
+                <img src="../assets/addsub.png"></a>
 
         </div>
         <div class="card">
-            <h2 class="card-title">ΠΟΛΛΑΠΛΑΣΙΑΣΜΟΣ ΣΤΟΥΣ ΦΥΣΙΚΟΥΣ</h2>
-            <img src="../assets/mul1.png"
-                 alt="">
+            <a href="../jsp/sub-chapters/chapter02.jsp"><h2 class="card-title">ΠΟΛΛΑΠΛΑΣΙΑΣΜΟΣ ΣΤΟΥΣ ΦΥΣΙΚΟΥΣ</h2>
+                <img src="../assets/mul1.png"
+                     alt=""></a>
 
         </div>
         <div class="card">
-            <h2 class="card-title">ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ</h2>
-            <img src="../assets/mul.png"
-                 alt="">
+            <a href="../jsp/sub-chapters/chapter03.jsp"><h2 class="card-title">ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ</h2>
+                <img src="../assets/mul.png"
+                     alt=""></a>
         </div>
         <div class="card" style="    margin-bottom: 250px;">
-            <a href="#"> <h2 class="card-title">ΔΙΑΙΡΕΣΗ ΣΤΟΥΣ ΦΥΣΙΚΟΥΣ</h2>
+            <a href="../jsp/sub-chapters/chapter04.jsp"><h2 class="card-title">ΔΙΑΙΡΕΣΗ ΣΤΟΥΣ ΦΥΣΙΚΟΥΣ</h2>
                 <img src="../assets/div.png"></a>
         </div>
     </div>

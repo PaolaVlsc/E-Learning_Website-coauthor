@@ -10,7 +10,7 @@
     position: relative;
     max-width: 270px;
     max-height: 350px;
-    box-shadow: 0 40px 60px -6px black;
+    box-shadow: 0 40px 40px -6px black;
 }
 
 .card-title {
