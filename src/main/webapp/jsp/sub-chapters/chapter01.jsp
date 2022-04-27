@@ -64,7 +64,7 @@ To change this template use File | Settings | File Templates.
         </ul>
 
         <div class="logout">
-            <a href="<%=Login.isLoggedIn(session)?"logout-servlet":"../login.jsp"%>">
+            <a href="<%=Login.isLoggedIn(session)?"../../logout-servlet":"../login.jsp"%>">
                 <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
             </a>
         </div>

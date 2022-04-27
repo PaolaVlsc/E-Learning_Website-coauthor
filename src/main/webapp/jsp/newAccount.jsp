@@ -13,6 +13,7 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <meta charset="UTF-8">
     <title>Μαθηματικά Ε - ΒΕΜΠΛΗΧΑ</title>
     <style>
@@ -35,10 +36,14 @@
         input[type=text], input[type=password] {
             width: 100%;
             padding: 12px 20px;
-            margin: 2px 0;
+            margin: 2px -30px 2px 0;
             display: inline-block;
             border: 1px solid #ccc;
             box-sizing: border-box;
+        }
+
+        i{
+            cursor: pointer;
         }
 
         button {
@@ -100,6 +105,19 @@
     </style>
 </head>
 <body>
+<script>
+    function tooglePassword(c){
+        let type;
+        if (c.className == "bi bi-eye-slash") {
+            c.className = "bi bi-eye";
+            type="text";
+        } else {
+            c.className = "bi bi-eye-slash";
+            type="password";
+        }
+        document.getElementById("password").setAttribute('type',type);
+    }
+</script>
 <form action="" method="post">
     <div class="img-container">
         <img src="../assets/cat_glasses.jpg" alt="Avatar" class="avatar">
@@ -114,21 +132,27 @@
             if ("POST".equalsIgnoreCase(request.getMethod())){
                 Connection conn = DbConnection.getConnection();
                 if (conn!=null) {
-                    PreparedStatement dbStmt = null;
+                    PreparedStatement dbStmt;
                     try {
                         dbStmt = conn.prepareStatement("SELECT 1 FROM users WHERE email=?;");
                         String email = request.getParameter("email");
                         dbStmt.setString(1,email);
                         dbStmt.execute();
-                        final ResultSet dbRs = dbStmt.executeQuery();
+                        ResultSet dbRs = dbStmt.executeQuery();
                         if (dbRs.next()) {
                             out.println("<FONT COLOR=\"#ff0000\"> Υπάρχει ήδη λογαριασμός με αυτή την διεύθυνση email</FONT>");
                         }else{
                             dbStmt = conn.prepareStatement("INSERT INTO users (name,password,email) VALUES (?,?,?);");
                             dbStmt.setString(1,request.getParameter("name"));
                             dbStmt.setString(2,request.getParameter("password"));
-                            dbStmt.setString(3,request.getParameter("email"));
+                            dbStmt.setString(3,email);
                             dbStmt.executeUpdate();
+                            dbStmt = conn.prepareStatement("SELECT id FROM users WHERE email=?;");
+                            dbStmt.setString(1,email);
+                            dbStmt.execute();
+                            dbRs = dbStmt.executeQuery();
+                            dbRs.next();
+                            session.setAttribute("userId",dbRs.getString(1));
                             response.sendRedirect("../index.jsp");
                         }
                     } catch (SQLException e) {
@@ -148,6 +172,7 @@
         <br>
         <label for="password"><b>Κωδικός</b></label>
         <input type="password" placeholder="Εισαγωγή κωδικού" name="password" id="password" required maxlength="32">
+        <i class="bi bi-eye-slash" id="togglePassword" onclick="tooglePassword(this)"></i>
         <br><br>
         <button type="submit">Δημιουργία Λογαριασμού</button>
     </div>
