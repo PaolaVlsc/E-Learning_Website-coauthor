@@ -132,7 +132,7 @@
 </form>
 <!--<a href="#" style="color:rgb(44, 121, 165);position:fixed; left:36%; bottom:0%;"><h1><-Γύρνα πίσω στην αρχική</h1></a>-->
 
-<button class="button1" type="button">Γύρνα πίσω στην αρχική</button>
+<button class="button1" type="button" style="margin-bottom: 40px">Γύρνα πίσω στην αρχική</button>
 
 </body>
 </html>
