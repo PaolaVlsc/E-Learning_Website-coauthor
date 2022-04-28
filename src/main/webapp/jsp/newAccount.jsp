@@ -2,7 +2,8 @@
 <%@ page import="projectel.projectel.DbConnection" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.SQLException" %><%--
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="projectel.projectel.Login" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 18/4/2022
@@ -128,6 +129,11 @@
         <br><br>
         <label for="email"><b>Email χρήστη</b></label>
         <%
+            //Αν είναι ήδη συνδεδεμένος ανακατεύθυνε τον στην αρχική σελίδα
+            if (Login.isLoggedIn(session) ){
+                response.sendRedirect("../index.jsp");
+            }
+            //Δημιουργία λογαριασμού
             request.setCharacterEncoding("UTF-8");
             if ("POST".equalsIgnoreCase(request.getMethod())){
                 Connection conn = DbConnection.getConnection();
@@ -159,7 +165,6 @@
                         e.printStackTrace();
                         response.sendRedirect("../html/error.html");
                     }
-                    //PreparedStatement dbStmt = conn.prepareStatement("INSERT INTO users (name,password,email) VALUES (?,?,?);");
                 }else{
                     response.sendRedirect("../html/error.html");
                 }

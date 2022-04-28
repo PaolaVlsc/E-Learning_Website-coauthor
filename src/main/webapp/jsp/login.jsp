@@ -130,6 +130,11 @@
         <i class="bi bi-eye-slash" id="togglePassword" onclick="tooglePassword(this)"></i>
         <br>
         <%
+            //Αν είναι ήδη συνδεδεμένος ανακατεύθυνε τον στην αρχική σελίδα
+            if (Login.isLoggedIn(session) ){
+                response.sendRedirect("../index.jsp");
+            }
+            //Σύνδεση χρήστη
             request.setCharacterEncoding("UTF-8");
             if ("POST".equalsIgnoreCase(request.getMethod())){
                 String userId = Login.checkCredentials(request.getParameter("email"),request.getParameter("password"));
