@@ -41,6 +41,13 @@ button{
     margin-top: 40px;
     margin-bottom: 20px;
 }
+.button1{
+    background-color: lightcoral;
+    display: none;
+}
+.button1:hover{
+    background-color: #eca0a0;
+}
 button:hover{
     background-color: #38a;
 }
