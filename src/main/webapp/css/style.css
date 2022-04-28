@@ -78,6 +78,7 @@
 }
 
 body {
+    background: linear-gradient(to bottom, rgb(255, 243, 238) 35%, rgb(230, 245, 253) 100%) fixed;
     text-align: center;
 }
 
