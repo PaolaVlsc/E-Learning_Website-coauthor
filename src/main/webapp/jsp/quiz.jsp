@@ -86,7 +86,6 @@ To change this template use File | Settings | File Templates.
     <form action="" method="post" target="content">
         <button id="previous">Προηγούμενη ερώτηση</button>
         <button id="next">Επόμενη ερώτηση</button>
-
         <button type="submit" id="submit">Καταχώρηση απαντήσεων</button>
     </form>
     <div id="results"></div>

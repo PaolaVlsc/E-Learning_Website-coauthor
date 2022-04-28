@@ -180,6 +180,8 @@
         <i class="bi bi-eye-slash" id="togglePassword" onclick="tooglePassword(this)"></i>
         <br><br>
         <button type="submit">Δημιουργία Λογαριασμού</button>
+        Εάν ήδη έχεις λογαριασμό, πάτα το παρακάτω κουμπί για να συνδεθείς!
+        <button type="button" onclick="location.href='login.jsp'">Σύνδεση</button>
     </div>
 </form>
 <button class="button1" onclick="location.href='../index.jsp'">Γύρνα πίσω στην αρχική</button>
