@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/statistics_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body <%if(!Login.isLoggedIn(session)) {%> style="background-image: url('../assets/dino_talks.png');background-repeat: no-repeat ;background-position: center; background-attachment: fixed;" <%}%>>
 <nav class="navbar">
     <div class="wrapper">
         <div class="icon a menu-btn">
@@ -69,6 +69,7 @@
 
     </div>
 </nav>
+<% if (Login.isLoggedIn(session)){%>
 <script src="../js/app.js"></script>
 
 <script>
@@ -166,13 +167,13 @@
         </script>
     </div>
 </div>
+<%}%>
 <footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
     <p> <i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
         <i class="fa fa-phone"></i> Τηλ.: 211-401-0000</p>
 </footer>
-
 </body>
 </html>
 
