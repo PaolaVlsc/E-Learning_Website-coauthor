@@ -27,7 +27,7 @@
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 14.3px;
 }
 
 .logout a:hover {
@@ -38,7 +38,7 @@
 .navbar.sticky {
     background: lightcoral;
     padding: 10px 0;
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .wrapper {
@@ -82,9 +82,11 @@ body {
 }
 
 .banner-area {
+    background: url("../assets/header_mainpage.jpg") no-repeat;
     height: 500px;
     background-size: cover;
-    background: url("../assets/header_mainpage.jpg") no-repeat fixed center;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .banner-area h2 {
@@ -187,7 +189,7 @@ body {
     }
 
     .navbar.show .menu-list {
-        left: 0;
+        left: 0%;
     }
 
     .navbar .menu-list li {
@@ -201,7 +203,7 @@ body {
     }
 
     .navbar.show .menu-list li a {
-        margin-left: 0;
+        margin-left: 0px;
     }
 
     .banner-area h2 {
