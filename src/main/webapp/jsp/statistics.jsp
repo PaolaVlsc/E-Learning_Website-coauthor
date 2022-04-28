@@ -127,9 +127,7 @@
                         }else{
                             gradesChapters[i-1] = Integer.parseInt(grades);
                         }
-            %>
-            array[<%= i-1 %>] = "<%= gradesChapters[i-1]%>";
-            <%
+                        out.print("array[" + (i-1) + "] = \"" + gradesChapters[i-1] + "\";");
                     }
                 } catch (NumberFormatException e) {
                     response.sendRedirect("../html/error.html");
