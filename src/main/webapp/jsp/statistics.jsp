@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/statistics_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body <%if(!Login.isLoggedIn(session)) {%> style="background-image: url('../assets/dino_talks.png');background-repeat: no-repeat ;background-position: center; background-attachment: fixed;" <%}%>>
+<body <%if(!Login.isLoggedIn(session)) {%> style="background-image: url('../assets/dino_talks.png'); background-repeat: no-repeat ;background-position: center; background-attachment: fixed;" <%}%>>
 <nav class="navbar">
     <div class="wrapper">
         <div class="icon a menu-btn">
@@ -69,7 +69,6 @@
 
     </div>
 </nav>
-<% if (Login.isLoggedIn(session)){%>
 <script src="../js/app.js"></script>
 
 <script>
@@ -88,6 +87,7 @@
     }
 </script>
 
+<%if (Login.isLoggedIn(session)){%>
 <div class="main-wrap">
     <div class="left-side">
         <br><br><h3>Τα κεφάλαια σου:</h3>
