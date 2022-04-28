@@ -4,11 +4,9 @@
         // variable to store the HTML output
         const output = [];
         let x,y,z;
-        //Shuffle quiz questions
-        Shuffle(myQuestions);
 
         // for each question...
-        myQuestions.slice().forEach(
+        chosenQuestions.slice().forEach(
             (currentQuestion, questionNumber) => {
                 // variable to store the list of possible answers
                 let answers = [];
@@ -76,8 +74,7 @@
                 if(!currentQuestion.type.localeCompare("Fill the Gaps")) {
 
                     output.push(
-                        `
-                                
+                        `                              
                                 <div class="slide">
                                 <div class="question"> ${currentQuestion.question}
                                 <input type="text" id="FtG${questionNumber}" style="height:2em; font-size: 30px; -webkit-appearance: none; width: 5em" onkeydown =" if(event.keyCode !== 37 && event.keyCode !== 39) return /^[0-9\\b]+$/.test(String.fromCharCode(event.keyCode || event.which))" name="question${questionNumber}" >                        
@@ -116,7 +113,7 @@
 
     }
     function fillDropDown(){
-        myQuestions.forEach(
+        chosenQuestions.forEach(
             (currentQuestion, questionNumber) => {
                 if(!currentQuestion.type.localeCompare("Matching Question")){
                     var keys = Object.keys(currentQuestion.answers)
@@ -162,7 +159,7 @@
         let x, y;
         let i;
         // for each question...
-        myQuestions.forEach( (currentQuestion, questionNumber) => {
+        chosenQuestions.forEach( (currentQuestion, questionNumber) => {
             // find selected answer
             const answerContainer = answerContainers[questionNumber];
             const selector = `input[name=question${questionNumber}]:checked`;
@@ -240,7 +237,7 @@
         });
 
         // show number of correct answers out of total
-        resultsContainer.innerHTML = `${currentSlide+1} Απο ${myQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${myQuestions.length}`
+        resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
         disableAnswer();
     }
 
@@ -249,10 +246,10 @@
         slides[n].classList.add('active-slide');
         currentSlide = n;
         if(numCorrect===-1){
-            resultsContainer.innerHTML = `${currentSlide+1} Απο ${myQuestions.length}`;
+            resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}`;
         }
         else if (numCorrect>=0){
-            resultsContainer.innerHTML = `${currentSlide+1} Απο ${myQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${myQuestions.length}`
+            resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
         }
         if(currentSlide === 0){
             previousButton.style.display = 'none';
@@ -293,7 +290,17 @@
         }
         return myQuestions;
     }
+    function cloneMyQuestions(){
+        let i=0;
 
+        myQuestions.forEach( (currentQuestion, questionNumber) => {
+            if(currentQuestion.chapter===1 && i<10){
+                chosenQuestions[i] = currentQuestion;
+            }
+
+            i++;
+        });
+    }
     // Variables
     const quizContainer = document.getElementById('quiz');
     const resultsContainer = document.getElementById('results');
@@ -427,9 +434,12 @@
             }
         }
     ];
-
     let numCorrect = -1;
-
+    let chosenQuestions=[];
+    //Shuffle quiz questions
+    Shuffle(myQuestions);
+    //Choose questions
+    cloneMyQuestions()
     //Start quiz
     buildQuiz();
 
