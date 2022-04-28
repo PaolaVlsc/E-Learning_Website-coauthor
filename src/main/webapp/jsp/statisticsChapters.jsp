@@ -117,7 +117,7 @@
         <%
             request.setCharacterEncoding("UTF-8");
             int i=1;
-            List<Integer> list = Statistics.getAllChapterGrades(3,chapter);
+            List<Integer> list = Statistics.getAllChapterGrades(Integer.parseInt((String)session.getAttribute("userId")),chapter);
             if(list.isEmpty()){
         %>
                 <div><h1 style="color:#ef7f80;width:80%;">Δεν έχεις γράψει κάποιο διαγώνισμα σε αυτό το κεφάλαιο!</h1></div>

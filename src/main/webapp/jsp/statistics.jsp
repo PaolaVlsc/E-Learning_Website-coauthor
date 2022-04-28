@@ -18,7 +18,14 @@
     <link rel="stylesheet" href="../css/statistics_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body <%if(!Login.isLoggedIn(session)) {%>
+        style="background-image: url('../assets/dino_talks.png');
+        width:100px;
+        height:100px;
+        max-width:100px;
+        max-height:100px;
+        background-size:cover;"
+        <%}%>>
 <nav class="navbar">
     <div class="wrapper">
         <div class="icon a menu-btn">
@@ -87,6 +94,7 @@
     }
 </script>
 
+<%if (Login.isLoggedIn(session)){%>
 <div class="main-wrap">
     <div class="left-side">
         <br><br><h3>Τα κεφάλαια σου:</h3>
@@ -121,15 +129,13 @@
                 try{
                     for (i=1;i<=5;i++){
                         //String gradesChapters = Statistics.getMaxGrades(Integer.parseInt(request.getParameter("StudentId")),i);
-                        String grades = Statistics.getMaxGrades(5,i);
+                        String grades = Statistics.getMaxGrades(Integer.parseInt((String)session.getAttribute("userId")),i);
                         if(grades==null){
                             gradesChapters[i-1] = 0;
                         }else{
                             gradesChapters[i-1] = Integer.parseInt(grades);
                         }
-            %>
-            array[<%= i-1 %>] = "<%= gradesChapters[i-1]%>";
-            <%
+                        out.print("array[" + (i-1) + "] = \"" + gradesChapters[i-1] + "\";");
                     }
                 } catch (NumberFormatException e) {
                     response.sendRedirect("../html/error.html");
@@ -168,13 +174,13 @@
         </script>
     </div>
 </div>
+<%}%>
 <footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
     <p> <i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
         <i class="fa fa-phone"></i> Τηλ.: 211-401-0000</p>
 </footer>
-
 </body>
 </html>
 
