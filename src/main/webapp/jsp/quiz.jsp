@@ -81,9 +81,13 @@ To change this template use File | Settings | File Templates.
         <div id="quiz"></div>
     </div>
     <br>
-    <button id="previous">Προηγούμενη ερώτηση</button>
-    <button id="next">Επόμενη ερώτηση</button>
-    <button id="submit">Καταχώρηση απαντήσεων</button>
+    <iframe name="content" style="display:none;">
+    </iframe>
+    <form action="" method="post" target="content">
+        <button id="previous">Προηγούμενη ερώτηση</button>
+        <button id="next">Επόμενη ερώτηση</button>
+        <button type="submit" id="submit">Καταχώρηση απαντήσεων</button>
+    </form>
     <div id="results"></div>
     <script src="../js/quiz.js"></script>
 </body>
