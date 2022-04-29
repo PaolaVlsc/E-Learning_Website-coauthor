@@ -451,9 +451,9 @@
     const tryAgainButton = document.getElementById("tryAgain");
     const nextQuizButton = document.getElementById("nextQuiz");
     //Remove display of buttons
-    backToTestsButton.style.display = 'none';
-    nextQuizButton.style.display = 'none';
-    tryAgainButton.style.display = 'none';
+    backToTestsButton.className += "button1";
+    nextQuizButton.className += "button1";
+    tryAgainButton.className += "button1";
 
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
