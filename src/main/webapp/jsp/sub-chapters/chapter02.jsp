@@ -61,6 +61,7 @@ To change this template use File | Settings | File Templates.
                 </div>
             </li>
             <li><a href="../../jsp/statistics.jsp">Στατιστικά</a></li>
+            <li><a href="../games.jsp">Παιχνίδια</a></li>
         </ul>
 
         <div class="logout">

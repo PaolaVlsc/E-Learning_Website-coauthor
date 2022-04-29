@@ -61,6 +61,7 @@
                 </div>
             </li>
             <li><a class="current" href="../jsp/statistics.jsp">Στατιστικά</a></li>
+            <li><a href="../jsp/games.jsp">Παιχνίδια</a></li>
         </ul>
 
         <div class="logout">
