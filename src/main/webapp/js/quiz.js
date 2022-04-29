@@ -147,6 +147,8 @@
         }
     }
 
+
+
     function showResults(){
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
@@ -297,7 +299,7 @@
     function cloneMyQuestions(){
         let i=0;
 
-        myQuestions.forEach( (currentQuestion, questionNumber) => {
+        myQuestions.forEach( (currentQuestion) => {
             if(currentQuestion.chapter===1 && i<10){
                 chosenQuestions[i] = currentQuestion;
             }

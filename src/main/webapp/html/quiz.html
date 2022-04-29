@@ -82,8 +82,8 @@
     <div class="quiz-container">
         <div id="quiz"></div>
     </div>
-    <div class="popup">
-        <span class="popuptext" id="myPopup"></span>
+    <div class="popup" onclick="hidePopUp()">
+        <span class="popuptext" id="myPopup"><br>ΜΠΡΑΒΟΟΟΟ<br><br> ΤΑ ΠΑΣ ΤΕΛΕΙΑ ΠΑΜΕΕ</span>
     </div>
     <br>
     <button id="previous">Προηγούμενη ερώτηση</button>
@@ -95,5 +95,14 @@
     <button id="nextQuiz">Επόμενο Τεστ</button>
     <script src="../js/quiz.js"></script>
 <!--    <script src="../js/fireworks.js"></script>-->
+
+<!--    Hide pop up -->
+    <script>
+        function hidePopUp(){
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("hide");
+        }
+    </script>
+
 </body>
 </html>
