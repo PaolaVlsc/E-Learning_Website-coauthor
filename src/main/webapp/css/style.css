@@ -159,7 +159,7 @@ body {
     }
 }
 
-@media (max-width: 868px) {
+@media (max-width: 1080px) {
 
     .icon {
         display: block;
