@@ -150,8 +150,6 @@
 
 
     function showResults(){
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
         //remove submit button
         submitButton.style.display = 'none';
         //add new buttons
@@ -245,6 +243,10 @@
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
         disableAnswer();
+        if(numCorrect>7){
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
     }
 
     function showSlide(n) {
