@@ -1,4 +1,6 @@
 (function (){
+    // import {} from './fireworks.js';
+
     // Functions
     function buildQuiz(){
         // variable to store the HTML output
@@ -146,6 +148,8 @@
     }
 
     function showResults(){
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
         //remove submit button
         submitButton.style.display = 'none';
         //add new buttons
