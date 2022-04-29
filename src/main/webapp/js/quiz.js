@@ -473,4 +473,14 @@
     submitButton.addEventListener('click', showResults);
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
+
+    backToTestsButton.onclick = function () {
+        location.href = "../html/tests.html";
+    };
+    nextQuizButton.onclick = function () {
+        location.href = "../html/quiz.html";
+    };
+    tryAgainButton.onclick = function () {
+        location.href = "quiz.html";
+    };
 })();
