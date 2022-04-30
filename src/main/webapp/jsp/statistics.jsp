@@ -87,15 +87,15 @@
 <%if (Login.isLoggedIn(session)){%>
 <div class="main-wrap">
     <div class="left-side">
-        <br><br><h3>Τα κεφάλαια σου:</h3>
+        <br><br><h3>Οι βαθμοί στα κεφάλαια σου:</h3>
         <a href="statistics.jsp" style="padding-left:3em; color: #5cafc6"><u>Όλα τα κεφάλαια</u></a>
 
         <a href="statisticsChapters.jsp?chapter=1" style="padding-left:3em;"><u>Πρόσθεση και αφαίρεση</u></a>
         <!-- <a href="statisticsChapters.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>-->
         <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
-        <a href="statisticsChapters.jsp?chapter=2" style="padding-left:3em;"><u>Πολλαπλασιασμός στους φυσικούς αριθμούς</u></a>
+        <a href="statisticsChapters.jsp?chapter=2" style="padding-left:3em;"><u>Πολλαπλασιασμός</u></a>
         <a href="statisticsChapters.jsp?chapter=3" style="padding-left:3em;"><u>Κριτήρια διαιρετότητας</u></a>
-        <a href="statisticsChapters.jsp?chapter=4" style="padding-left:3em;"><u>Διαίρεση στους φυσικούς</u></a>
+        <a href="statisticsChapters.jsp?chapter=4" style="padding-left:3em;"><u>Διαίρεση</u></a>
         <a href="statisticsChapters.jsp?chapter=5" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
     </div>
     <div class="right-side">
@@ -123,7 +123,7 @@
                     response.sendRedirect("../html/error.html");
                 }
             %>
-            let xValues = ["Πρόσθεση και αφαίρεση", "Πολλαπλασιασμός στους φυσικούς", "Κριτήρια διαιρετότητας", "Διαίρεση στους φυσικούς","Επαναληπτικό"];
+            let xValues = ["Πρόσθεση και αφαίρεση", "Πολλαπλασιασμός", "Κριτήρια διαιρετότητας", "Διαίρεση","Επαναληπτικό"];
             let yValues = [array[0], array[1], array[2], array[3], array[4]];
             let barColors = ["red", "green", "blue", "orange", "pink"];
 
