@@ -82,41 +82,21 @@
 
 <script>
     navbar.classList.add("sticky");
-    function toggleText(x) {
-        let texts = document.getElementsByClassName(x);
-        let i;
-        for (i = 0; i < texts.length; i++) {
-            let text = texts[i];
-            if (text.style.display === "none") {
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
-        }
-    }
 </script>
 
 <%if (Login.isLoggedIn(session)){%>
 <div class="main-wrap">
     <div class="left-side">
         <br><br><h3>Τα κεφάλαια σου:</h3>
-        <a href="statistics.jsp" style="padding-left:3em; color: #064e61"><u>Όλα τα κεφάλαια</u></a>
+        <a href="statistics.jsp" style="padding-left:3em; color: #5cafc6"><u>Όλα τα κεφάλαια</u></a>
 
-        <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
-        <a href="statisticsChapters.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
+        <a href="statisticsChapters.jsp?chapter=1" style="padding-left:3em;"><u>Πρόσθεση και αφαίρεση</u></a>
+        <!-- <a href="statisticsChapters.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>-->
         <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
-
-        <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em;"><u>Κεφάλαιο 2</u></a>
-        <a href="statisticsChapters.jsp?chapter=2" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
-
-        <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
-        <a href="statisticsChapters.jsp?chapter=3" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
-
-        <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
-        <a href="statisticsChapters.jsp?chapter=4" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
-
-        <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
-        <a href="statisticsChapters.jsp?chapter=5" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
+        <a href="statisticsChapters.jsp?chapter=2" style="padding-left:3em;"><u>Πολλαπλασιασμός στους φυσικούς αριθμούς</u></a>
+        <a href="statisticsChapters.jsp?chapter=3" style="padding-left:3em;"><u>Κριτήρια διαιρετότητας</u></a>
+        <a href="statisticsChapters.jsp?chapter=4" style="padding-left:3em;"><u>Διαίρεση στους φυσικούς</u></a>
+        <a href="statisticsChapters.jsp?chapter=5" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
     </div>
     <div class="right-side">
         <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!</h2>
@@ -143,7 +123,7 @@
                     response.sendRedirect("../html/error.html");
                 }
             %>
-            let xValues = ["Κεφάλαιο 1", "Κεφάλαιο 2", "Κεφάλαιο 3", "Κεφάλαιο 4","Επανάληψη"];
+            let xValues = ["Πρόσθεση και αφαίρεση", "Πολλαπλασιασμός στους φυσικούς", "Κριτήρια διαιρετότητας", "Διαίρεση στους φυσικούς","Επαναληπτικό"];
             let yValues = [array[0], array[1], array[2], array[3], array[4]];
             let barColors = ["red", "green", "blue", "orange", "pink"];
 
