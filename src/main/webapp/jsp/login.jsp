@@ -99,9 +99,9 @@
 </head>
 <body>
 <script>
- function tooglePassword(c){
+ function togglePassword(c){
      let type;
-     if (c.className == "bi bi-eye-slash") {
+     if (c.className === "bi bi-eye-slash") {
          c.className = "bi bi-eye";
          type="text";
      } else {
@@ -127,7 +127,7 @@
         <br>
         <label for="password"><b>Κωδικός</b></label>
         <input type="password" placeholder="Εισαγωγή κωδικού" name="password" id="password" required maxlength="32"/>
-        <i class="bi bi-eye-slash" id="togglePassword" onclick="tooglePassword(this)"></i>
+        <i class="bi bi-eye-slash" id="togglePassword" onclick="togglePassword(this)"></i>
         <br>
         <%
             //Αν είναι ήδη συνδεδεμένος ανακατεύθυνε τον στην αρχική σελίδα
