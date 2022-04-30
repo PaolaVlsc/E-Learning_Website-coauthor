@@ -18,17 +18,18 @@ a{
 }
 a:visited { text-decoration: none; }
 .right-side {
-    position: fixed;
-    top: 100px;
+    position:absolute;
+    top: 60px;
     left: 290px;
     width:80%;/*to be centered*/
     display: table-cell;
+    padding-bottom: 6%;
 }
 
 .main-wrap {
     position: absolute;
     top: 50px;
-    bottom: 50px;
+    bottom: 150px;
     width: 100%;
     text-align: left;
 }
