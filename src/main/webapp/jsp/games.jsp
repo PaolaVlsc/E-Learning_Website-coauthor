@@ -91,7 +91,7 @@ To change this template use File | Settings | File Templates.
     </a><br>
     Εάν θέλεις να εξασκηθείς στα κριτήρια διαιρετότητας:<br>
     <a target="_blank" href="http://users.sch.gr/gregzer/M/M-E/%CE%9A%CF%81%CE%B9%CF%84%CE%AE%CF%81%CE%B9%CE%B1%20%CE%B4%CE%B9%CE%B1%CE%B9%CF%81%CE%B5%CF%84%CF%8C%CF%84%CE%B7%CF%84%CE%B1%CF%82%20-%20%CE%95%CE%BE%CE%AC%CF%83%CE%BA%CE%B7%CF%83%CE%B7/story_html5.html">
-        <img src="../assets/chap3.jpg" alt="κριτήρια διαιρετότητας" style="width:400px;height:220px%;">
+        <img src="../assets/chap3.jpg" alt="κριτήρια διαιρετότητας" style="width:400px;height:220px;">
     </a><br>
 
 </div>
