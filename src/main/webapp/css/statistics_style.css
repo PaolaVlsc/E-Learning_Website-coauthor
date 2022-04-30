@@ -19,7 +19,7 @@ a{
 a:visited { text-decoration: none; }
 .right-side {
     position:absolute;
-    top: 60px;
+    top: 40px;
     left: 290px;
     width:80%;/*to be centered*/
     display: table-cell;

@@ -100,7 +100,7 @@
     </div>
     <div class="right-side">
         <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!</h2>
-        <canvas id="myChart" style="height:auto;width:70%;max-width:80%"></canvas>
+        <canvas id="myChart" style="width:70%;max-width:80%"></canvas>
 
         <script>
             let array =[];
@@ -136,10 +136,7 @@
                         data: yValues
                     }]
                 },
-                aspectRatio: 0.5,
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
                     legend: {display: false},
                     title: {
                         display: true,
