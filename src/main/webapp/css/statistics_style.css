@@ -4,13 +4,12 @@ body {
 .left-side {
     /*background: lightcoral;
     color: white;*/
-    position: absolute;
+    position: fixed;
     top: 60px;
     bottom: 80px;
-    left: 150px;
-	width:100%;
-	display: block;
-	border-right: 2px solid black;
+    width:180px;
+    display: table-cell;
+    border-right: 20px solid black;
 }
 a{
     text-decoration: none;
@@ -19,16 +18,18 @@ a{
 }
 a:visited { text-decoration: none; }
 .right-side {
-    position: absolute;
+    position: fixed;
     top: 100px;
-	display: block;
+    left: 250px;
+    width:80%;/*to be centered*/
+    display: table-cell;
 }
 
 .main-wrap {
-    position: relative;
+    position: absolute;
     top: 50px;
     bottom: 50px;
     width: 100%;
-	text-align: left;
+    text-align: left;
 }
 body { overflow-x: hidden; }
