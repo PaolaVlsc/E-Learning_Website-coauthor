@@ -3,6 +3,7 @@
         max_sparks = 50;
     let canvas = document.getElementById('myCanvas');
     let context = canvas.getContext('2d');
+    canvas.style.display='inline-block';
     let fireworks = [];
     for (let i = 0; i < max_fireworks; i++) {
         let firework = {
@@ -53,7 +54,6 @@
                 });
                 firework.age++;
                 if (firework.age > 110 && Math.random() < .05) {
-                    canvas.style.visibility='hidden';
                     canvas.style.display='none';
                     fireworks.length=0;
                     firework.age=0;

@@ -5,7 +5,7 @@
     function buildQuiz(){
         // variable to store the HTML output
         const output = [];
-        let x,y,z;
+        let x,z;
 
         // for each question...
         chosenQuestions.slice().forEach(
@@ -15,29 +15,39 @@
                 let abc="a";
                 //Shuffle answers for multiple choice questions
                 var keys = Object.keys(currentQuestion.answers);
-                if(currentQuestion.type.search("BigNumber")!==-1){
-                    x=getRandomInt(1000,1000000);
-                    y=getRandomInt(1000,1000000);
-                    currentQuestion.type=currentQuestion.type.replace(" BigNumber","")
-                }
-                else{
-                    x=getRandomInt(0,100);
-                    y=getRandomInt(0,100);
-                }
+                let x = getRandomNumber(currentQuestion)
                 if(currentQuestion.shuffle){
                     keys.sort(function() {return Math.random() - 0.5;});
                 }
-                else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
-                    currentQuestion.question=x+" + "+y+" = "+(x+y);
+                //If chooseOperand is 1 we use + operand
+                let chooseOperand = getRandomInt(0, 1);
+                if(chooseOperand){
+                    if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+                        currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]);
+                    }
+                    else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+                        while(!(z=getRandomInt(-10,10))){}
+                        currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]+z);
+                    }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+                        currentQuestion.question=x[0]+" + "+x[1]+" = ";
+                        currentQuestion.correctAnswer=x[0]+x[1];
+                    }
                 }
-                else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-                    while(!(z=getRandomInt(-10,10))){}
-                    currentQuestion.question=x+" + "+y+" = "+(x+y+z);
-                }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-                    currentQuestion.question=x+" + "+y+" = ";
-                    currentQuestion.correctAnswer=x+y;
+                else{
+                    while(x[0]-x[1]<0){
+                        x=getRandomNumber(currentQuestion);
+                    }
+                    if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+                        currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]);
+                    }
+                    else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+                        while(!(z=getRandomInt(-10,10))){}
+                        currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]-z);
+                    }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+                        currentQuestion.question=x[0]+" - "+x[1]+" = ";
+                        currentQuestion.correctAnswer=x[0]-x[1];
+                    }
                 }
-
                 // and for each available answer...
                 if(currentQuestion.type.localeCompare("Matching Question")){
                     keys.forEach(function(letter) {
@@ -114,6 +124,21 @@
 
 
     }
+
+    function getRandomNumber(currentQuestion){
+        let x,y;
+        if(currentQuestion.type.search("BigNumber")!==-1){
+            x=getRandomInt(1000,1000000);
+            y=getRandomInt(1000,1000000);
+            currentQuestion.type=currentQuestion.type.replace(" BigNumber","")
+        }
+        else{
+            x=getRandomInt(0,100);
+            y=getRandomInt(0,100);
+        }
+        return [x,y];
+    }
+
     function fillDropDown(){
         chosenQuestions.forEach(
             (currentQuestion, questionNumber) => {
@@ -244,6 +269,7 @@
         resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
         disableAnswer();
         if(numCorrect>7){
+            `<script src="fireworks.js"></script>`
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
         }
@@ -459,6 +485,7 @@
     const tryAgainButton = document.getElementById("tryAgain");
     const nextQuizButton = document.getElementById("nextQuiz");
     //Remove display of buttons
+    document.getElementById("myCanvas").style.display = "none";
     backToTestsButton.className += "button1";
     nextQuizButton.className += "button1";
     tryAgainButton.className += "button1";
