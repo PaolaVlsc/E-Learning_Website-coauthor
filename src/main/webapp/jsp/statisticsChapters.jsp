@@ -107,7 +107,13 @@
         <%
             }else if(chapter!=5){
         %>
-            <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι βαθμοί σου στο κεφάλαιο <%=chapter%>!</h2>
+            <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι βαθμοί σου στο κεφάλαιο: <%
+                if(chapter == 1) out.print("Πρόσθεση και αφαίρεση");
+                else if(chapter == 2) out.print("Πολλαπλασιασμός");
+                else if(chapter == 3) out.print("Κριτήρια διαιρετότητας");
+                else if(chapter == 4) out.print("Διαίρεση");
+
+            %>!</h2>
         <%
             }else{
         %>
