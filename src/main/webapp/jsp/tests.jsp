@@ -75,11 +75,11 @@
 </script>
 <div class="main-wrap" style="padding-bottom: 100px;">
   <h1>Διάλεξε σε ποιο κεφάλαιο επιθυμείς να ελέγξεις τις γνώσεις σου!</h1>
-    <button onclick="location.href='quiz.jsp'" >Πρόσθεση και Αφαίρεση</button><br>
-    <button onclick="location.href='quiz.jsp'">Πολλαπλασιασμός στους<br>φυσικούς αριθμούς</button><br>
-    <button onclick="location.href='quiz.jsp'">Τα κριτήρια διαιρετότητας</button><br>
-    <button onclick="location.href='quiz.jsp'">Διαίρεση στους φυσικούς</button><br>
-    <button onclick="location.href='quiz.jsp'">Δοκίμασε τις γνώσεις σου πάνω σε<br>όλα τα κεφάλαια!</button>
+    <button onclick="location.href='testsChapter.jsp'" >Πρόσθεση και Αφαίρεση</button><br>
+    <button onclick="location.href='testsChapter.jsp'">Πολλαπλασιασμός στους<br>φυσικούς αριθμούς</button><br>
+    <button onclick="location.href='testsChapter.jsp'">Τα κριτήρια διαιρετότητας</button><br>
+    <button onclick="location.href='testsChapter.jsp'">Διαίρεση στους φυσικούς</button><br>
+    <button onclick="location.href='testsChapter.jsp'">Δοκίμασε τις γνώσεις σου πάνω σε<br>όλα τα κεφάλαια!</button>
 </div>
 <footer style="position: fixed; bottom: 0;">
   <hr>
