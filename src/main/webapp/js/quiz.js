@@ -466,6 +466,11 @@
             }
         }
     ];
+    //get url
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const chapter = urlParams.get('chapter');
+    //console.log(chapter);
     let numCorrect = -1;
     let chosenQuestions=[];
     //Shuffle quiz questions
@@ -502,10 +507,10 @@
         location.href = "../html/tests.html";
     };
     nextQuizButton.onclick = function () {
-        location.href = "../html/quiz.html";
+        location.href = "../html/quiz.html?chapter="+(parseInt(chapter)+1).toString();
     };
     tryAgainButton.onclick = function () {
-        location.href = "quiz.html";
+        location.href = "quiz.html?chapter="+chapter;
     };
 
 
