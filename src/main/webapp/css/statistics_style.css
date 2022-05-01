@@ -9,7 +9,7 @@ body {
     bottom: 80px;
 	width:180px;
 	display: table-cell;
-	border-right: 10px solid blue;
+	border-right: 2px solid black;
 }
 a{
     text-decoration: none;
