@@ -503,15 +503,58 @@
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
 
-    backToTestsButton.onclick = function () {
+    // Get the modal
+    let modal = document.getElementById("myModal");
+    let choice = document.getElementById("choice");
+
+    // Get the button that opens the modal
+    //let btn = document.getElementById("backToTests");
+
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+    /*btn.onclick = function() {
+        modal.style.display = "block";
+    }*/
+    backToTestsButton.onclick = function() {
+        modal.style.display = "block";
+        choice.onclick = function() {
+            location.href = "../html/tests.html";
+        }
+    }
+    nextQuizButton.onclick = function() {
+        modal.style.display = "block";
+        choice.onclick = function() {
+            location.href = "../html/quiz.html?chapter="+(parseInt(chapter)+1).toString();
+        }
+    }
+    tryAgainButton.onclick = function() {
+        modal.style.display = "block";
+        choice.onclick = function() {
+            location.href = "quiz.html?chapter="+chapter;
+        }
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    /*backToTestsButton.onclick = function () {
         location.href = "../html/tests.html";
-    };
-    nextQuizButton.onclick = function () {
+    };*/
+    /*nextQuizButton.onclick = function () {
         location.href = "../html/quiz.html?chapter="+(parseInt(chapter)+1).toString();
-    };
-    tryAgainButton.onclick = function () {
+    };*/
+    /*tryAgainButton.onclick = function () {
         location.href = "quiz.html?chapter="+chapter;
-    };
+    };*/
 
 
     // ~~~~~~~~~~~~~~~ fireworks ~~~~~~~~~~~~~~~
@@ -570,7 +613,7 @@
                         }
                     });
                     firework.age++;
-                    if (firework.age > 110 && Math.random() < .05) {
+                    if (firework.age > 50 && Math.random() < .05) {
                         canvas.style.display='none';
                         fireworks.length=0;
                         firework.age=0;

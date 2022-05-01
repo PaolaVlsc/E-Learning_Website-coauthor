@@ -6,6 +6,7 @@
     <title>quiz | SINP </title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/quiz_style.css">
+    <link rel="stylesheet" href="../css/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -93,7 +94,24 @@
     <button id="backToTests">Επιστροφή στα Τεστ</button>
     <button id="tryAgain">Προσπάθησε ξανά</button>
     <button id="nextQuiz">Επόμενο Τεστ</button>
-    <script src="../js/quiz.js"></script>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Είσαι σίγουρος;</h2>
+            </div>
+            <div class="modal-body">
+                <p>Εάν φύγεις τώρα δε θα μπορείς να δεις τι έκανες λάθος ή σωστό!</p>
+            </div>
+            <div class="modal-footer">
+                <button id="choice" class="button button2">Ναι, θέλω να φύγω</button>
+            </div>
+        </div>
+
+    </div>
 
 <!--    Hide pop up -->
     <script>
@@ -102,6 +120,6 @@
             popup.classList.toggle("hide");
         }
     </script>
-
+    <script src="../js/quiz.js"></script>
 </body>
 </html>
