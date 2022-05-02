@@ -38,7 +38,7 @@ To change this template use File | Settings | File Templates.
             <li><a href="../../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
-                <a  class="current" href="../../jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
+                    <a class="current" href="../../jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
                     <div class="dropdown-content">
                         <a href="../../jsp/sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
                         <a href="chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
@@ -66,7 +66,7 @@ To change this template use File | Settings | File Templates.
 
         <div class="logout">
             <a href="<%=Login.isLoggedIn(session)?"../../logout-servlet":"../login.jsp"%>">
-                <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
+                <i class="fa fa-user-circle"></i><%=Login.isLoggedIn(session) ? "Αποσύνδεση" : "Σύνδεση"%>
             </a>
         </div>
 
@@ -79,7 +79,6 @@ To change this template use File | Settings | File Templates.
 </script>
 <!---------- End: Js navbar ----------->
 <!---------------------------------------- Close of navbar ------------------------------------------->
-
 <div class="mothership">
     <div class="container1">
         <div class="my_header">
@@ -344,10 +343,15 @@ To change this template use File | Settings | File Templates.
                     </div>
 
                 </section>
+
+
                 <div class="center">
 
+                    <button type="button" class="slide" onclick="location.href='chapter01.jsp'">
+                        <div class="previous">Προηγούμενο Μάθημα!</div>
+                    </button>
                     <button type="button" class="slide" onclick="location.href='chapter03.jsp'">
-                        <div>Επόμενο Μάθημα !</div>
+                        <div class="next">Επόμενο Μάθημα !</div>
                     </button>
                     </divv>
                 </div>
