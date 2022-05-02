@@ -198,7 +198,7 @@ To change this template use File | Settings | File Templates.
                     </div>
 
 
-                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για την πρόσθεση και την αφαίρεση</h4>
+                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για τον πολλαπλασιασμό!</h4>
                     <center>
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/FMdYauf-wLs"
                                 title="YouTube video player" frameborder="0"
