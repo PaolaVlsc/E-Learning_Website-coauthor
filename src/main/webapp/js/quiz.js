@@ -20,6 +20,9 @@
                 if(chapter==1){
                     chapter1(currentQuestion,x)
                 }
+                else if(chapter==3){
+                    chapter3(currentQuestion,x)
+                }
                 else if(chapter==4){
                     chapter4(currentQuestion,x)
                 }
@@ -131,6 +134,39 @@
                 currentQuestion.correctAnswer=x[0]-x[1];
             }
         }
+    }
+    function chapter3(currentQuestion,x){
+        let numberDiv=getRandomInt(3,1000);
+        currentQuestion.question=currentQuestion.question.replace("number", numberDiv);
+        let sum = 0;
+        while (numberDiv) {
+            sum += numberDiv % 10;
+            numberDiv = Math.floor(numberDiv / 10);
+        }
+        console.log(sum)
+        if(sum%3){
+            currentQuestion.correctAnswer="b";
+        }
+        else{
+            currentQuestion.correctAnswer="a";
+        }
+        // if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+        //     currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]);
+        // }
+        // else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+        //     while(!(z=getRandomInt(-10,10)) || x[0]/x[1]+z<0){}
+        //     currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]+z);
+        // }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+        //     currentQuestion.question=x[0]+" / "+x[1]+" = ";
+        //     currentQuestion.correctAnswer=x[0]/x[1];
+        // }else if(!currentQuestion.type.localeCompare("Matching Question")){
+        //     let numberDiv=getRandomInt(1,9);
+        //     for(let j in currentQuestion.answers) {
+        //         currentQuestion.answers[j]=numberDiv*10+" / 10"
+        //         currentQuestion.correctAnswer[j]=numberDiv;
+        //         numberDiv*=10;
+        //     }
+        // }
     }
     function chapter4(currentQuestion,x){
         let z;
@@ -501,8 +537,34 @@
                 c: "npm"
             }
         },
+        //~~~~~~~~~~~~~~~~~~~~~~ Chapter 3 ~~~~~~~~~~~~~~~~~~~~~~
 
-        //Chapter 4
+        // {
+        //     type:"multipleChoice",
+        //     chapter:3,
+        //     shuffle : true,
+        //     question: "Ποιος αριθμός μπορεί να είναι υπόλοιπο στην διαίρεση με 3;",
+        //     answers: {
+        //         a: "0",
+        //         b: "3",
+        //         c: "4",
+        //         d: "84"
+        //     },
+        //     correctAnswer: "a"
+        // },
+        {
+            type:"Right/Wrong",
+            chapter:3,
+            shuffle : false,
+            question: "Αν  έχουμε number κιλά λάδι, μπορούμε να γεμίσουμε τελείως δοχεία των 3 κιλών;",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+
+        //~~~~~~~~~~~~~~~~~~~~~~ Chapter 4 ~~~~~~~~~~~~~~~~~~~~~~
 
         {
             type:"multipleChoice",
