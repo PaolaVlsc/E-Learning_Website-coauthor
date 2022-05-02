@@ -77,19 +77,48 @@ To change this template use File | Settings | File Templates.
     </script>
     <!---------- End: Js navbar ----------->
     <!---------------------------------------- Close of navbar ------------------------------------------->
+    <canvas id='myCanvas' style="position: absolute; left: 0%" width='1500' height='800'></canvas>
     <h1>Τέσταρε τις γνώσεις σου !</h1>
     <div class="quiz-container">
         <div id="quiz"></div>
     </div>
+    <div class="popup" onclick="hidePopUp()">
+        <span class="popuptext" id="myPopup"><a style="cursor: pointer;position: absolute;right: 12px;top: 0">&times;</a><br>ΜΠΡΑΒΟΟΟΟ<br><br> ΤΑ ΠΑΣ ΤΕΛΕΙΑ ΠΑΜΕΕ</span>
+    </div>
     <br>
-    <iframe name="content" style="display:none;">
-    </iframe>
-    <form action="" method="post" target="content">
-        <button id="previous">Προηγούμενη ερώτηση</button>
-        <button id="next">Επόμενη ερώτηση</button>
-        <button type="submit" id="submit">Καταχώρηση απαντήσεων</button>
-    </form>
+    <button id="previous">Προηγούμενη ερώτηση</button>
+    <button id="next">Επόμενη ερώτηση</button>
+    <button id="submit">Καταχώρηση απαντήσεων</button>
     <div id="results"></div>
+    <button id="backToTests">Επιστροφή στα Τεστ</button>
+    <button id="tryAgain">Προσπάθησε ξανά</button>
+    <button id="nextQuiz">Επόμενο Τεστ</button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Είσαι σίγουρος;</h2>
+            </div>
+            <div class="modal-body">
+                <p>Εάν φύγεις τώρα δε θα μπορείς να δεις τι έκανες λάθος ή σωστό!</p>
+            </div>
+            <div class="modal-footer">
+                <button id="choice" class="button button2">Ναι, θέλω να φύγω</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!--    Hide pop up -->
+    <script>
+        function hidePopUp(){
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("hide");
+        }
+    </script>
     <script src="../js/quiz.js"></script>
 </body>
 </html>
