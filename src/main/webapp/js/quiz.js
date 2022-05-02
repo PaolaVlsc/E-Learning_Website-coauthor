@@ -17,34 +17,11 @@
                 if(currentQuestion.shuffle){
                     keys.sort(function() {return Math.random() - 0.5;});
                 }
-                //If chooseOperand is 1 we use + operand
-                let chooseOperand = getRandomInt(0, 1);
-                if(chooseOperand){
-                    if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
-                        currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]);
-                    }
-                    else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-                        while(!(z=getRandomInt(-10,10))){}
-                        currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]+z);
-                    }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-                        currentQuestion.question=x[0]+" + "+x[1]+" = ";
-                        currentQuestion.correctAnswer=x[0]+x[1];
-                    }
+                if(chapter==1){
+                    chapter1(currentQuestion,x)
                 }
-                else{
-                    while(x[0]-x[1]<0){
-                        x=getRandomNumber(currentQuestion);
-                    }
-                    if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
-                        currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]);
-                    }
-                    else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-                        while(!(z=getRandomInt(-10,10))){}
-                        currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]-z);
-                    }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-                        currentQuestion.question=x[0]+" - "+x[1]+" = ";
-                        currentQuestion.correctAnswer=x[0]-x[1];
-                    }
+                else if(chapter==4){
+                    chapter4(currentQuestion,x)
                 }
                 // and for each available answer...
                 if(currentQuestion.type.localeCompare("Matching Question")){
@@ -123,6 +100,57 @@
 
     }
 
+    function chapter1(currentQuestion,x){
+        let z;
+        //If chooseOperand is 1 we use + operand
+        let chooseOperand = getRandomInt(0, 1);
+        if(chooseOperand){
+            if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+                currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]);
+            }
+            else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+                while(!(z=getRandomInt(-10,10))){}
+                currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]+z);
+            }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+                currentQuestion.question=x[0]+" + "+x[1]+" = ";
+                currentQuestion.correctAnswer=x[0]+x[1];
+            }
+        }
+        else{
+            while(x[0]-x[1]<0){
+                x=getRandomNumber(currentQuestion);
+            }
+            if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+                currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]);
+            }
+            else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+                while(!(z=getRandomInt(-10,10))){}
+                currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]-z);
+            }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+                currentQuestion.question=x[0]+" - "+x[1]+" = ";
+                currentQuestion.correctAnswer=x[0]-x[1];
+            }
+        }
+    }
+    function chapter4(currentQuestion,x){
+        let z;
+        x=getRandomNumber(currentQuestion)
+        while(x[0]%x[1] || x[1]===0){
+            x=getRandomNumber(currentQuestion)
+        }
+        if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+            currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]);
+        }
+        else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+            while(!(z=getRandomInt(-10,10)) || x[0]/x[1]+z<0){}
+            currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]+z);
+        }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+            currentQuestion.question=x[0]+" / "+x[1]+" = ";
+            currentQuestion.correctAnswer=x[0]/x[1];
+        }else if(!currentQuestion.type.localeCompare("Matching Question")){
+            console.log(currentQuestion.answers[0])
+        }
+    }
     function getRandomNumber(currentQuestion){
         let x,y;
         if(currentQuestion.type.search("BigNumber")!==-1){
@@ -176,8 +204,12 @@
         //remove submit button
         submitButton.style.display = 'none';
         //add new buttons
-        backToTestsButton.style.display = 'inline-block';
-        nextQuizButton.style.display = 'inline-block';
+        if(chapter>1){
+            lastQuizButton.style.display = 'inline-block';
+        }
+        if(chapter<5){
+            nextQuizButton.style.display = 'inline-block';
+        }
         tryAgainButton.style.display = 'inline-block';
         // gather answer containers from our quiz
         const answerContainers = quizContainer.querySelectorAll('.answers');
@@ -266,7 +298,7 @@
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
         disableAnswer();
-        if(numCorrect>-1){
+        if(numCorrect>7){
             fireworks()
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
@@ -326,11 +358,10 @@
         let i=0;
 
         myQuestions.forEach( (currentQuestion) => {
-            if(currentQuestion.chapter===1 && i<10){
+            if(currentQuestion.chapter==chapter && i<10){
                 chosenQuestions[i] = currentQuestion;
+                i++;
             }
-
-            i++;
         });
     }
     // Variables
@@ -464,7 +495,169 @@
                 b: "TypeScript",
                 c: "npm"
             }
-        }
+        },
+
+        //Chapter 4
+
+        {
+            type:"multipleChoice",
+            chapter:4,
+            shuffle : true,
+            question: "Ποιος αριθμός μπορεί να είναι υπόλοιπο στην διαίρεση με 3;",
+            answers: {
+                a: "0",
+                b: "3",
+                c: "4",
+                d: "84"
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"multipleChoice",
+            chapter:4,
+            shuffle : true,
+            question: "Ποιος αριθμός δεν μπορεί να είναι υπόλοιπο στην διαίρεση με 9;",
+            answers: {
+                a: "0",
+                b: "7",
+                c: "6",
+                d: "87"
+            },
+            correctAnswer: "d"
+        },
+        {
+            type:"multipleChoice",
+            chapter:4,
+            shuffle : true,
+            question: "Ποιος αριθμός μπορεί να είναι υπόλοιπο στην διαίρεση με 4;",
+            answers: {
+                a: "7",
+                b: "5",
+                c: "2",
+                d: "4"
+            },
+            correctAnswer: "c"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:4,
+            shuffle : false,
+            question: "Αν το υπόλοιπο υ είναι 0, τότε έχουμε μία Τέλεια Διαίρεση",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:4,
+            shuffle : false,
+            question: "Αν το υπόλοιπο υ είναι 0, τότε έχουμε μία Ατελής Διαίρεση",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:4,
+            shuffle : false,
+            question: "Η διαίρεση της μορφής Δ = δ x π + υ λέγεται Ευκλείδεια Διαίρεση",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:4,
+            shuffle : false,
+            question: "Δεν επιτρέπεται να διαιρέσουμε έναν αριθμό δια μηδέν (0)",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:4,
+            shuffle : false,
+            question: "Επιτρέπεται να διαιρέσουμε έναν αριθμό δια μηδέν (0) ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Right/Wrong Generated Right",
+            chapter:4,
+            shuffle : false,
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong Generated Wrong",
+            chapter:4,
+            shuffle : false,
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:4,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:4,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:4,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Matching Question",
+            chapter:4,
+            shuffle : true,
+            question: "Αντιστοίχησε τις σωστές απαντήσεις",
+            answers: {
+                a: "Node.js",
+                b: "TypeScript",
+                c: "npm"
+            },
+            correctAnswer: {
+                a: "Node.js",
+                b: "TypeScript",
+                c: "npm"
+            }
+        },
     ];
     //get url
     const queryString = window.location.search;
@@ -484,12 +677,12 @@
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
     //After submission buttons
-    const backToTestsButton = document.getElementById("backToTests");
+    const lastQuizButton = document.getElementById("lastQuiz");
     const tryAgainButton = document.getElementById("tryAgain");
     const nextQuizButton = document.getElementById("nextQuiz");
     //Remove display of buttons
     document.getElementById("myCanvas").style.display = "none";
-    backToTestsButton.className += "button1";
+    lastQuizButton.className += "button1";
     nextQuizButton.className += "button1";
     tryAgainButton.className += "button1";
     const slides = document.querySelectorAll(".slide");
