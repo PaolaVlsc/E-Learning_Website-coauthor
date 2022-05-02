@@ -38,7 +38,7 @@ To change this template use File | Settings | File Templates.
             <li><a href="../../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
-                    <a  class="current" href="../../jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
+                    <a class="current" href="../../jsp/chapters.jsp">Κεφάλαια Μαθηματικών</a>
                     <div class="dropdown-content">
                         <a href="../../jsp/sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
                         <a href="../../jsp/sub-chapters/chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
@@ -66,7 +66,7 @@ To change this template use File | Settings | File Templates.
 
         <div class="logout">
             <a href="<%=Login.isLoggedIn(session)?"../../logout-servlet":"../login.jsp"%>">
-                <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
+                <i class="fa fa-user-circle"></i><%=Login.isLoggedIn(session) ? "Αποσύνδεση" : "Σύνδεση"%>
             </a>
         </div>
 
@@ -80,6 +80,7 @@ To change this template use File | Settings | File Templates.
 <!---------- End: Js navbar ----------->
 <!---------------------------------------- Close of navbar ------------------------------------------->
 
+
 <div class="mothership">
     <div class="container1">
         <div class="my_header">
@@ -88,7 +89,7 @@ To change this template use File | Settings | File Templates.
         <div class="wrapper1">
             <aside>
                 <div class="sidebar1">
-                    <h2>ΠΡΟΣΘΕΣΗ ΚΑΙ ΑΦΑΙΡΕΣΗ
+                    <h2>ΔΙΑΙΡΕΣΗ
                     </h2>
                     <br>
                     <hr>
@@ -116,49 +117,152 @@ To change this template use File | Settings | File Templates.
                     <h1 style="color: rgb(10, 132, 100)">Θεωρία</h1>
                     <hr style="color: rgb(10, 132, 100)">
                     <h4>
-                        <center>ΠΟΛΛΑΠΛΑΣΙΑΣΜΟΣ</center>
+                        <center>ΔΙΑΙΡΕΣΗ</center>
                     </h4>
 
                     <b> Ορισμοί: </b>
                     <br>
                     <ul style="padding: 20px;">
-                        <li> Πρόσθεση είναι η πράξη με την οποία από δύο φυσικούς αριθμούς βρίσκουμε έναν τρίτο φυσικό
-                            αριθμό, ο οποίος λέγεται <b>άθροισμα</b>.
+                        <li> Όταν έχουμε δύο φυσικούς αριθμούς, τον <b>Δ (Διαιρετέο)</b> και τον <b>δ (διαιρέτη)</b>,
+                            τότε μπορούμε να βρούμε
+                            δύο άλλους μοναδικούς φυσικούς αριθμούς <b> π (πηλίκο)</b> και <b>υ (υπόλοιπο)</b>, έτσι
+                            ώστε να ισχύει η ισότητα:
+                            <ul style="list-style: none; text-align: center;">
+                                <li><b>Δ = δ x π + υ </b></li>
+                            </ul>
+                            Όλη αυτή η διαδικασία είναι η πράξη της <b>διαίρεσης</b>.
                         </li>
-                        <li>Οι αριθμοί οι οποίοι προστίθενται λέγονται <b>προσθετέοι</b>.</li>
+
+                        <li> Η διαίρεση αυτής της μορφής
+                            ονομάζεται και <b>Ευκλείδεια διαίρεση.</b></li>
+
+                        <li> Το υπόλοιπο είναι πάντα αριθμός μικρότερος από τον διαιρέτη και μεγαλύτερος ή ίσος του
+                            μηδενός.
+                        </li>
                     </ul>
-                    <b> Παράδειγμα: </b><br>
-                    <div class="paradeigma-prosthesh-01" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/OK.png" style=" box-shadow: 2px 2px 4px #000000;  width: 35%;
-  height: auto;"></center>
+
+                    <h4>
+                        <center>Τέλεια Διαίρεση</center>
+                    </h4>
+
+                    Αν το υπόλοιπο υ είναι 0, τότε έχουμε μία Τέλεια Διαίρεση: Δ = δ x π
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter04/div_ex_01.png" style=" box-shadow: 2px 2px 4px #000000;  width: 50%;  height: auto;"></center>
                     </div>
 
-                    <b>Ιδιότητες:</b><br>
+                    <h4>
+                        <center>Ατελής Διαίρεση</center>
+                    </h4>
+                    Αν το υπόλοιπο υ είναι 0, τότε έχουμε μία Τέλεια Διαίρεση: Δ = δ x π
 
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter04/div_ex_02.png" style=" box-shadow: 2px 2px 4px #000000;  width: 50%;  height: auto;"></center>
+                    </div>
+                    <h4>
+                        <center>Ευκλείδεια Διαίρεση</center>
+                    </h4>
+                    Η διαίρεση της μορφής Δ = δ x π + υ λέγεται <b>Ευκλείδεια Διαίρεση.</b>
+                    <ul style="list-style: none; padding-left: 30px;">
+                        <li> 135 = 7 x 19 + 2 </li>
+                        <li> 192 = 12 x 16 + 0 </li>
+                    </ul>
+
+                    <h4>
+                        <center>Βασικές μαθηματικές έννοιες και διεργασίες</center>
+                    </h4>
+                    <b> Διαίρεση </b>λέγεται η πράξη με την οποία μοιράζουμε έν
+
+                    <br>
+
+                    Έχουμε δυο ειδών διαιρέσεις:
+                    <ul style="padding: 20px;">
+                        <li><b>Τη διαίρεση μερισμού. </b> Όταν ξέρουμε την τιμή των πολλών μονάδων και ζητάμε την τιμή
+                            της μιας μονάδας. <i>Π.χ.Οι πέντε σοκολάτες κοστίζουν 10 €. Πόσο κοστίζει η μία;
+                            </i></li>
+                        <li><b>Τη διαίρεση μέτρησης. </b>. Όταν ξέρουμε και την τιμή των πολλών μονάδων και την τιμή της
+                            μιας μονάδας και δεν ξέρουμε πόσες είναι αυτές οι πολλές μονάδες.
+                        </li>
+                    </ul>
+
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter04/div_ex_03.png" style=" box-shadow: 2px 2px 4px #000000;  width: 80%;  height: auto;"></center>
+                    </div>
+
+
+
+                    <h5>Ιδιότητες:</h5>
+
+                    <ul style="padding: 20px;  border: 2px solid skyblue; border-radius: 5px; padding: 15px; padding-left: 50px;margin-bottom: 30px;margin-top: 30px; ">
+                        <li> Κάθε αριθμός αν διαιρεθεί με το 1, δίνει πηλίκο τον εαυτό του.
+                            <ul style="list-style: none; color: mediumpurple">
+                                <li><b>π.χ. 5 : 1 = 5 </b></li>
+                            </ul>
+                        </li>
+
+
+                        <li>Κάθε αριθμός αν διαιρεθεί με τον εαυτό του δίνει πηλίκο το 1.
+                            <ul style="list-style: none; color: mediumpurple">
+                                <li><b>π.χ. 9 : 9 = 1 </b></li>
+                            </ul>
+                        </li>
+
+                        <li>Το μηδέν (0) με όποιον αριθμό κι αν διαιρεθεί, δίνει πηλίκο τον εαυτό του.
+                            <ul style="list-style: none; color: mediumpurple">
+                                <li><b>π.χ. 0 : 5 = 0</b></li>
+                            </ul>
+                        </li>
+
+                        <li> Δεν επιτρέπεται να διαιρέσουμε έναν αριθμό δια μηδέν (0).
+
+                            <ul style="list-style: none; color: mediumpurple">
+                                <li><b>π.χ. 4 : 0 είναι αδύνατο</b></li>
+                            </ul>
+                        </li>
+                        <li> Σε κάθε διαίρεση αν πολλαπλασιάσουμε ή διαιρέσουμε τους δύο όρους με τον ίδιο αριθμό, το
+                            πηλίκο δεν αλλάζει.
+
+                            <ul style="list-style: none; color: mediumpurple">
+                                <li><b> π.χ. 20 : 4 = 5 (20 • 2) : (4 • 2) = 40 : 8 = 5 </b></li>
+                            </ul>
+                        </li>
+                    </ul>
 
 
                     <h4>
-                        <center>ΑΦΑΙΡΕΣΗ</center>
+                        <center>Δοκιμή της διαίρεσης:</center>
                     </h4>
-                    <b> Ορισμοί: </b>
-                    <br>
-                    <ul style="padding: 20px;">
-                        <li> Αφαίρεση είναι η πράξη με την οποία από δύο φυσικούς αριθμούς, τον μειωτέο και τον
-                            αφαιρετέο, βρίσκουμε έναν τρίτο φυσικό αριθμό, που λέγεται <b>διαφορά </b>.
-                        </li>
-                    </ul>
-                    <b> Παράδειγμα: </b><br>
-                    <div class="paradeigma-sub-01" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/sub-example-01.png" style=" box-shadow: 2px 2px 4px #000000;  width: 35%;
-  height: auto;"></center>
-                    </div>
-                    <br>
 
-                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για την πρόσθεση και την αφαίρεση</h4>
-                    <center><iframe style=" box-shadow: 2px 2px 4px #000000;"  width="560" height="315" src="https://www.youtube.com/embed/72ebUe-ONgw"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe></center>
+
+                    Η δοκιμή ή αλλιώς επαλήθευση της διαίρεσης γίνεται με την εφαρμογή της ισότητας <b>Δ = δ x π + υ</b>.<br>
+
+
+                    Πιο συγκεκριμένα:
+                    Σε μια τέλεια διαίρεση η δοκιμή γίνεται ως εξής:
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter04/div_ex_04.png" style=" box-shadow: 2px 2px 4px #000000;  width: 50%;  height: auto;"></center>
+                    </div>
+
+
+                    <b>Δοκιμή:</b><br>
+                    Δ = δ x π = 12 x 16 = 192
+
+                    <h5>Σε μια ατελή διαίρεση η δοκιμή γίνεται ως εξής:</h5>
+
+
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter04/div_ex_05.png" style=" box-shadow: 2px 2px 4px #000000;  width: 50%;  height: auto;"></center>
+                    </div>
+
+                    <b>Δοκιμή:</b><br>
+                    Δ = δ x π + υ = 7 x 19 + 2 = 133+2= 135
+
+                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για τη διαίρεση!</h4>
+                    <center>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7K_UAOMgC-4"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </center>
                 </section>
                 <br>
                 <!------- END A PART------>
@@ -166,38 +270,91 @@ To change this template use File | Settings | File Templates.
                 <section id="exercises">
                     <h1 style="color: rgb(10, 132, 100)">Ασκήσεις / Παραδείγματα</h1>
                     <hr style="color: rgb(10, 132, 100)">
-                    <h4 style="text-decoration: underline;">Πώς κάνω μια πρόσθεση;</h4>
+                    <h4 style="text-decoration: underline;">Πώς κάνω μια διαίρεση;</h4>
                     Για να προσθέσω φυσικούς αριθμούς πρέπει να προσθέσω τις μονάδες των αριθμών αυτών, μετά τις δεκάδες
                     των αριθμώ, μετά τις εκατοντάδες κλπ. Η πρόσθεση φυσικών αριθμών μπορεί να γίνει ορίζονται και
                     κάθετα.
-                    <div class="paradeigma-prosthesh-02" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/paradeigma.png" style=" box-shadow: 2px 2px 4px #000000;  width: 75%;
-  height: auto;"></center>
-                    </div>
-                    <h4 style="text-decoration: underline;">Πώς κάνω μια αφαίρεση;</h4>
-                    Για να αφαιρέσω φυσικούς αριθμούς πρέπει ο μειωτέος να είναι μεγαλύτερος από τον αφαιρετέο. Το
-                    αποτέλεσμα της πράξης λέγεται διαφορά. Αφαιρώ μονάδες από μονάδες, δεκάδες από δεκάδες κλπ. Η
-                    αφαίρεση μπορεί να γίνει οριζόντια ή κάθετα.
-                    <div class="sub-example-02" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/sub-example-02.png" style=" box-shadow: 2px 2px 4px #000000;  width: 75%;
-  height: auto;"></center>
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter04/div_ex_06.png" style=" box-shadow: 2px 2px 4px #000000;  width: 95%;  height: auto;"></center>
                     </div>
                     <h4>
                         Υποδειγματική εφαρμογή #1.
                     </h4>
 
-                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
-                        <b><i>Εκφώνηση:</i></b><br>Μια πόλη έχει 245.890 κατοίκους. Από αυτούς οι 38.608 είναι παιδιά.
-                        Αν γνωρίζουμε πως οι γυναίκες είναι 342 περισσότερες από τους άντρες, πόσες είναι οι γυναίκες
-                        και πόσοι οι άντρες αυτής της πόλης.<br>
-                        <b>
-                            <i>Λύση:</i></b><br>
-                        <ul style="list-style: none;">
-                            <li>245.890 - 38.608 = 207.282 (άντρες-γυναίκες)</li>
-                            <li>(207.282 - 342) : 2 = <b>103.470 άντρες </b></li>
-                            <li>103.470 + 342 = <b>103.812 γυναίκες </b></li>
-                        </ul>
+                    <div style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter04/div_ex_07.png"
+                                         style=" box-shadow: 0.5px 0.5px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
                     </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #2.
+                    </h4>
+
+                    <div style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter04/div_ex_08.png"
+                                         style=" box-shadow: 0.5px 0.5px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #3.
+                    </h4>
+
+                    <div style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter04/div_ex_09.png"
+                                         style=" box-shadow: 0.5px 0.5px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #4.
+                    </h4>
+
+                    <div style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter04/div_ex_10.png"
+                                         style=" box-shadow: 0.5px 0.5px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #5.
+                    </h4>
+
+                    <div style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter04/div_ex_11.png"
+                                         style=" box-shadow: 0.5px 0.5px 4px #000000;  width: 55%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #6.
+                    </h4>
+
+                    <div style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter04/div_ex_12.png"
+                                         style=" box-shadow: 0.5px 0.5px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
                 </section>
                 <br>
 
@@ -205,8 +362,7 @@ To change this template use File | Settings | File Templates.
                     <h1 style="color: rgb(10, 132, 100)">Έλεγξε τις γνώσεις σου</h1>
                     <hr style="color: rgb(10, 132, 100)">
                     <br>
-                    <div class="test-prosthesh" style="padding-top: 25px;padding-bottom: 25px;   border: 2px solid skyblue;
-  border-radius: 5px;">
+                    <div style="padding-top: 25px;padding-bottom: 25px;   border: 2px solid skyblue;  border-radius: 5px;">
                         <center><a href="../quiz.jsp"><img src="../../assets/chapter04/nia.png" style=" box-shadow: 2px 2px 4px #000000;  width: 70%;
   height: auto;"></a></center>
                     </div>
