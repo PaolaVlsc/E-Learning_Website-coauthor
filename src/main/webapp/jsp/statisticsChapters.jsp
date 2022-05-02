@@ -75,42 +75,24 @@
 
 <script>
     navbar.classList.add("sticky");
-    function toggleText(x) {
-        let texts = document.getElementsByClassName(x);
-        let i;
-        for (i = 0; i < texts.length; i++) {
-            let text = texts[i];
-            if (text.style.display === "none") {
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
-        }
-    }
 </script>
 <%
     int chapter = Integer.parseInt(request.getParameter("chapter"));
 %>
 <div class="main-wrap">
     <div class="left-side">
-        <br><br><h3>Τα κεφάλαια σου:</h3>
+        <br><br><h3>Οι βαθμοί στα κεφάλαια σου:</h3>
         <a href="statistics.jsp" style="padding-left:3em;"><u>Όλα τα κεφάλαια</u></a>
-        <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em; <%if(chapter == 1) out.print("color: #064e61");%>"><u>Κεφάλαιο 1</u></a>
-        <a href="statisticsChapters.jsp?chapter=1" style="padding-left:6em; <%if(chapter == 1) out.print("color: #5cafc6");else out.print("display:none;");%>" class="hiddenText1" >Βαθμοί</a>
-
+        <a href="statisticsChapters.jsp?chapter=1" style="padding-left:3em; <%if(chapter == 1) out.print("color: #5cafc6");%>"><u>Πρόσθεση και αφαίρεση</u></a>
         <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
-        <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em; <%if(chapter == 2) out.print("color: #064e61");%>"><u>Κεφάλαιο 2</u></a>
-        <a href="statisticsChapters.jsp?chapter=2" style="padding-left:6em; <%if(chapter == 2) out.print("color: #5cafc6");else out.print("display:none;");%>" class="hiddenText2">Βαθμοί</a>
+        <a href="statisticsChapters.jsp?chapter=2" style="padding-left:3em; <%if(chapter == 2) out.print("color: #5cafc6");%>"><u>Πολλαπλασιασμός</u></a>
 
-        <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em; <%if(chapter == 3) out.print("color: #064e61");%>"><u>Κεφάλαιο 3</u></a>
-        <a href="statisticsChapters.jsp?chapter=3" style="padding-left:6em; <%if(chapter == 3) out.print("color: #5cafc6");else out.print("display:none;");%>" class="hiddenText3">Βαθμοί</a>
+        <a href="statisticsChapters.jsp?chapter=3" style="padding-left:3em; <%if(chapter == 3) out.print("color: #5cafc6");%>"><u>Κριτήρια διαιρετότητας</u></a>
 
-        <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em; <%if(chapter == 4) out.print("color: #064e61");%>"><u>Κεφάλαιο 4</u></a>
-        <a href="statisticsChapters.jsp?chapter=4" style="padding-left:6em; <%if(chapter == 4) out.print("color: #5cafc6");else out.print("display:none;");%>" class="hiddenText4">Βαθμοί</a>
+        <a href="statisticsChapters.jsp?chapter=4" style="padding-left:3em; <%if(chapter == 4) out.print("color: #5cafc6");%>"><u>Διαίρεση</u></a>
 
 
-        <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;  <%if(chapter == 5) out.print("color: #064e61"); %>"><u>Επαναληπτικό</u></a>
-        <a href="statisticsChapters.jsp?chapter=5" style="padding-left:6em; <%if(chapter == 5) out.print("color: #5cafc6"); else out.print("display:none;");%>" class="hiddenText5">Βαθμοί</a>
+        <a href="statisticsChapters.jsp?chapter=5" style="padding-left:3em;  <%if(chapter == 5) out.print("color: #5cafc6"); %>"><u>Επαναληπτικό</u></a>
 
     </div>
 
@@ -125,7 +107,13 @@
         <%
             }else if(chapter!=5){
         %>
-            <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι βαθμοί σου στο κεφάλαιο <%=chapter%>!</h2>
+            <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι βαθμοί σου στο κεφάλαιο: <%
+                if(chapter == 1) out.print("Πρόσθεση και αφαίρεση");
+                else if(chapter == 2) out.print("Πολλαπλασιασμός");
+                else if(chapter == 3) out.print("Κριτήρια διαιρετότητας");
+                else if(chapter == 4) out.print("Διαίρεση");
+
+            %>!</h2>
         <%
             }else{
         %>

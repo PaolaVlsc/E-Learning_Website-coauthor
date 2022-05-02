@@ -7,9 +7,9 @@ body {
     position: fixed;
     top: 60px;
     bottom: 80px;
-	width:180px;
-	display: table-cell;
-	border-right: 2px solid black;
+    width:260px;
+    display: table-cell;
+    border-right: 2px solid black;
 }
 a{
     text-decoration: none;
@@ -18,18 +18,19 @@ a{
 }
 a:visited { text-decoration: none; }
 .right-side {
-    position: fixed;
-    top: 100px;
-	left: 250px;
-	width:80%;/*to be centered*/
-	display: table-cell;
+    position:absolute;
+    top: 40px;
+    left: 290px;
+    width:80%;/*to be centered*/
+    display: table-cell;
+    padding-bottom: 6%;
 }
 
 .main-wrap {
     position: absolute;
     top: 50px;
-    bottom: 50px;
+    bottom: 150px;
     width: 100%;
-	text-align: left;
+    text-align: left;
 }
 body { overflow-x: hidden; }
