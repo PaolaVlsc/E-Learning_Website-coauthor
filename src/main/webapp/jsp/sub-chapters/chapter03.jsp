@@ -42,7 +42,7 @@ To change this template use File | Settings | File Templates.
                     <div class="dropdown-content">
                         <a href="../../jsp/sub-chapters/chapter01.jsp">Πρόσθεση και Αφαίρεση</a>
                         <a href="../../jsp/sub-chapters/chapter02.jsp">Πολλαπλασιασμός στους φυσικούς αριθμούς</a>
-                        <a href="chapter03.jsp">Κριτήρια διαιρετότητας</a>
+                        <a href="../../jsp/sub-chapters/chapter03.jsp">Κριτήρια διαιρετότητας</a>
                         <a href="chapter04.jsp">Διαίρεση στους φυσικούς</a>
                     </div>
                 </div>
@@ -136,7 +136,7 @@ To change this template use File | Settings | File Templates.
 
                     <!-- START image  -->
                     <div style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-03.png" style=" border-radius: 25px;
+                        <center><img src="../../assets/chapter03/kritiria-diairetothtas-03.png" style=" border-radius: 25px;
   border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 35%;
   height: auto;"></center>
                     </div>
@@ -148,7 +148,7 @@ To change this template use File | Settings | File Templates.
                     0 ή 5.</b>
                     <!-- START image  -->
                     <div style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-04.png" style=" border-radius: 25px;
+                        <center><img src="../../assets/chapter03/kritiria-diairetothtas-04.png" style=" border-radius: 25px;
   border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
   height: auto;"></center>
                     </div>
@@ -159,7 +159,7 @@ To change this template use File | Settings | File Templates.
                     Ένας φυσικός αριθμός διαιρείται με το 10, <b>όταν το τελευταίο του ψηφίο είναι: 0.</b>
                     <!-- START image  -->
                     <div style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-05.png" style=" border-radius: 25px;
+                        <center><img src="../../assets/chapter03/kritiria-diairetothtas-05.png" style=" border-radius: 25px;
   border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
   height: auto;"></center>
                     </div>
@@ -171,7 +171,7 @@ To change this template use File | Settings | File Templates.
                     αριθμοί που <b>το άθροισμα των ψηφίων τους είναι 9.</b>
                     <!-- START image  -->
                     <div style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-06.png" style=" border-radius: 25px;
+                        <center><img src="../../assets/chapter03/kritiria-diairetothtas-06.png" style=" border-radius: 25px;
   border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
   height: auto;"></center>
                     </div>
@@ -182,7 +182,7 @@ To change this template use File | Settings | File Templates.
                     00.</b>
                     <!-- START image  -->
                     <div style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-07.png" style=" border-radius: 25px;
+                        <center><img src="../../assets/chapter03/kritiria-diairetothtas-07.png" style=" border-radius: 25px;
   border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
   height: auto;"></center>
                     </div>
@@ -193,7 +193,7 @@ To change this template use File | Settings | File Templates.
                     00.</b>
                     <!-- START image  -->
                     <div style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter02/kritiria-diairetothtas-08.png" style=" border-radius: 25px;
+                        <center><img src="../../assets/chapter03/kritiria-diairetothtas-08.png" style=" border-radius: 25px;
   border: 6px solid #73AD21; box-shadow: 2px 2px 4px #000000;  width: 40%;
   height: auto;"></center>
                     </div>
@@ -223,7 +223,7 @@ To change this template use File | Settings | File Templates.
                         <b><i>Τσεκάρω αυτά που είναι σωστά</i></b>
                         <!-- START image  -->
                         <div class="2-6-orig-orig_orig" style="padding-top: 25px;">
-                            <center><img src="../../assets/chapter02/kritiria-diairetothtas-02.png"
+                            <center><img src="../../assets/chapter03/kritiria-diairetothtas-02.png"
                                          style=" box-shadow: 2px 2px 4px #000000;  width: 80%;
   height: auto;"></center>
                         </div>
@@ -356,7 +356,7 @@ To change this template use File | Settings | File Templates.
                     <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
                         <!-- START image  -->
                         <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
-                            <center><img src="../../assets/chapter02/kritiria-diairetothtas-01.png"
+                            <center><img src="../../assets/chapter03/kritiria-diairetothtas-01.png"
                                          style=" box-shadow: 2px 2px 4px #000000;  width: 80%;
   height: auto;"></center>
                         </div>
