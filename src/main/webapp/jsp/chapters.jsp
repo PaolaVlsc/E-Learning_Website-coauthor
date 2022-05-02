@@ -60,6 +60,7 @@
                 </div>
             </li>
             <li><a href="../jsp/statistics.jsp">Στατιστικά</a></li>
+            <li><a href="../jsp/games.jsp">Παιχνίδια</a></li>
         </ul>
 
         <div class="logout">

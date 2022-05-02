@@ -99,9 +99,9 @@
 </head>
 <body>
 <script>
- function tooglePassword(c){
+ function togglePassword(c){
      let type;
-     if (c.className == "bi bi-eye-slash") {
+     if (c.className === "bi bi-eye-slash") {
          c.className = "bi bi-eye";
          type="text";
      } else {
@@ -127,9 +127,14 @@
         <br>
         <label for="password"><b>Κωδικός</b></label>
         <input type="password" placeholder="Εισαγωγή κωδικού" name="password" id="password" required maxlength="32"/>
-        <i class="bi bi-eye-slash" id="togglePassword" onclick="tooglePassword(this)"></i>
+        <i class="bi bi-eye-slash" id="togglePassword" onclick="togglePassword(this)"></i>
         <br>
         <%
+            //Αν είναι ήδη συνδεδεμένος ανακατεύθυνε τον στην αρχική σελίδα
+            if (Login.isLoggedIn(session) ){
+                response.sendRedirect("../index.jsp");
+            }
+            //Σύνδεση χρήστη
             request.setCharacterEncoding("UTF-8");
             if ("POST".equalsIgnoreCase(request.getMethod())){
                 String userId = Login.checkCredentials(request.getParameter("email"),request.getParameter("password"));
@@ -151,7 +156,7 @@
 </form>
 <!--<a href="#" style="color:rgb(44, 121, 165);position:fixed; left:36%; bottom:0%;"><h1><-Γύρνα πίσω στην αρχική</h1></a>-->
 
-<button class="button1" type="button" style="margin-bottom: 40px">Γύρνα πίσω στην αρχική</button>
+<button class="button1" type="button" style="margin-bottom: 40px" onclick="location.href='../index.jsp'">Γύρνα πίσω στην αρχική</button>
 
 </body>
 </html>

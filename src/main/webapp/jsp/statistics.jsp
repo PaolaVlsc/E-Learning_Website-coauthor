@@ -18,7 +18,15 @@
     <link rel="stylesheet" href="../css/statistics_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body <%if(!Login.isLoggedIn(session)) {%>
+        style="
+        background-image: url('../assets/ombredino3.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        background-position: center;
+"
+        <%}%>>
 <nav class="navbar">
     <div class="wrapper">
         <div class="icon a menu-btn">
@@ -59,6 +67,7 @@
                 </div>
             </li>
             <li><a class="current" href="../jsp/statistics.jsp">Στατιστικά</a></li>
+            <li><a href="../jsp/games.jsp">Παιχνίδια</a></li>
         </ul>
 
         <div class="logout">
@@ -73,40 +82,21 @@
 
 <script>
     navbar.classList.add("sticky");
-    function toggleText(x) {
-        let texts = document.getElementsByClassName(x);
-        let i;
-        for (i = 0; i < texts.length; i++) {
-            let text = texts[i];
-            if (text.style.display === "none") {
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
-        }
-    }
 </script>
 
+<%if (Login.isLoggedIn(session)){%>
 <div class="main-wrap">
     <div class="left-side">
-        <br><br><h3>Τα κεφάλαια σου:</h3>
-        <a href="statistics.jsp" style="padding-left:3em; color: #064e61"><u>Όλα τα κεφάλαια</u></a>
+        <br><br><h3>Οι βαθμοί στα κεφάλαια σου:</h3>
+        <a href="statistics.jsp" style="padding-left:3em; color: #5cafc6"><u>Όλα τα κεφάλαια</u></a>
 
-        <a href="#" onclick="toggleText('hiddenText1')" style="padding-left:3em;"><u>Κεφάλαιο 1</u></a>
-        <a href="statisticsChapters.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>
+        <a href="statisticsChapters.jsp?chapter=1" style="padding-left:3em;"><u>Πρόσθεση και αφαίρεση</u></a>
+        <!-- <a href="statisticsChapters.jsp?chapter=1" style="display: none; padding-left:6em;" class="hiddenText1">Βαθμοί</a>-->
         <!--<a href="#" style="display: none; padding-left:6em;" class="hiddenText1">Βραβεία</a>-->
-
-        <a href="#" onclick="toggleText('hiddenText2')" style="padding-left:3em;"><u>Κεφάλαιο 2</u></a>
-        <a href="statisticsChapters.jsp?chapter=2" style="display: none; padding-left:6em;" class="hiddenText2">Βαθμοί</a>
-
-        <a href="#" onclick="toggleText('hiddenText3')" style="padding-left:3em;"><u>Κεφάλαιο 3</u></a>
-        <a href="statisticsChapters.jsp?chapter=3" style="display: none; padding-left:6em;" class="hiddenText3">Βαθμοί</a>
-
-        <a href="#" onclick="toggleText('hiddenText4')" style="padding-left:3em;"><u>Κεφάλαιο 4</u></a>
-        <a href="statisticsChapters.jsp?chapter=4" style="display: none; padding-left:6em;" class="hiddenText4">Βαθμοί</a>
-
-        <a href="#" onclick="toggleText('hiddenText5')" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
-        <a href="statisticsChapters.jsp?chapter=5" style="display: none; padding-left:6em;" class="hiddenText5">Βαθμοί</a>
+        <a href="statisticsChapters.jsp?chapter=2" style="padding-left:3em;"><u>Πολλαπλασιασμός</u></a>
+        <a href="statisticsChapters.jsp?chapter=3" style="padding-left:3em;"><u>Κριτήρια διαιρετότητας</u></a>
+        <a href="statisticsChapters.jsp?chapter=4" style="padding-left:3em;"><u>Διαίρεση</u></a>
+        <a href="statisticsChapters.jsp?chapter=5" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
     </div>
     <div class="right-side">
         <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!</h2>
@@ -121,21 +111,19 @@
                 try{
                     for (i=1;i<=5;i++){
                         //String gradesChapters = Statistics.getMaxGrades(Integer.parseInt(request.getParameter("StudentId")),i);
-                        String grades = Statistics.getMaxGrades(5,i);
+                        String grades = Statistics.getMaxGrades(Integer.parseInt((String)session.getAttribute("userId")),i);
                         if(grades==null){
                             gradesChapters[i-1] = 0;
                         }else{
                             gradesChapters[i-1] = Integer.parseInt(grades);
                         }
-            %>
-            array[<%= i-1 %>] = "<%= gradesChapters[i-1]%>";
-            <%
+                        out.print("array[" + (i-1) + "] = \"" + gradesChapters[i-1] + "\";");
                     }
                 } catch (NumberFormatException e) {
                     response.sendRedirect("../html/error.html");
                 }
             %>
-            let xValues = ["Κεφάλαιο 1", "Κεφάλαιο 2", "Κεφάλαιο 3", "Κεφάλαιο 4","Επανάληψη"];
+            let xValues = ["Πρόσθεση και αφαίρεση", "Πολλαπλασιασμός", "Κριτήρια διαιρετότητας", "Διαίρεση","Επαναληπτικό"];
             let yValues = [array[0], array[1], array[2], array[3], array[4]];
             let barColors = ["red", "green", "blue", "orange", "pink"];
 
@@ -168,13 +156,13 @@
         </script>
     </div>
 </div>
+<%}%>
 <footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
     <p> <i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
         <i class="fa fa-phone"></i> Τηλ.: 211-401-0000</p>
 </footer>
-
 </body>
 </html>
 

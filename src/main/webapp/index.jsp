@@ -60,6 +60,7 @@ To change this template use File | Settings | File Templates.
                 </div>
             </li>
             <li><a href="jsp/statistics.jsp">Στατιστικά</a></li>
+            <li><a href="jsp/games.jsp">Παιχνίδια</a></li>
         </ul>
         <div class="logout">
             <a href="<%=Login.isLoggedIn(session)?"logout-servlet":"jsp/login.jsp"%>">
@@ -73,21 +74,56 @@ To change this template use File | Settings | File Templates.
 
 <!-- Start Header -->
 <div class="banner-area">
-    <h2>ΨΗΦΙΑΚΗ ΤΑΞΗ</h2>
+    <h2>Μαθηματικά</h2>
 </div>
 <!-- Close Header -->
 
 <!-- Start Main Container -->
 <div class="content-area">
     <div class="wrapper">
-        <div class="quote">QUOTE FWTO ISWS? NAI</div>
         <div class="title">Μαθηματικά Ε΄ Δημοτικού</div>
-        <p>Περιγραφή του site??? </p>
-        <a href="jsp/chapters.jsp"><img src="assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
-                                        style="width:250px;height:350px;"></a>
+        <p>Ο σκοπός της διδασκαλίας των Μαθηματικών εντάσσεται στους γενικότερους σκοπούς της Εκπαίδευσης και αφορά τη συμβολή στην ολοκλήρωση της προσωπικότητας του μαθητή και την επιτυχή κοινωνική ένταξή του.</p>
+        <p>Προσφέρουμε θεωρία και ασκήσεις μαθηματικών για την Ε' δημοτικού, καθώς και τη δυνατότητα να ελέγξετε τις γνώσεις σας πάνω σε ό,τι σας μάθαμε ή πιθανώς ήδη γνωρίζατε!</p>
+        <p>Εάν συνδεθείτε, τότε θα έχετε την δυνατότητα να βλέπετε τους βαθμούς σας στα κουίζ, καθώς και την πρόοδό σας.</p>
+        <div><img src="assets/quote.png" alt="quote" style="width:80%;"></div>
+        <p style="text-align:center;">Η ενότητα που θα διδαχτείτε είναι η Ενότητα 2, με τα ακόλουθα τέσσερα κεφάλαια:</p>
+        <ul style="text-align:center;">
+            <li>
+                Η πρόσθεση και η αφαίρεση στους φυσικούς αριθμούς
+            </li>
+            <li>
+                Ο πολλαπλασιασμός στους φυσικούς αριθμούς
+            </li>
+            <li>
+                Κριτήρια διαιρετότητας
+            </li>
+            <li>
+                Η διαίρεση στους φυσικούς αριθμούς
+            </li>
+        </ul>
+
+
+        <p>Τα μαθηματικά μπορούν να είναι πολύ διασκεδαστικά! Μέσα από αυτήν την ιστοσελίδα θα μάθουμε να τα αγαπάμε και θα μπορούμε να λύσουμε όλες τις ασκήσεις που θα συναντήσουμε!</p>
+        <a href="jsp/chapters.jsp"><img src="assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού" style="width:250px;height:350px;"></a>
         <div>
             <a href="jsp/chapters.jsp">Έλα να μάθουμε Μαθηματικά</a>
         </div>
+        <br>
+        <h3 style="text-align:center;">Τα μέλη της ομάδας που δημιούργησαν αυτήν την ιστοσελίδα είναι(με αλφαβητική σειρά):</h3>
+        <ul style="text-align:center;">
+            <li>
+                Βελάσκο Πάολα
+            </li>
+            <li>
+                Λήμνος Ιάσων
+            </li>
+            <li>
+                Μπίλη Σοφία
+            </li>
+            <li>
+                Χανιωτάκης Νικόλαος
+            </li>
+        </ul>
     </div>
 </div>
 <!-- Close Main Container -->

@@ -5,6 +5,12 @@ body {
     /*background: linear-gradient(to bottom, rgb(253, 220, 220) 15%, rgb(194, 233, 252) 100%);*/
     background-image: url('../assets/ombre4.png');
     background-attachment: fixed;
+
+    width:100px;
+    height:100px;
+    max-width:100px;
+    max-height:100px;
+    background-size:cover;
 }
 
 .main-wrap {
