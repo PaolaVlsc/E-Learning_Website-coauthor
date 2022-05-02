@@ -200,7 +200,7 @@ To change this template use File | Settings | File Templates.
                     <!-- END image  -->
 
 
-                    <h4>Δες το βίντεο για να εμβαθύνεις τις γνώσεις σου περισσότερο</h4>
+                    <h4>Δες το βίντεο για να εμβαθύνεις τις γνώσεις σου περισσότερο!</h4>
                     <center>
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/FL2ZkqdiaZY"
                                 title="YouTube video player" frameborder="0"
