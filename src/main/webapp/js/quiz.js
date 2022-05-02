@@ -148,7 +148,12 @@
             currentQuestion.question=x[0]+" / "+x[1]+" = ";
             currentQuestion.correctAnswer=x[0]/x[1];
         }else if(!currentQuestion.type.localeCompare("Matching Question")){
-            console.log(currentQuestion.answers[0])
+            let numberDiv=getRandomInt(1,9);
+            for(let j in currentQuestion.answers) {
+                currentQuestion.answers[j]=numberDiv*10+" / 10"
+                currentQuestion.correctAnswer[j]=numberDiv;
+                numberDiv*=10;
+            }
         }
     }
     function getRandomNumber(currentQuestion){
@@ -710,7 +715,7 @@
     /*btn.onclick = function() {
         modal.style.display = "block";
     }*/
-    backToTestsButton.onclick = function() {
+    lastQuizButton.onclick = function() {
         modal.style.display = "block";
         choice.onclick = function() {
             location.href = "../html/tests.html";
