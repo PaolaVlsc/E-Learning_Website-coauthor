@@ -122,82 +122,214 @@ To change this template use File | Settings | File Templates.
                     <b> Ορισμοί: </b>
                     <br>
                     <ul style="padding: 20px;">
-                        <li> Πρόσθεση είναι η πράξη με την οποία από δύο φυσικούς αριθμούς βρίσκουμε έναν τρίτο φυσικό
-                            αριθμό, ο οποίος λέγεται <b>άθροισμα</b>.
+                        <li><b>Πολλαπλασιασμός</b> είναι η πράξη με την οποία από δύο φυσικούς αριθμούς βρίσκουμε έναν
+                            τρίτο φυσικό αριθμό, ο οποίος λέγεται γινόμενο των αριθμών αυτών.
                         </li>
-                        <li>Οι αριθμοί οι οποίοι προστίθενται λέγονται <b>προσθετέοι</b>.</li>
+                        <li>Οι αριθμοί οι οποίοι πολλαπλασιάζονται λέγονται <b>παράγοντες του γινομένου.</b></li>
                     </ul>
                     <b> Παράδειγμα: </b><br>
-                    <div class="paradeigma-prosthesh-01" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/OK.png" style=" box-shadow: 2px 2px 4px #000000;  width: 35%;
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/mul_ex_01.png" style=" box-shadow: 2px 2px 4px #000000;  width: 35%;
   height: auto;"></center>
                     </div>
 
                     <b>Ιδιότητες:</b><br>
 
+                    <ul style="padding: 20px;  border: 2px solid skyblue; border-radius: 5px; padding: 15px; padding-left: 50px;margin-bottom: 30px;margin-top: 30px; ">
+                        <li> Το 1 όταν πολλαπλασιαστεί με έναν φυσικό αριθμό δεν τον μεταβάλλει.
+                            π.χ. 4 * 1 = 1 * 4 = 4
+                        </li>
 
 
-                    <h4>
-                        <center>ΑΦΑΙΡΕΣΗ</center>
-                    </h4>
-                    <b> Ορισμοί: </b>
-                    <br>
-                    <ul style="padding: 20px;">
-                        <li> Αφαίρεση είναι η πράξη με την οποία από δύο φυσικούς αριθμούς, τον μειωτέο και τον
-                            αφαιρετέο, βρίσκουμε έναν τρίτο φυσικό αριθμό, που λέγεται <b>διαφορά </b>.
+                        <li><b>Αντιμεταθετική ιδιότητα:</b> Αν αλλάξουμε τη σειρά των αριθμών (παραγόντων), τότε το
+                            γινόμενο
+                            τους παραμένει ίδιο.
+                        </li>
+
+                        <li><b>Προσεταιριστική ιδιότητα: </b>Μπορούμε να αντικαταστήσουμε παράγοντες με το γινόμενό τους
+                            ή να
+                            αναλύσουμε έναν παράγοντα σε γινόμενο.
+
+                            π.χ. 5 * ( 4 * 7 ) = ( 5 * 4 ) * 7
+                        </li>
+
+                        <li><b>Επιμεριστική ιδιότητα:</b> Ισχύει η επιμεριστική ιδιότητα του πολλαπλασιασμού ως προς την
+                            πρόσθεση και την αφαίρεση.
+
+                            π.χ. 5 * ( 4 + 7 ) = 5 * 4 + 5 * 7 και 5 * ( 4 - 7 ) = 5 * 4 - 5 * 7
                         </li>
                     </ul>
-                    <b> Παράδειγμα: </b><br>
-                    <div class="paradeigma-sub-01" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/sub-example-01.png" style=" box-shadow: 2px 2px 4px #000000;  width: 35%;
+
+
+                    <center>
+                        <table class="content-table-antim-proset">
+                            <thead>
+                            <tr>
+                                <th>Πίνακας Πολλαπλασιασμού</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><img src="../../assets/chapter02/mul_ex_02.png"
+                                         style="box-shadow: 2px 2px 4px #000000; max-width: 755px; heigh: auto;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </center>
+
+
+                    Ο πολλαπλασιασμός είναι ένας γρήγορος τρόπος να κάνεις μια πρόσθεση που επαναλαμβάνεται ξανά και
+                    ξανά.
+                    <ul style="padding-left: 20px">
+                        <li><b>Πρόσθεση:</b> 3 + 3 + 3 + 3 + 3 = 15
+                        </li>
+                        <li><b>Πολλαπλασιασμός:</b> 3 x 5 = 15
+                        </li>
+                    </ul>
+
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/mul_ex_03.png" style=" box-shadow: 2px 2px 4px #000000;  width: 70%;
   height: auto;"></center>
                     </div>
-                    <br>
+
+                    <div style="padding-top: 25px;">
+                        <center><img src="../../assets/chapter02/mul_ex_04.png" style=" box-shadow: 2px 2px 4px #000000;  width: 70%;
+  height: auto;"></center>
+                    </div>
+
 
                     <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για την πρόσθεση και την αφαίρεση</h4>
-                    <center><iframe style=" box-shadow: 2px 2px 4px #000000;"  width="560" height="315" src="https://www.youtube.com/embed/72ebUe-ONgw"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe></center>
+                    <center>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FMdYauf-wLs"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </center>
                 </section>
                 <br>
-                <!------- END A PART------>
+                <!------- END THEORY PART------>
 
                 <section id="exercises">
                     <h1 style="color: rgb(10, 132, 100)">Ασκήσεις / Παραδείγματα</h1>
                     <hr style="color: rgb(10, 132, 100)">
-                    <h4 style="text-decoration: underline;">Πώς κάνω μια πρόσθεση;</h4>
-                    Για να προσθέσω φυσικούς αριθμούς πρέπει να προσθέσω τις μονάδες των αριθμών αυτών, μετά τις δεκάδες
-                    των αριθμώ, μετά τις εκατοντάδες κλπ. Η πρόσθεση φυσικών αριθμών μπορεί να γίνει ορίζονται και
-                    κάθετα.
-                    <div class="paradeigma-prosthesh-02" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/paradeigma.png" style=" box-shadow: 2px 2px 4px #000000;  width: 75%;
+                    <h4 style="text-decoration: underline;">Πώς κάνω έναν πολλαπλασιασμό;</h4>
+
+                    <ul style="padding-left: 30px">
+                        <li style="text-decoration: underline; font-weight: bold; padding-bottom: 10px ">
+                            Με τον αλγόριθμο του πολλαπλασιασμού
+                            <div style="padding-top: 25px;">
+                                <center><img src="../../assets/chapter02/mul_ex_05.png" style=" box-shadow: 2px 2px 4px #000000;  width: 60%;
   height: auto;"></center>
-                    </div>
-                    <h4 style="text-decoration: underline;">Πώς κάνω μια αφαίρεση;</h4>
-                    Για να αφαιρέσω φυσικούς αριθμούς πρέπει ο μειωτέος να είναι μεγαλύτερος από τον αφαιρετέο. Το
-                    αποτέλεσμα της πράξης λέγεται διαφορά. Αφαιρώ μονάδες από μονάδες, δεκάδες από δεκάδες κλπ. Η
-                    αφαίρεση μπορεί να γίνει οριζόντια ή κάθετα.
-                    <div class="sub-example-02" style="padding-top: 25px;">
-                        <center><img src="../../assets/chapter01/sub-example-02.png" style=" box-shadow: 2px 2px 4px #000000;  width: 75%;
+                            </div>
+                        </li>
+                        <li style="text-decoration: underline; font-weight: bold; ">
+                            Με τη μέθοδο σταυρού
+                            <div style="padding-top: 25px;">
+                                <center><img src="../../assets/chapter02/mul_ex_06.png" style=" box-shadow: 2px 2px 4px #000000;  width: 40%;
   height: auto;"></center>
-                    </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Ασκήσεις -->
                     <h4>
                         Υποδειγματική εφαρμογή #1.
                     </h4>
 
                     <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
-                        <b><i>Εκφώνηση:</i></b><br>Μια πόλη έχει 245.890 κατοίκους. Από αυτούς οι 38.608 είναι παιδιά.
-                        Αν γνωρίζουμε πως οι γυναίκες είναι 342 περισσότερες από τους άντρες, πόσες είναι οι γυναίκες
-                        και πόσοι οι άντρες αυτής της πόλης.<br>
+                        <b><i>Εκφώνηση:</i></b><br>Ένας υπάλληλος παίρνει για κάθε εβδομάδα που εργάζεται 250 €. Πόσα €
+                        παίρνει τον μήνα; <br>
                         <b>
                             <i>Λύση:</i></b><br>
                         <ul style="list-style: none;">
-                            <li>245.890 - 38.608 = 207.282 (άντρες-γυναίκες)</li>
-                            <li>(207.282 - 342) : 2 = <b>103.470 άντρες </b></li>
-                            <li>103.470 + 342 = <b>103.812 γυναίκες </b></li>
+                            <li>4 x 250 € = 1.000 €</li>
                         </ul>
                     </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #2.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <b><i>Εκφώνηση:</i></b><br>Η Μαρία έχει 6 βόλους. Ο Γιάννης έχει διπλάσιους βόλους από τη Μαρία.
+                        Πόσους βόλους έχει ο Γιάννης; <br>
+                        <b>
+                            <i>Λύση:</i></b><br>
+                        <ul style="list-style: none;">
+                            <li>2 x 6 βόλοι = 12 βόλοι.</li>
+                        </ul>
+                    </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #3.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter02/mul_ex_07.png"
+                                         style=" box-shadow: 2px 2px 4px #000000;  width: 80%;
+  height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #4.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter02/mul_ex_08.png"
+                                         style=" box-shadow: 2px 2px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #5.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter02/mul_ex_09.png"
+                                         style=" box-shadow: 2px 2px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #6.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter02/mul_ex_10.png"
+                                         style=" box-shadow: 2px 2px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+
+                    <h4>
+                        Υποδειγματική εφαρμογή #7.
+                    </h4>
+
+                    <div class="app01" style="border: 2px solid skyblue; border-radius: 5px; padding: 5px">
+                        <!-- START image  -->
+                        <div class="2-6-orig-orig_orig" style="padding-top: 5px;">
+                            <center><img src="../../assets/chapter02/mul_ex_11.png"
+                                         style=" box-shadow: 2px 2px 4px #000000;  width: 80%; height: auto;"></center>
+                        </div>
+                        <!-- END image  -->
+                    </div>
+
+
                 </section>
                 <br>
 
@@ -214,7 +346,7 @@ To change this template use File | Settings | File Templates.
                 </section>
                 <div class="center">
 
-                    <button type="button" class="slide" onclick="location.href='chapter03.jsp'" >
+                    <button type="button" class="slide" onclick="location.href='chapter03.jsp'">
                         <div>Επόμενο Μάθημα !</div>
                     </button>
                     </divv>
