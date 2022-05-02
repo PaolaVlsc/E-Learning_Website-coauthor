@@ -136,19 +136,27 @@
         }
     }
     function chapter3(currentQuestion,x){
-        let numberDiv=getRandomInt(3,1000);
-        currentQuestion.question=currentQuestion.question.replace("number", numberDiv);
-        let sum = 0;
-        while (numberDiv) {
-            sum += numberDiv % 10;
-            numberDiv = Math.floor(numberDiv / 10);
+        let division;
+        if(!currentQuestion.type.localeCompare("Right/Wrong Generated 3")) {
+            division=3;
+            currentQuestion.type=currentQuestion.type.replace(" 3","")
+        }else if (!currentQuestion.type.localeCompare("Right/Wrong Generated 2")) {
+            division=2;
+            currentQuestion.type=currentQuestion.type.replace(" 2","")
         }
-        console.log(sum)
-        if(sum%3){
-            currentQuestion.correctAnswer="b";
-        }
-        else{
-            currentQuestion.correctAnswer="a";
+        if(!currentQuestion.type.localeCompare("Right/Wrong Generated")) {
+            let numberDiv = getRandomInt(3, 1000);
+            currentQuestion.question = currentQuestion.question.replace("number", numberDiv);
+            let sum = 0;
+            while (numberDiv) {
+                sum += numberDiv % 10;
+                numberDiv = Math.floor(numberDiv / 10);
+            }
+            if (sum % division) {
+                currentQuestion.correctAnswer = "b";
+            } else {
+                currentQuestion.correctAnswer = "a";
+            }
         }
         // if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
         //     currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]);
@@ -553,7 +561,17 @@
         //     correctAnswer: "a"
         // },
         {
-            type:"Right/Wrong",
+            type:"Right/Wrong Generated 2",
+            chapter:3,
+            shuffle : false,
+            question: "Αν  έχουμε number κιλά λάδι, μπορούμε να γεμίσουμε τελείως δοχεία των 2 κιλών;",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },{
+            type:"Right/Wrong Generated 3",
             chapter:3,
             shuffle : false,
             question: "Αν  έχουμε number κιλά λάδι, μπορούμε να γεμίσουμε τελείως δοχεία των 3 κιλών;",
