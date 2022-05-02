@@ -96,7 +96,7 @@
         </div>
         <div class="card">
             <a href="../jsp/sub-chapters/chapter03.jsp"><h2 class="card-title">ΚΡΙΤΗΡΙΑ ΔΙΑΙΡΕΤΟΤΗΤΑΣ</h2>
-                <img src="../assets/mul.png"
+                <img src="../assets/kritiria.png"
                      alt=""></a>
         </div>
         <div class="card" style="    margin-bottom: 250px;">
