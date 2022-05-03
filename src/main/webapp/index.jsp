@@ -80,14 +80,35 @@ To change this template use File | Settings | File Templates.
 
 <!-- Start Main Container -->
 <div class="content-area">
-    <div class="wrapper">
+    <div class="wrapper" style="font-size: 20px;">
         <div class="title">Μαθηματικά Ε΄ Δημοτικού</div>
-        <p>Ο σκοπός της διδασκαλίας των Μαθηματικών εντάσσεται στους γενικότερους σκοπούς της Εκπαίδευσης και αφορά τη συμβολή στην ολοκλήρωση της προσωπικότητας του μαθητή και την επιτυχή κοινωνική ένταξή του.</p>
-        <p>Προσφέρουμε θεωρία και ασκήσεις μαθηματικών για την Ε' δημοτικού, καθώς και τη δυνατότητα να ελέγξετε τις γνώσεις σας πάνω σε ό,τι σας μάθαμε ή πιθανώς ήδη γνωρίζατε!</p>
-        <p>Εάν συνδεθείτε, τότε θα έχετε την δυνατότητα να βλέπετε τους βαθμούς σας στα κουίζ, καθώς και την πρόοδό σας.</p>
-        <div><img src="assets/quote.png" alt="quote" style="width:80%;"></div>
-        <p style="text-align:center;">Η ενότητα που θα διδαχτείτε είναι η Ενότητα 2, με τα ακόλουθα τέσσερα κεφάλαια:</p>
-        <ul style="text-align:center;">
+        <p>Ο σκοπός της διδασκαλίας των Μαθηματικών εντάσσεται στους γενικότερους σκοπούς της Εκπαίδευσης και αφορά τη
+            συμβολή στην ολοκλήρωση της προσωπικότητας του μαθητή και την επιτυχή κοινωνική ένταξή του.
+        </p>
+        <div style="margin:50px;"><img src="assets/vem.png" alt="quote" style="width:50%;"></div>
+
+
+        <p>Προσφέρουμε θεωρία και ασκήσεις μαθηματικών για την Ε' δημοτικού, καθώς και τη δυνατότητα να ελέγξετε τις
+            γνώσεις σας πάνω σε ό,τι σας μάθαμε ή πιθανώς ήδη γνωρίζατε!</p>
+
+        <h5 style="    background-color: pink;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 2px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding-left: 20px;">Εάν συνδεθείτε, τότε θα έχετε τη δυνατότητα να βλέπετε τους βαθμούς σας στα κουίζ, καθώς και
+            την πρόοδό σας.</h5>
+
+        <div style="padding-top: 25px;">
+            <center><img src="assets/quote.png" style=" box-shadow: 2px 2px 4px #000000;  width: 80%;  height: auto;">
+            </center>
+        </div>
+
+        <p style="text-align:center;">Η ενότητα που θα διδαχτείτε είναι η Ενότητα 2, με τα ακόλουθα τέσσερα
+            κεφάλαια:</p>
+        <ul id="niaou">
             <li>
                 Η πρόσθεση και η αφαίρεση στους φυσικούς αριθμούς
             </li>
@@ -103,27 +124,35 @@ To change this template use File | Settings | File Templates.
         </ul>
 
 
-        <p>Τα μαθηματικά μπορούν να είναι πολύ διασκεδαστικά! Μέσα από αυτήν την ιστοσελίδα θα μάθουμε να τα αγαπάμε και θα μπορούμε να λύσουμε όλες τις ασκήσεις που θα συναντήσουμε!</p>
-        <a href="jsp/chapters.jsp"><img src="assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού" style="width:250px;height:350px;"></a>
+        <div style="padding-top: 25px;">
+            <center><img src="assets/b2.png" style="width: 60%;  height: auto;"></center>
+        </div>
+        <p>Μέσα από αυτήν την ιστοσελίδα θα μάθουμε να τα αγαπάμε και
+            θα μπορούμε να λύσουμε όλες τις ασκήσεις που θα συναντήσουμε!</p>
+        <a href="jsp/chapters.jsp"><img src="assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
+                                        style="margin-top:50px; width:250px;height:350px;"></a>
         <div>
             <a href="jsp/chapters.jsp">Έλα να μάθουμε Μαθηματικά</a>
         </div>
         <br>
-        <h3 style="text-align:center;">Τα μέλη της ομάδας που δημιούργησαν αυτήν την ιστοσελίδα είναι(με αλφαβητική σειρά):</h3>
-        <ul style="text-align:center;">
-            <li>
-                Βελάσκο Πάολα
-            </li>
-            <li>
-                Λήμνος Ιάσων
-            </li>
-            <li>
-                Μπίλη Σοφία
-            </li>
-            <li>
-                Χανιωτάκης Νικόλαος
-            </li>
-        </ul>
+        <div style="border: 2px solid skyblue; border-radius: 5px; padding: 5px"><h3 style="font-size: 18px;">Τα μέλη
+            της ομάδας που δημιούργησαν αυτήν την ιστοσελίδα είναι(με αλφαβητική
+            σειρά):</h3>
+            <ul style="list-style: none">
+                <li>
+                    Βελάσκο Πάολα
+                </li>
+                <li>
+                    Λήμνος Ιάσων
+                </li>
+                <li>
+                    Μπίλη Σοφία
+                </li>
+                <li>
+                    Χανιωτάκης Νικόλαος
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 <!-- Close Main Container -->
