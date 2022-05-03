@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/test_chapters_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+    </style>
 </head>
 <body>
 <nav class="navbar">
@@ -74,7 +79,8 @@
     navbar.classList.add("sticky");
 </script>
 <div class="main-wrap">
-    ρφγερη
+    <h1><%=Login.isLoggedIn(session)?"Καλή τύχη!":"Καλή τύχη! Εάν θέλεις να αποθηκευτεί η πρόοδός σου θα πρέπει να συνδεθείς!"%></h1>
+    <button onclick="location.href='quiz.jsp?chapter=<%=request.getParameter("chapter")%>'">Έναρξη τεστ</button>
 </div>
 <footer style="position: fixed; bottom: 0;">
     <hr>
