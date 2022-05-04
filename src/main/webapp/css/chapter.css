@@ -38,7 +38,7 @@ header {
 
 .container1 aside {
     width: 30%;
-    margin: 35px 0;
+    margin: 35px 50px;
 }
 
 .container1 aside .sidebar1 {
@@ -232,3 +232,30 @@ section {
 }
 
 /* End of Slide Button  */
+
+@media (max-width: 868px) {
+    .my_header {
+        visibility: hidden;
+    }
+
+    aside {
+        width: 0%;
+    }
+    .sidebar1 {
+        display: none;
+        width: 0%;
+        overflow: hidden;
+    }
+
+    .container1 .main-body-chapter {
+        text-align: justify;
+        overflow: auto;
+        width: 100%;
+        margin: -30px 0;
+    }
+
+    .wrapper1 {
+        display: block;
+    }
+
+}
