@@ -32,4 +32,8 @@ public class Login {
     static public boolean isLoggedIn(final HttpSession session){
         return session.getAttribute("userId")!=null;
     }
+
+    static public String getUserId(final HttpSession session){
+        return (String) session.getAttribute("userId");
+    }
 }
