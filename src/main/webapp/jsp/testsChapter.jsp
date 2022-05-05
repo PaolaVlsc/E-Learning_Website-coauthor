@@ -11,11 +11,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%! String message="Καλή τύχη! Εάν θέλεις να αποθηκευτεί η πρόοδός σου θα πρέπει πρώτα να συνδεθείς!"; //default μήνυμα αν δεν έχει συνδεθεί
+<%! String message;
     Boolean isLogged;%>
 <%
+    message="Καλή τύχη! Εάν θέλεις να αποθηκευτεί η πρόοδός σου θα πρέπει πρώτα να συνδεθείς!"; //default μήνυμα αν δεν έχει συνδεθεί
     isLogged=Login.isLoggedIn(session);
     if(isLogged){
+        message="Καλη τύχω ω συνδεδεμένε χρήστη"; // default μήνυμα αν έχει συνδεθεί
         if(request.getParameter("chapter").equals("5")){
             //Αν δεν καταφέρει να συνδεθεί με τη βάση δε χρειάζεται να του πετάξει μήνυμα εσωτερικού σφάλματος, απλά θα του εμφανίσει το ακόλουθο default μήνυμα.
             message="Το επαναληπτικό είναι δύσκολο, μήπως να ξαναδοκιμάσεις κάποιο άλλο κεφάλαιο πρώτα;"; //default μήνυμα για το επαναληπτικό τεστ αν έχει συνδεθεί.
@@ -40,6 +42,8 @@
         }else {
 
         }
+    }else{
+
     }
 %>
 <!DOCTYPE html>
