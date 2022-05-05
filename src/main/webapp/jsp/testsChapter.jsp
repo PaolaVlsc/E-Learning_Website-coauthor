@@ -17,7 +17,7 @@
     message="Καλή τύχη! Εάν θέλεις να αποθηκευτεί η πρόοδός σου θα πρέπει πρώτα να συνδεθείς!"; //default μήνυμα αν δεν έχει συνδεθεί
     isLogged=Login.isLoggedIn(session);
     if(isLogged){
-        message="Καλη τύχω ω συνδεδεμένε χρήστη"; // default μήνυμα αν έχει συνδεθεί
+        message="Καλή τύχη ω συνδεδεμένε χρήστη"; // default μήνυμα αν έχει συνδεθεί
         if(request.getParameter("chapter").equals("5")){
             //Αν δεν καταφέρει να συνδεθεί με τη βάση δε χρειάζεται να του πετάξει μήνυμα εσωτερικού σφάλματος, απλά θα του εμφανίσει το ακόλουθο default μήνυμα.
             message="Το επαναληπτικό είναι δύσκολο, μήπως να ξαναδοκιμάσεις κάποιο άλλο κεφάλαιο πρώτα;"; //default μήνυμα για το επαναληπτικό τεστ αν έχει συνδεθεί.
@@ -25,7 +25,7 @@
             if(conn != null){
                 PreparedStatement statement;
                 try {
-                    statement = conn.prepareStatement("SELECT COUNT( DISTINCT chapter_id) FROM GRADES WHERE user_id=? and chapter_id<5;");
+                    statement = conn.prepareStatement("SELECT COUNT( DISTINCT chapter_id) FROM GRADES WHERE user_id=? AND chapter_id<5;");
                     statement.setString(1,Login.getUserId(session));
                     statement.execute();
                     final ResultSet dbRs = statement.executeQuery();
