@@ -12,7 +12,7 @@ To change this template use File | Settings | File Templates.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Αρχική Σελίδα | SINP </title>
+    <title>Παιχνίδια | SINP </title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/games.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -76,7 +76,7 @@ To change this template use File | Settings | File Templates.
 <div class="main-wrap" style="padding-bottom: 100px;">
     <h1>Διάλεξε ποιο παιχνίδι θέλεις να παίξεις!</h1>
     Μπορείς να παίξεις με φίλους!<br>
-    <button onclick="location.href='https://create.kahoot.it/details/b16a1924-bdc9-461e-9440-a4af1188f620'" >Kahoot!</button><br>
+    <button onclick="window.open('https://create.kahoot.it/details/b16a1924-bdc9-461e-9440-a4af1188f620','_blank');" >Kahoot!</button><br>
     Εάν θέλεις να εξασκηθείς στην προπαίδεια του 2, 3, 4:<br>
     <a target="_blank" href="http://users.sch.gr/sudiakos/stapenalti/story_html5.html">
         <img src="../assets/mult2.jpg" alt="προπαίδεια 2 3 4" style="width:400px;height:250px;">

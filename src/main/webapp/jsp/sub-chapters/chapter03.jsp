@@ -379,8 +379,11 @@ To change this template use File | Settings | File Templates.
                 </section>
                 <div class="center">
 
+                    <button type="button" class="slide" onclick="location.href='chapter02.jsp'">
+                        <div class="previous">Προηγούμενο Μάθημα!</div>
+                    </button>
                     <button type="button" class="slide" onclick="location.href='chapter04.jsp'">
-                        <div>Επόμενο Μάθημα !</div>
+                        <div class="next">Επόμενο Μάθημα !</div>
                     </button>
                     </divv>
                 </div>
