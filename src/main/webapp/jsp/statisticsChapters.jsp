@@ -71,9 +71,13 @@
     navbar.classList.add("sticky");
 </script>
 <%
-    int chapter = Integer.parseInt(request.getParameter("chapter"));
+    int chapter = Integer.parseInt(request.getParameter("chapter"));//get chapter id
 %>
 <div class="main-wrap">
+    <!--
+         left side will have the different links for the different chapters
+         the current chapter will be blue
+     -->
     <div class="left-side">
         <br><br><h3>Οι βαθμοί στα κεφάλαια σου:</h3>
         <a href="statistics.jsp" style="padding-left:3em;"><u>Όλα τα κεφάλαια</u></a>
@@ -89,19 +93,24 @@
         <a href="statisticsChapters.jsp?chapter=5" style="padding-left:3em;  <%if(chapter == 5) out.print("color: #5cafc6"); %>"><u>Επαναληπτικό</u></a>
 
     </div>
-
+    <!--
+        the right side will have a line graph with all the grades the student has
+        from the different chapters
+    -->
     <div class="right-side">
         <%
             request.setCharacterEncoding("UTF-8");
             int i=1;
             List<Integer> list = Statistics.getAllChapterGrades(Integer.parseInt((String)session.getAttribute("userId")),chapter);
+            //if there are no grades in current chapter
             if(list.isEmpty()){
         %>
                 <div><h1 style="color:#ef7f80;width:80%;">Δεν έχεις γράψει κάποιο διαγώνισμα σε αυτό το κεφάλαιο!</h1></div>
         <%
-            }else if(chapter!=5){
+            }else if(chapter!=5){ //if chapter is not the final test
         %>
             <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι βαθμοί σου στο κεφάλαιο: <%
+                //print the different names of chapters depending on the link
                 if(chapter == 1) out.print("Πρόσθεση και αφαίρεση");
                 else if(chapter == 2) out.print("Πολλαπλασιασμός");
                 else if(chapter == 3) out.print("Κριτήρια διαιρετότητας");
@@ -109,7 +118,7 @@
 
             %>!</h2>
         <%
-            }else{
+            }else{//if chapter is the final test
         %>
             <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι βαθμοί σου στο επαναληπτικό κεφάλαιο!</h2>
         <%
@@ -121,6 +130,7 @@
             let xValues=[];
             let yValues=[];
             <%
+                //if there are grades in list then
                 if(!list.isEmpty()){
                     for (Integer j : list){
             %>
@@ -150,8 +160,7 @@
                 options: {
                     legend: {display: false},
                     title: {
-                        display: true,
-                        //text: "Οι βαθμοί σου στο κεφάλαιο <%=chapter%>!",
+                        display: true
                     },
                     scales: {
                         yAxes: [{
@@ -160,13 +169,7 @@
                                 display: true,
                                 labelString: 'Βαθμοί'
                             }
-                        }],
-                        /*xAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Προσπάθειες'
-                            }
-                        }],*/
+                        }]
                     }
                 }
             });
