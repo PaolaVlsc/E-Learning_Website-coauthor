@@ -1,22 +1,24 @@
 body {
+    /*make background a gradient*/
     background: linear-gradient(to bottom, rgb(255, 243, 238) 15%, rgb(230, 245, 253) 100%) fixed;
 }
+/*left side will be used to present the sidebar menu for the chapters*/
 .left-side {
-    /*background: lightcoral;
-    color: white;*/
     position: fixed;
     top: 60px;
     bottom: 80px;
     width:260px;
     display: table-cell;
-    border-right: 2px solid black;
+    border-right: 2px solid black;/*border for the 2 different sides*/
 }
+/*make a not change colours when link is visited*/
 a{
     text-decoration: none;
     color: #000;
-    /*color: white;*/
 }
 a:visited { text-decoration: none; }
+
+/*right side has the charts for the grades*/
 .right-side {
     position:absolute;
     top: 40px;
@@ -26,6 +28,7 @@ a:visited { text-decoration: none; }
     padding-bottom: 6%;
 }
 
+/*main wrap has both left and right sides and it keeps the texts in the visible part of the website*/
 .main-wrap {
     position: absolute;
     top: 50px;
@@ -33,4 +36,6 @@ a:visited { text-decoration: none; }
     width: 100%;
     text-align: left;
 }
+
+/*overflow x is hidden for the charts*/
 body { overflow-x: hidden; }

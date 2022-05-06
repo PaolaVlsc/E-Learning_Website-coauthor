@@ -1,14 +1,8 @@
 <%@ page import="projectel.projectel.Statistics" %>
 <%@ page import="projectel.projectel.Login" %>
 <%@ page import="java.util.List" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 18/4/2022
-  Time: 2:14 μ.μ.
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
