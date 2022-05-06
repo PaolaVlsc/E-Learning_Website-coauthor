@@ -1,4 +1,9 @@
-<%@ page import="projectel.projectel.Login" %><%--
+<%@ page import="projectel.projectel.Login" %>
+<%@ page import="projectel.projectel.DbConnection" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 18/4/2022
@@ -6,6 +11,41 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%! String message;
+    Boolean isLogged;%>
+<%
+    message="Καλή τύχη! Εάν θέλεις να αποθηκευτεί η πρόοδός σου θα πρέπει πρώτα να συνδεθείς!"; //default μήνυμα αν δεν έχει συνδεθεί
+    isLogged=Login.isLoggedIn(session);
+    if(isLogged){
+        message="Καλή τύχη "+Login.getUserName(session); // default μήνυμα αν έχει συνδεθεί
+        if(request.getParameter("chapter").equals("5")){
+            //Αν δεν καταφέρει να συνδεθεί με τη βάση δε χρειάζεται να του πετάξει μήνυμα εσωτερικού σφάλματος, απλά θα του εμφανίσει το ακόλουθο default μήνυμα.
+            message="Πρόσεχε, το επαναληπτικό είναι δύσκολο. Καλή τύχη "+Login.getUserName(session)+"!"; //default μήνυμα για το επαναληπτικό τεστ αν έχει συνδεθεί.
+            Connection conn = DbConnection.getConnection();
+            if(conn != null){
+                PreparedStatement statement;
+                try {
+                    statement = conn.prepareStatement("SELECT COUNT( DISTINCT chapter_id) FROM GRADES WHERE user_id=? AND chapter_id<5;");
+                    statement.setString(1,Login.getUserId(session));
+                    statement.execute();
+                    final ResultSet dbRs = statement.executeQuery();
+                    if(dbRs.next()){
+                        if(dbRs.getInt(1)<4){
+                            message="Είσαι σίγουρος πως θες να δοκιμάσεις το επαναληπτικό; Δεν έχεις δει τα προηγούμενα κεφάλαια.";
+                        }
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }else if (request.getParameter("chapter").equals("3")){
+            message="Πρόσεχε, αυτό το τεστ είναι δύσκολο. Καλή τύχη "+Login.getUserName(session)+"!";
+        }
+    }else{
+
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,8 +114,11 @@
     navbar.classList.add("sticky");
 </script>
 <div class="main-wrap">
-    ρφγερη
+    <h1><%=message%></h1>
+    <br>
+    <button onclick="location.href='quiz.jsp?chapter=<%=request.getParameter("chapter")%>'">Έναρξη τεστ</button>
 </div>
+
 <footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
