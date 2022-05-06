@@ -20,6 +20,9 @@
                 if(chapter==1){
                     chapter1(currentQuestion,x)
                 }
+                else if(chapter==2){
+                    chapter2(currentQuestion,x)
+                }
                 else if(chapter==3){
                     chapter3(currentQuestion,x)
                 }
@@ -134,17 +137,50 @@
                 currentQuestion.correctAnswer=x[0]-x[1];
             }
         }
+    }function chapter2(currentQuestion,x){
+        let z , flag=0 , number;
+        x=getRandomNumber(currentQuestion)
+        if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+            currentQuestion.question=x[0]+" * "+x[1]+" = "+(x[0]*x[1]);
+        }
+        else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+            while(!(z=getRandomInt(-10,10))){}
+            currentQuestion.question=x[0]+" * "+x[1]+" = "+(x[0]*x[1]+z);
+        }
+        else if(!currentQuestion.type.localeCompare("multipleChoice Generated")){
+            if(currentQuestion.question.includes("6000")){
+                number=6000;
+            }
+            else{
+                number=4000;
+            }
+            for(let j in currentQuestion.answers) {
+                x=getRandomNumber(currentQuestion)
+                if(flag===0){
+                    while(x[0]*x[1]<number) {
+                        x=getRandomNumber(currentQuestion)
+                    }
+                    currentQuestion.answers[j]=x[0]+" x "+x[1]
+                    flag = 1;
+                }
+                else{
+                    while(x[0]*x[1]>number) {
+                        x=getRandomNumber(currentQuestion)
+                    }
+                    currentQuestion.answers[j]=x[0]+" x "+x[1]
+                }
+            }
+        }
+        else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+            currentQuestion.question=x[0]+" x "+x[1]+" = ";
+            currentQuestion.correctAnswer=x[0]*x[1];
+        }
     }
-    function chapter3(currentQuestion,x){
+    function chapter3(currentQuestion){
         let division;
         if(!currentQuestion.type.localeCompare("Right/Wrong Generated 3")) {
             division=3;
             currentQuestion.type=currentQuestion.type.replace(" 3","")
-        }else if (!currentQuestion.type.localeCompare("Right/Wrong Generated 2")) {
-            division=2;
-            currentQuestion.type=currentQuestion.type.replace(" 2","")
-        }
-        if(!currentQuestion.type.localeCompare("Right/Wrong Generated")) {
             let numberDiv = getRandomInt(3, 1000);
             currentQuestion.question = currentQuestion.question.replace("number", numberDiv);
             let sum = 0;
@@ -157,7 +193,18 @@
             } else {
                 currentQuestion.correctAnswer = "a";
             }
+        }else if (!currentQuestion.type.localeCompare("Right/Wrong Generated 2")) {
+            division=2;
+            currentQuestion.type=currentQuestion.type.replace(" 2","")
+            let numberDiv = getRandomInt(3, 1000);
+            currentQuestion.question = currentQuestion.question.replace("number", numberDiv);
+            if (numberDiv % division) {
+                currentQuestion.correctAnswer = "b";
+            } else {
+                currentQuestion.correctAnswer = "a";
+            }
         }
+
         // if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
         //     currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]);
         // }
@@ -213,7 +260,9 @@
         }
         return [x,y];
     }
-
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
     function fillDropDown(){
         chosenQuestions.forEach(
             (currentQuestion, questionNumber) => {
@@ -389,9 +438,6 @@
     function showPreviousSlide() {
         showSlide(currentSlide - 1);
     }
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
     function Shuffle(myQuestions) {
         var currentIndex = myQuestions.length, temporaryValue, randomIndex;
         while (0 !== currentIndex) {
@@ -544,6 +590,140 @@
                 b: "TypeScript",
                 c: "npm"
             }
+        },
+
+        //~~~~~~~~~~~~~~~~~~~~~~ Chapter 2 ~~~~~~~~~~~~~~~~~~~~~~
+
+        {
+            type:"multipleChoice",
+            chapter:2,
+            shuffle : true,
+            question: "Το 1 όταν πολλαπλασιαστεί με έναν φυσικό αριθμο: ",
+            answers: {
+                a: "τον μεταβάλλει",
+                b: "δεν τον μεταβάλλει ",
+                c: "κανένα από τα παραπάνω",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"multipleChoice Generated",
+            chapter:2,
+            shuffle : true,
+            question: "Ποιος από τους παρακάτω παράγοντες έχουν γινόμενο μεγαλύτερο του 6.000; ",
+            answers: {
+                a: "",
+                b: "",
+                c: "",
+                d: "",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"multipleChoice Generated",
+            chapter:2,
+            shuffle : true,
+            question: "Ποιος από τους παρακάτω παράγοντες έχουν γινόμενο μεγαλύτερο του 4.000; ",
+            answers: {
+                a: "",
+                b: "",
+                c: "",
+                d: "",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "Στον πολλαπλασιασμό φυσικών αριθμών ισχύει η αντιμεταθετική ιδιότητα ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "Στον πολλαπλασιασμό φυσικών αριθμών ισχύει η προσεταιρεστική ιδιότητα ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "Στον πολλαπλασιασμό φυσικών αριθμών δεν ισχύει η προσεταιρεστική ιδιότητα ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "Στον πολλαπλασιασμό φυσικών αριθμών δεν ισχύει η αντιμεταθετική ιδιότητα ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Right/Wrong Generated Right",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong Generated Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
         },
         //~~~~~~~~~~~~~~~~~~~~~~ Chapter 3 ~~~~~~~~~~~~~~~~~~~~~~
 
