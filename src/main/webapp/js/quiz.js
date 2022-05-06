@@ -175,6 +175,25 @@
             currentQuestion.question=x[0]+" x "+x[1]+" = ";
             currentQuestion.correctAnswer=x[0]*x[1];
         }
+        else if(!currentQuestion.type.localeCompare("Matching Question")){
+            if(getRandomInt(0,1)){
+                let numberDiv=getRandomInt(1,99);
+                for(let j in currentQuestion.answers) {
+                    currentQuestion.answers[j]=numberDiv+" x 10"
+                    currentQuestion.correctAnswer[j]=numberDiv*10;
+                    numberDiv*=10;
+                }
+            }
+            else{
+                for(let j in currentQuestion.answers) {
+                    x=getRandomNumber(currentQuestion)
+                    let correctAnswer= x[0]*x[1]
+                    currentQuestion.answers[j]=x[0]+" x "+x[1]
+                    currentQuestion.correctAnswer[j]=correctAnswer
+                }
+            }
+
+        }
     }
     function chapter3(currentQuestion){
         let division;
@@ -725,6 +744,54 @@
             },
             correctAnswer: ""
         },
+        {
+            type:"Matching Question",
+            chapter:2,
+            shuffle : true,
+            question: "Αντιστοίχησε τις σωστές απαντήσεις",
+            answers: {
+                a: "",
+                b: "",
+                c: ""
+            },
+            correctAnswer: {
+                a: "",
+                b: "",
+                c: ""
+            }
+        },
+        {
+            type:"Matching Question",
+            chapter:2,
+            shuffle : true,
+            question: "Αντιστοίχησε τις σωστές απαντήσεις",
+            answers: {
+                a: "",
+                b: "",
+                c: ""
+            },
+            correctAnswer: {
+                a: "",
+                b: "",
+                c: ""
+            }
+        },
+        {
+            type:"Matching Question",
+            chapter:2,
+            shuffle : true,
+            question: "Αντιστοίχησε τις σωστές απαντήσεις",
+            answers: {
+                a: "",
+                b: "",
+                c: ""
+            },
+            correctAnswer: {
+                a: "",
+                b: "",
+                c: ""
+            }
+        },
         //~~~~~~~~~~~~~~~~~~~~~~ Chapter 3 ~~~~~~~~~~~~~~~~~~~~~~
 
         // {
@@ -913,14 +980,14 @@
             shuffle : true,
             question: "Αντιστοίχησε τις σωστές απαντήσεις",
             answers: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
+                a: "",
+                b: "",
+                c: ""
             },
             correctAnswer: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
+                a: "",
+                b: "",
+                c: ""
             }
         },
     ];
