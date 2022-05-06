@@ -17,10 +17,10 @@
     message="Καλή τύχη! Εάν θέλεις να αποθηκευτεί η πρόοδός σου θα πρέπει πρώτα να συνδεθείς!"; //default μήνυμα αν δεν έχει συνδεθεί
     isLogged=Login.isLoggedIn(session);
     if(isLogged){
-        message="Καλή τύχη ω συνδεδεμένε χρήστη"; // default μήνυμα αν έχει συνδεθεί
+        message="Καλή τύχη "+Login.getUserName(session); // default μήνυμα αν έχει συνδεθεί
         if(request.getParameter("chapter").equals("5")){
             //Αν δεν καταφέρει να συνδεθεί με τη βάση δε χρειάζεται να του πετάξει μήνυμα εσωτερικού σφάλματος, απλά θα του εμφανίσει το ακόλουθο default μήνυμα.
-            message="Πρόσεχε, το επαναληπτικό είναι δύσκολο. Καλή τύχη!"; //default μήνυμα για το επαναληπτικό τεστ αν έχει συνδεθεί.
+            message="Πρόσεχε, το επαναληπτικό είναι δύσκολο. Καλή τύχη "+Login.getUserName(session)+"!"; //default μήνυμα για το επαναληπτικό τεστ αν έχει συνδεθεί.
             Connection conn = DbConnection.getConnection();
             if(conn != null){
                 PreparedStatement statement;
@@ -40,7 +40,7 @@
 
             }
         }else if (request.getParameter("chapter").equals("3")){
-            message="Πρόσεχε, αυτό το τεστ είναι δύσκολο. Καλή τύχη!";
+            message="Πρόσεχε, αυτό το τεστ είναι δύσκολο. Καλή τύχη "+Login.getUserName(session)+"!";
         }
     }else{
 
