@@ -10,6 +10,7 @@
     <title>Παιχνίδια | SINP </title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="../css/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -59,11 +60,10 @@
             <li><a class="current" href="games.jsp">Παιχνίδια</a></li>
         </ul>
         <div class="logout">
-            <a href="<%=Login.isLoggedIn(session)?"../logout-servlet":"login.jsp"%>">
+            <a id="log" <%if(!Login.isLoggedIn(session)){%>href="login.jsp"<%}%>>
                 <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
             </a>
         </div>
-
     </div>
 </nav>
 <!-- Close Top Nav -->
@@ -88,7 +88,24 @@
     <a target="_blank" href="http://users.sch.gr/gregzer/M/M-E/%CE%9A%CF%81%CE%B9%CF%84%CE%AE%CF%81%CE%B9%CE%B1%20%CE%B4%CE%B9%CE%B1%CE%B9%CF%81%CE%B5%CF%84%CF%8C%CF%84%CE%B7%CF%84%CE%B1%CF%82%20-%20%CE%95%CE%BE%CE%AC%CF%83%CE%BA%CE%B7%CF%83%CE%B7/story_html5.html">
         <img src="../assets/chap3.jpg" alt="κριτήρια διαιρετότητας" style="width:400px;height:220px;">
     </a><br>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Είσαι σίγουρος;</h2>
+            </div>
+            <div class="modal-body">
+                <p>Εάν φύγεις τώρα δε θα αποθηκευτεί η πρόοδος σου!</p>
+            </div>
+            <div class="modal-footer">
+                <button id="choice" class="button button2">Ναι, θέλω να φύγω</button>
+            </div>
+        </div>
+
+    </div>
 </div>
 <!-- Start Footer -->
 
@@ -106,6 +123,39 @@
 <script src="../js/app.js"></script>
 
 <script>
+    <%if(Login.isLoggedIn(session)){%>
+    // Get the modal
+    let modal = document.getElementById("myModal");
+    let choice = document.getElementById("choice");
+    let log = document.getElementById("log");
+
+    // Get the button that opens the modal
+    //let btn = document.getElementById("backToTests");
+
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    /*btn.onclick = function() {
+        modal.style.display = "block";
+    }*/
+    log.onclick = function() {
+        modal.style.display = "block";
+        choice.onclick = function() {
+            location.href ="../logout-servlet";
+        }
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    <%}%>
     navbar.classList.add("sticky");
 </script>
 </body>
