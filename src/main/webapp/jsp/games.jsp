@@ -98,10 +98,10 @@
                 <h2>Είσαι σίγουρος;</h2>
             </div>
             <div class="modal-body">
-                <p>Εάν φύγεις τώρα δε θα αποθηκευτεί η πρόοδος σου!</p>
+                <p>Είσαι σίγουρος πως θες να αποσυνδεθείς;</p>
             </div>
             <div class="modal-footer">
-                <button id="choice" class="button button2">Ναι, θέλω να φύγω</button>
+                <button id="choice" class="button button2">Ναι, θέλω να φύγω.</button>
             </div>
         </div>
 
