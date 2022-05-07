@@ -432,13 +432,13 @@
         }
         else if (numCorrect>=0){
             resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`;
-            let xmlHttp = new XMLHttpRequest();
+            /*let xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
                     callback(xmlHttp.responseText);
             }
             xmlHttp.open("GET", theUrl, true); // true for asynchronous
-            xmlHttp.send(null);
+            xmlHttp.send(null);*/
         }
         if(currentSlide === 0){
             previousButton.style.display = 'none';
