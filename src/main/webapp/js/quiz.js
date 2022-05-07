@@ -51,7 +51,7 @@
                                   <tr>
                                   <td id="mat${questionNumber}${abc}" style="text-align:left; padding-right:10px;">${currentQuestion.answers[letter]}</td>
                                   <td style="text-align:left; padding-right:50px;">
-                                    <select id=${abc} style="width: 100px;" name="dropDown${questionNumber}">
+                                    <select id="m${questionNumber}${abc}" style="width: 100px;" name="dropDown${questionNumber}">
                                     <option  selected disabled hidden value="javascript">---</option>                                        
                                     </select>
                                   </td>
@@ -329,6 +329,7 @@
         numCorrect = 0;
         let x, y;
         let i;
+        let num=-9;
         // for each question...
         chosenQuestions.forEach( (currentQuestion, questionNumber) => {
             // find selected answer
@@ -363,13 +364,15 @@
             }else if(!currentQuestion.type.localeCompare("Matching Question")) {
                 let tagTd=document.getElementsByTagName("td");
                 let flag=0;
+                let abc="a";
+                num+=9;
                 let tempText= "Η σωστή απάντηση είναι : ";
-                for (let i = 0; i < tagTd.length-1; i+=tagTd.length/3) {
+                for (let i = num; i < (num+9); i+=Math.ceil(((tagTd.length-1)/(tagTd.length/3)))) {
                     for(let j in currentQuestion.answers) {
-                        document.getElementById(abc).style.backgroundColor="Tomato";
+                        document.getElementById("m"+questionNumber+abc).style.backgroundColor="Tomato";
                         if(currentQuestion.answers[j]===tagTd[i].innerHTML){
-                            if(j===document.getElementById(abc).options[document.getElementById(abc).selectedIndex].value){
-                                document.getElementById(abc).style.backgroundColor="LightGreen";
+                            if(j===document.getElementById("m"+questionNumber+abc).options[document.getElementById("m"+questionNumber+abc).selectedIndex].value){
+                                document.getElementById("m"+questionNumber+abc).style.backgroundColor="LightGreen";
                             }
                             else{
                                 flag=1;
@@ -386,6 +389,7 @@
                 else{
                     y = document.getElementById("RightAnswer"+questionNumber);
                     y.innerText=tempText;
+                    console.log("segeh="+y.innerText);
                 }
             }
             // if answer is wrong or blank
