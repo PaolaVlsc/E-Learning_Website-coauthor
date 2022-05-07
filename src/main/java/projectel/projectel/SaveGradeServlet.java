@@ -11,13 +11,17 @@ import java.io.PrintWriter;
 @WebServlet(name = "SaveGradeServlet", value = "/SaveGradeServlet")
 public class SaveGradeServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-       request.getParameter("grade");
-       System.out.println("grade="+request.getParameter("grade"));
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        request.getParameter("grade");
+        System.out.println("grade="+request.getParameter("hiddenField"));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.getParameter("grade");
-        System.out.println("grade="+request.getParameter("grade"));
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        System.out.println(request.getParameterNames().nextElement());
+        System.out.println("grade with post="+request.getParameter("hiddenField"));
     }
 
 }

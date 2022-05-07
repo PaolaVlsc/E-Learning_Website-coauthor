@@ -89,11 +89,11 @@
     <br>
     <iframe name="content" style="display:none;">
     </iframe>
-    <form id="myForm" action="" method="post" target="content">
-        <button id="previous">Προηγούμενη ερώτηση</button>
-        <button id="next">Επόμενη ερώτηση</button>
-        <input type='hidden' id= 'hiddenField' name='id' value='' />
-        <button id="submitBtn">Καταχώρηση απαντήσεων</button>
+    <form id="myForm" action="../SaveGradeServlet" method="post" target="content" >
+        <button type="button" id="previous">Προηγούμενη ερώτηση</button>
+        <button type="button" id="next">Επόμενη ερώτηση</button>
+        <input type="hidden" id= "hiddenField" name="hiddenField" value="a" />
+        <button type="button" id="submitBtn">Καταχώρηση απαντήσεων</button>
     </form>
     <div id="results"></div>
     <button id="lastQuiz">Προηγούμενο Τεστ</button>

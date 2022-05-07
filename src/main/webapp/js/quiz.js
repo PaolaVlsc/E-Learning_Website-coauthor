@@ -422,8 +422,11 @@
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
         }
-        document.getElementById('hiddenField').value = numCorrect;
+        //document.getElementById('hiddenField').value = numCorrect;
         document.getElementById("myForm").submit();
+        console.log("form submitted");
+        console.log(numCorrect);
+        console.log(document.getElementById('hiddenField').value);
     }
 
     function showSlide(n) {
