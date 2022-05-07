@@ -414,6 +414,7 @@
         });
 
         // show number of correct answers out of total
+
         resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
         disableAnswer();
         if(numCorrect>7){
