@@ -356,8 +356,8 @@
                 for (i = 0; i < x.length; i++) {
                     console.log(x)
                     if(x[i].value===currentQuestion.correctAnswer){
-                        document.getElementById(idFtG).style.backgroundColor="LightGreen";
-                        // answerContainer.children[i].style.color = "green";
+                        //document.getElementById(idFtG).style.backgroundColor="LightGreen";
+                        answerContainer.children[i].style.color = "green";
                     }
                 }
 
@@ -431,7 +431,14 @@
             resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}`;
         }
         else if (numCorrect>=0){
-            resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
+            resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`;
+            let xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    callback(xmlHttp.responseText);
+            }
+            xmlHttp.open("GET", theUrl, true); // true for asynchronous
+            xmlHttp.send(null);
         }
         if(currentSlide === 0){
             previousButton.style.display = 'none';
