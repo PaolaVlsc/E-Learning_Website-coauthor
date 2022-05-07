@@ -87,9 +87,13 @@ To change this template use File | Settings | File Templates.
         <span class="popuptext" id="myPopup"><a style="cursor: pointer;position: absolute;right: 12px;top: 0">&times;</a><br>ΜΠΡΑΒΟΟΟΟ<br><br> ΤΑ ΠΑΣ ΤΕΛΕΙΑ ΠΑΜΕΕ</span>
     </div>
     <br>
-    <button id="previous">Προηγούμενη ερώτηση</button>
-    <button id="next">Επόμενη ερώτηση</button>
-    <button id="submit">Καταχώρηση απαντήσεων</button>
+    <iframe name="content" style="display:none;">
+    </iframe>
+    <form action="" method="post" target="content">
+        <button id="previous">Προηγούμενη ερώτηση</button>
+        <button id="next">Επόμενη ερώτηση</button>
+        <button type="submit" id="submit">Καταχώρηση απαντήσεων</button>
+    </form>
     <div id="results"></div>
     <button id="backToTests">Επιστροφή στα Τεστ</button>
     <button id="tryAgain">Προσπάθησε ξανά</button>
