@@ -492,7 +492,7 @@
     // Variables
     const quizContainer = document.getElementById('quiz');
     const resultsContainer = document.getElementById('results');
-    const submitButton = document.getElementById('submit');
+    const submitButton = document.getElementById('submitBtn');
     const myQuestions = [
         //Chapter 1 Questions
         {
