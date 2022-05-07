@@ -12,7 +12,7 @@ public class Login {
     //Ελέγχει τα διαπιστευτήρια του χρήστη και επιστρέφει το user id αν είναι σωστά αλλιώς null.
     static public Boolean checkCredentials(final String email,final String password, final HttpSession session){
         Connection conn = DbConnection.getConnection();
-        if (conn==null) return null;
+        if (conn==null) return false;
         try {
             final PreparedStatement dbStmt = conn.prepareStatement("SELECT id,name FROM users WHERE password=? AND email=?;");
             dbStmt.setString(1, password);

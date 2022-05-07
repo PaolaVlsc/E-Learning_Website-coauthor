@@ -429,7 +429,7 @@
         }else {
             popup.innerHTML+="Καλή προσπάθεια!<br>Εάν θέλεις μπορείς να ξαναδείς τη θεωρία στο κεφάλαιο αυτό.";
         }
-        document.getElementById("myForm").action="../SaveGradeServlet?grade="+numCorrect;
+        document.getElementById("myForm").action="../SaveGradeServlet?grade="+numCorrect+"&chapter="+chapter;
         document.getElementById("myForm").submit();
 
     }
