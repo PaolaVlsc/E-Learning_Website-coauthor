@@ -134,8 +134,10 @@
                 while(!(z=getRandomInt(-10,10))){}
                 currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]-z);
             }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-                currentQuestion.question=x[0]+" - "+x[1]+" = ";
-                currentQuestion.correctAnswer=x[0]-x[1];
+                if(currentQuestion.question===""){
+                    currentQuestion.question=x[0]+" - "+x[1]+" = ";
+                    currentQuestion.correctAnswer=x[0]-x[1];
+                }
             }
         }
     }function chapter2(currentQuestion,x){
@@ -197,27 +199,19 @@
         }
     }
     function chapter3(currentQuestion){
-        let division;
-        if(!currentQuestion.type.localeCompare("Right/Wrong Generated 3")) {
-            division=3;
-            currentQuestion.type=currentQuestion.type.replace(" 3","")
-            let numberDiv = getRandomInt(3, 1000);
+        if(currentQuestion.type .includes("Right/Wrong")){
+            let division,numberDiv = getRandomInt(3, 1000);
             currentQuestion.question = currentQuestion.question.replace("number", numberDiv);
-            let sum = 0;
-            while (numberDiv) {
-                sum += numberDiv % 10;
-                numberDiv = Math.floor(numberDiv / 10);
+            if(!currentQuestion.type.localeCompare("Right/Wrong Generated 3")) {
+                division=3;
+                currentQuestion.type=currentQuestion.type.replace(" 3","")
+            }else if (!currentQuestion.type.localeCompare("Right/Wrong Generated 2")) {
+                division=2;
+                currentQuestion.type=currentQuestion.type.replace(" 2","")
+
+            }else if(!currentQuestion.type.localeCompare("Right/Wrong Generated 9")) {
+                division=9;
             }
-            if (sum % division) {
-                currentQuestion.correctAnswer = "b";
-            } else {
-                currentQuestion.correctAnswer = "a";
-            }
-        }else if (!currentQuestion.type.localeCompare("Right/Wrong Generated 2")) {
-            division=2;
-            currentQuestion.type=currentQuestion.type.replace(" 2","")
-            let numberDiv = getRandomInt(3, 1000);
-            currentQuestion.question = currentQuestion.question.replace("number", numberDiv);
             if (numberDiv % division) {
                 currentQuestion.correctAnswer = "b";
             } else {
@@ -359,8 +353,10 @@
                     y = document.getElementById(idFtG).style.backgroundColor = "LightGreen ";
                 }
                 for (i = 0; i < x.length; i++) {
+                    console.log(x)
                     if(x[i].value===currentQuestion.correctAnswer){
-                        answerContainer.children[i].style.color = "green";
+                        document.getElementById(idFtG).style.backgroundColor="LightGreen";
+                        // answerContainer.children[i].style.color = "green";
                     }
                 }
 
@@ -810,19 +806,17 @@
         },
         //~~~~~~~~~~~~~~~~~~~~~~ Chapter 3 ~~~~~~~~~~~~~~~~~~~~~~
 
-        // {
-        //     type:"multipleChoice",
-        //     chapter:3,
-        //     shuffle : true,
-        //     question: "Ποιος αριθμός μπορεί να είναι υπόλοιπο στην διαίρεση με 3;",
-        //     answers: {
-        //         a: "0",
-        //         b: "3",
-        //         c: "4",
-        //         d: "84"
-        //     },
-        //     correctAnswer: "a"
-        // },
+        {
+            type:"Right/Wrong Generated 9",
+            chapter:3,
+            shuffle : false,
+            question: "Μπορείς να μοιράσεις εξίσου number καραμέλες σε 3 ή 9 φίλους σου",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
         {
             type:"Right/Wrong Generated 2",
             chapter:3,
@@ -843,6 +837,33 @@
                 b: "Λάθος",
             },
             correctAnswer: "b"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:3,
+            shuffle : false,
+            question: "Να συμπληρώσεις το τελευταίο ψηφίο κάθε αριθμού, έτσι ώστε οι αριθμοί που προκύπτουν να διαιρούνται με το 2 και με το 9:  10",
+            answers: {
+            },
+            correctAnswer: "8"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:3,
+            shuffle : false,
+            question: "Να συμπληρώσεις το τελευταίο ψηφίο κάθε αριθμού, έτσι ώστε οι αριθμοί που προκύπτουν να διαιρούνται με το 2 και με το 9:  43",
+            answers: {
+            },
+            correctAnswer: "2"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:3,
+            shuffle : false,
+            question: "Να συμπληρώσεις το τελευταίο ψηφίο κάθε αριθμού, έτσι ώστε οι αριθμοί που προκύπτουν να διαιρούνται με το 2 και με το 9:  95",
+            answers: {
+            },
+            correctAnswer: "4"
         },
 
         //~~~~~~~~~~~~~~~~~~~~~~ Chapter 4 ~~~~~~~~~~~~~~~~~~~~~~
