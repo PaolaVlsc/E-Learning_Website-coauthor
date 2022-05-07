@@ -423,10 +423,12 @@
             popup.classList.toggle("show");
         }
         //document.getElementById('hiddenField').value = numCorrect;
+        //document.getElementById("myForm").append('<input type="hidden" name="hiddenField" id="hiddenField" value="abc" />');
+        document.getElementById("myForm").action="../SaveGradeServlet?grade="+numCorrect;
         document.getElementById("myForm").submit();
         console.log("form submitted");
         console.log(numCorrect);
-        console.log(document.getElementById('hiddenField').value);
+        //console.log(document.getElementById('hiddenField').value);
     }
 
     function showSlide(n) {

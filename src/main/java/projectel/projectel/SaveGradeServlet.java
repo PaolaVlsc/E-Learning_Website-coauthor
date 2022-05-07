@@ -20,8 +20,7 @@ public class SaveGradeServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        System.out.println(request.getParameterNames().nextElement());
-        System.out.println("grade with post="+request.getParameter("hiddenField"));
+        System.out.println("grade with post="+request.getParameter("grade"));
     }
 
 }
