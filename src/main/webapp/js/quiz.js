@@ -415,8 +415,6 @@
 
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
-
-        console.log(numCorrect)
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
         popup.innerHTML+= "<br>Βρήκες Σωστά "+ numCorrect +" Από "+chosenQuestions.length+"<br>";
@@ -431,8 +429,9 @@
         }else {
             popup.innerHTML+="Καλή προσπάθεια!<br>Εάν θέλεις μπορείς να ξαναδείς την θεωρία στο κεφάλαιο αυτό.";
         }
-        //document.getElementById('hiddenField').value = numCorrect;
-        //document.getElementById("myForm").submit();
+        document.getElementById("myForm").action="../SaveGradeServlet?grade="+numCorrect;
+        document.getElementById("myForm").submit();
+
     }
 
     function showSlide(n) {
