@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/popup.css">
     <link rel="stylesheet" href="../css/quiz_style.css">
+    <link rel="stylesheet" href="../css/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -56,13 +57,11 @@
                 <li><a href="../jsp/statistics.jsp">Στατιστικά</a></li>
                 <li><a href="../jsp/games.jsp">Παιχνίδια</a></li>
             </ul>
-
             <div class="logout">
-                <a href="<%=Login.isLoggedIn(session)?"../logout-servlet":"login.jsp"%>">
+                <a id="log" <%if(!Login.isLoggedIn(session)){%>href="login.jsp"<%}%>>
                     <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
                 </a>
             </div>
-
         </div>
     </nav>
     <!--------- Start: Js navbar ---------->
@@ -102,21 +101,49 @@
                 <h2>Είσαι σίγουρος;</h2>
             </div>
             <div class="modal-body">
-                <p>Εάν φύγεις τώρα δε θα μπορείς να δεις τι έκανες λάθος ή σωστό!</p>
+                <p>Είσαι σίγουρος πως θες να αποσυνδεθείς;</p>
             </div>
             <div class="modal-footer">
-                <button id="choice" class="button button2">Ναι, θέλω να φύγω</button>
+                <button id="choice" class="button button2">Ναι, θέλω να φύγω.</button>
             </div>
         </div>
 
     </div>
-
     <!--    Hide pop up -->
     <script>
         function hidePopUp(){
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("hide");
         }
+    </script>
+    <script>
+        <%if(Login.isLoggedIn(session)){%>
+        // Get the modal
+        let modal = document.getElementById("myModal");
+        let choice = document.getElementById("choice");
+        let log = document.getElementById("log");
+
+        // Get the <span> element that closes the modal
+        let span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        log.onclick = function() {
+            modal.style.display = "block";
+            choice.onclick = function() {
+                location.href ="../logout-servlet";
+            }
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        <%}%>
     </script>
     <script src="../js/quiz.js"></script>
 </body>

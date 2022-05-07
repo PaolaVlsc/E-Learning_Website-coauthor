@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Στατιστικά | SINP </title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/popup.css">
     <link rel="stylesheet" href="../css/statistics_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -57,9 +58,8 @@
             <li><a class="current" href="../jsp/statistics.jsp">Στατιστικά</a></li>
             <li><a href="../jsp/games.jsp">Παιχνίδια</a></li>
         </ul>
-
         <div class="logout">
-            <a href="<%=Login.isLoggedIn(session)?"../logout-servlet":"login.jsp"%>">
+            <a id="log" <%if(!Login.isLoggedIn(session)){%>href="login.jsp"<%}%>>
                 <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
             </a>
         </div>
@@ -67,9 +67,6 @@
 </nav>
 <script src="../js/app.js"></script>
 
-<script>
-    navbar.classList.add("sticky");
-</script>
 <%
     int chapter = Integer.parseInt(request.getParameter("chapter"));//get chapter id
 %>
@@ -180,13 +177,61 @@
     </div>
 
 </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Είσαι σίγουρος;</h2>
+        </div>
+        <div class="modal-body">
+            <p>Είσαι σίγουρος πως θες να αποσυνδεθείς;</p>
+        </div>
+        <div class="modal-footer">
+            <button id="choice" class="button button2">Ναι, θέλω να φύγω.</button>
+        </div>
+    </div>
+
+</div>
 <footer style="position: fixed; bottom: 0;">
     <hr>
     <h3>Επικοινωνία</h3>
     <p> <i class="fa fa-envelope-o"></i> Email: sinp@uniwa.gr<br>
         <i class="fa fa-phone"></i> Τηλ.: 211-401-0000</p>
 </footer>
+<script>
+    <%if(Login.isLoggedIn(session)){%>
+    // Get the modal
+    let modal = document.getElementById("myModal");
+    let choice = document.getElementById("choice");
+    let log = document.getElementById("log");
 
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+
+    log.onclick = function() {
+        modal.style.display = "block";
+        choice.onclick = function() {
+            location.href ="../logout-servlet";
+        }
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    <%}%>
+</script>
+<script>
+    navbar.classList.add("sticky");
+</script>
 </body>
 </html>
 
