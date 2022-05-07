@@ -15,4 +15,9 @@ public class SaveGradeServlet extends HttpServlet {
        System.out.println("grade="+request.getParameter("grade"));
     }
 
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.getParameter("grade");
+        System.out.println("grade="+request.getParameter("grade"));
+    }
+
 }
