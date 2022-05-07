@@ -4,7 +4,9 @@
     top: 70px;
     width: 100%;
 }
-
+h1{
+    color: #5cafc6;
+}
 button {
     background-color: #5cafc6;
     border: none;

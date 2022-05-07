@@ -14,13 +14,21 @@
 <%! String message;
     Boolean isLogged;%>
 <%
-    message="Καλή τύχη! Εάν θέλεις να αποθηκευτεί η πρόοδός σου θα πρέπει πρώτα να συνδεθείς!"; //default μήνυμα αν δεν έχει συνδεθεί
+    message="Καλή τύχη!"; //default μήνυμα αν δεν έχει συνδεθεί
+    if (request.getParameter("chapter").equals("4")){
+        message+="<br>Να προσέχεις, γιατί αυτό το κεφάλαιο είναι δύσκολο!";
+    }else if (request.getParameter("chapter").equals("5")){
+        message+="<br>Το επαναληπτικό είναι δύσκολο!<br>Θα πρέπει να ξέρεις καλά όλα τα κεφάλαια!";
+    }else if (request.getParameter("chapter").equals("3")){
+        message+="<br>Θα πρέπει να ξέρεις καλά θεωρία σε αυτό το κεφάλαιο!";
+    }
+    message+="<br>Εάν θέλεις να αποθηκευτεί η πρόοδός σου θα πρέπει πρώτα να συνδεθείς!";
     isLogged=Login.isLoggedIn(session);
     if(isLogged){
-        message="Καλή τύχη "+Login.getUserName(session); // default μήνυμα αν έχει συνδεθεί
+        message="Καλή τύχη, "+Login.getUserName(session)+"!"; // default μήνυμα αν έχει συνδεθεί
         if(request.getParameter("chapter").equals("5")){
             //Αν δεν καταφέρει να συνδεθεί με τη βάση δε χρειάζεται να του πετάξει μήνυμα εσωτερικού σφάλματος, απλά θα του εμφανίσει το ακόλουθο default μήνυμα.
-            message="Πρόσεχε, το επαναληπτικό είναι δύσκολο. Καλή τύχη "+Login.getUserName(session)+"!"; //default μήνυμα για το επαναληπτικό τεστ αν έχει συνδεθεί.
+            message="Καλή τύχη, "+Login.getUserName(session)+"!<br>Πρόσεχε, το επαναληπτικό είναι δύσκολο."; //default μήνυμα για το επαναληπτικό τεστ αν έχει συνδεθεί.
             Connection conn = DbConnection.getConnection();
             if(conn != null){
                 PreparedStatement statement;
@@ -31,7 +39,7 @@
                     final ResultSet dbRs = statement.executeQuery();
                     if(dbRs.next()){
                         if(dbRs.getInt(1)<4){
-                            message="Είσαι σίγουρος πως θες να δοκιμάσεις το επαναληπτικό; Δεν έχεις δει τα προηγούμενα κεφάλαια.";
+                            message="Καλή τύχη, "+Login.getUserName(session)+"!<br>Είσαι σίγουρος πως θες να δοκιμάσεις το επαναληπτικό;<br>Δεν έχεις δει τα προηγούμενα κεφάλαια.";
                         }
                     }
                 } catch (SQLException e) {
@@ -39,8 +47,10 @@
                 }
 
             }
+        }else if (request.getParameter("chapter").equals("4")){
+            message+="<br>Πρόσεχε, αυτό το τεστ είναι δύσκολο.";
         }else if (request.getParameter("chapter").equals("3")){
-            message="Πρόσεχε, αυτό το τεστ είναι δύσκολο. Καλή τύχη "+Login.getUserName(session)+"!";
+            message+="<br>Πρόσεχε, σε αυτό το τεστ θα πρέπει να ξέρεις καλά θεωρία.";
         }
     }else{
 
