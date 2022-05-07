@@ -64,8 +64,7 @@
                     });
                 }
                 // add this question and its answers to the output
-                if(!currentQuestion.type.localeCompare("Fill the Gaps")) {
-
+                if(!currentQuestion.type.localeCompare("Fill the Gaps")){
                     output.push(
                         `                              
                                 <div class="slide">
@@ -118,8 +117,10 @@
                 while(!(z=getRandomInt(-10,10))){}
                 currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]+z);
             }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-                currentQuestion.question=x[0]+" + "+x[1]+" = ";
-                currentQuestion.correctAnswer=x[0]+x[1];
+                if(currentQuestion.question===""){
+                    currentQuestion.question=x[0]+" + "+x[1]+" = ";
+                    currentQuestion.correctAnswer=x[0]+x[1];
+                }
             }
         }
         else{
@@ -488,38 +489,41 @@
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Who invented JavaScript?",
+            question: "Ένα τρένο ξεκινάει από Αθήνα για Λάρισα με 480 επιβάτες \n" +
+                "\n" +
+                "α) Στη Λειβαδιά ανέβηκαν άλλοι 35 επιβάτες \n" +
+                "\n" +
+                "β) Στο Λιανοκλάδι Λαμίας κατέβηκαν 110 επιβάτες. Οι υπόλοιποι κατέβηκαν στη Λάρισσα. Πόσοι ήταν αυτοί που κατέβηκαν στη Λάρισσα; ",
             answers: {
-                a: "Douglas Crockford",
-                b: "Sheryl Sandberg",
-                c: "Brendan Eich"
+                a: "405",
+                b: "415",
+                c: "305"
             },
-            correctAnswer: "c"
+            correctAnswer: "a"
         },
         {
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Which one of these is a JavaScript package manager?",
+            question: "Ο Πύργος του Άιφελ στη Γαλλία έχει ύψος 320 μέτρα. Ο Λευκός Πύργος της Θεσσαλονίκης έχει ύψος 37 μέτρα. Πόσο πιο ψηλός είναι ο Πύργος του Άιφελ; ",
             answers: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
+                a: "283",
+                b: "290",
+                c: "273"
             },
-            correctAnswer: "c"
+            correctAnswer: "a"
         },
         {
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Which tool can you use to ensure code quality?",
+            question: "Η κυρία Σοφία αγόρασε μια ηλεκτρική κουζίνα 450ευρώ, μία ηλεκτρική σκούπα με 257 ερυρώ και ένα τάμπλετ με 230 ευρώ. Πόσα πλήρωσε συνολικά; ",
             answers: {
-                a: "Angular",
-                b: "jQuery",
-                c: "RequireJS",
-                d: "ESLint"
+                a: "928",
+                b: "937",
+                c: "938"
             },
-            correctAnswer: "d"
+            correctAnswer: "b"
         },
         {
             type:"Right/Wrong",
@@ -595,21 +599,33 @@
             correctAnswer: ""
         },
         {
-            type:"Matching Question",
+            type:"Fill the Gaps",
             chapter:1,
-            shuffle : true,
-            question: "Αντιστοίχησε τις σωστές απαντήσεις",
+            shuffle : false,
+            question: "Ένας Νίκος πούλησε στην αγορά 350 κιλά μήλα  165 κιλά αχλάδια και 285 κιλά  πορτοκάλια. Πόσα κιλά φρούτα πούλησε στην αγορά; ",
             answers: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
             },
-            correctAnswer: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
-            }
+            correctAnswer: "800"
         },
+        {
+            type:"Fill the Gaps",
+            chapter:1,
+            shuffle : false,
+            question: "Η Πάολα είχε στον κουμπαρά της 250 €.Δάνεισε στον αδερφό της 185€ για ν’αγοράσει ένα καινούριο ποδήλατο. Πόσα χρήματα της έμειναν στον κουμπαρά;",
+            answers: {
+            },
+            correctAnswer: "65"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:1,
+            shuffle : false,
+            question: "Ένα αεροπλάνο έχει 587 θέσεις. Στο πρωϊνό του δρομολόγιο ταξίδεψαν 230 άντρες, 158 γυναίκες και 15 παιδιά. Πόσες θέσεις έμειναν άδειες; ",
+            answers: {
+            },
+            correctAnswer: "184"
+        },
+
 
         //~~~~~~~~~~~~~~~~~~~~~~ Chapter 2 ~~~~~~~~~~~~~~~~~~~~~~
 
