@@ -417,7 +417,7 @@
         resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
-        popup.innerHTML+= "<br>Βρήκες Σωστά "+ numCorrect +" Από "+chosenQuestions.length+"<br>";
+        popup.innerHTML+= "<br>Βρήκες Σωστά "+ numCorrect +" Από "+chosenQuestions.length+"<br>----------------------------<br>";
         disableAnswer();
         if(numCorrect>8){
             fireworks()
@@ -427,7 +427,7 @@
         }else if(numCorrect>=4 && numCorrect<=5){
             popup.innerHTML+="Καλή προσπάθεια, δεν πειράζει!<br>Δοκίμασε αν θες ξανά!";
         }else {
-            popup.innerHTML+="Καλή προσπάθεια!<br>Εάν θέλεις μπορείς να ξαναδείς την θεωρία στο κεφάλαιο αυτό.";
+            popup.innerHTML+="Καλή προσπάθεια!<br>Εάν θέλεις μπορείς να ξαναδείς τη θεωρία στο κεφάλαιο αυτό.";
         }
         document.getElementById("myForm").action="../SaveGradeServlet?grade="+numCorrect;
         document.getElementById("myForm").submit();
