@@ -16,25 +16,27 @@
 .navbar {
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 2;/*visible, always on top*/
     padding: 25px 0;
-    /*transition: all 0.3s ease;*/
 }
 
+/*a link for the logout button with hover*/
 .logout a {
+    cursor: pointer;
     color: aliceblue;
     padding: 22px 10px;
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 14.3px;
+    font-size: 14px;
 }
 
 .logout a:hover {
-    color: rgb(201, 106, 106); /*rgb(89, 153, 227);*/
-    background-color: rgb(240, 197, 197); /*rgb(205, 222, 241);*/
+    color: rgb(201, 106, 106);
+    background-color: rgb(240, 197, 197);
 }
 
+/*sticky navbar for when we are not in index page*/
 .navbar.sticky {
     background: lightcoral;
     padding: 10px 0;
@@ -47,6 +49,7 @@
     justify-content: space-between;
 }
 
+/*logo in website with our name*/
 .navbar .logo {
     color: #fff;
     font-size: 30px;
@@ -54,6 +57,7 @@
     text-decoration: none;
 }
 
+/*list for when website is too small in x*/
 .navbar .menu-list {
     display: inline-flex;
 }
@@ -82,6 +86,7 @@ body {
     text-align: center;
 }
 
+/*banner for index*/
 .banner-area {
     background: url("../assets/header_mainpage.jpg") no-repeat;
     height: 500px;
@@ -141,6 +146,7 @@ body {
     top: 20px;
 }
 
+/*when user resizes*/
 @media (max-width: 1230px) {
     .wrapper {
         padding: 0 60px;
@@ -159,6 +165,7 @@ body {
     }
 }
 
+/*when the resize is small enough for the menu list to appear*/
 @media (max-width: 1080px) {
 
     .icon {
@@ -169,15 +176,8 @@ body {
         visibility: hidden;
     }
 
-    /* body.disabled{
-      overflow: hidden;
-    }
-    .icon.hide{
-      display: none;
-    }*/
     .navbar .menu-list {
         position: fixed;
-        /*height: 50vh;*/
         width: 100%;
         max-width: 250px;
         left: -100%;
@@ -223,6 +223,7 @@ body {
     }
 }
 
+/*footer with our company info*/
 footer {
     text-align: left;
     background-color: whitesmoke;
@@ -243,6 +244,7 @@ footer p {
     opacity: 0.5;
 }
 
+/*dropdown menu for menu list*/
 .dropdown {
     position: relative;
     display: inline-block;
@@ -270,9 +272,12 @@ footer p {
     display: block;
 }
 
+/*current will show where in the navbar is the user currently, it will be lighter that the navbar color*/
 .current {
     background-color: rgb(240, 197, 197);
 }
+
+/*if user is at index where the navbar is not showing then the color for current must be different*/
 .current-for-start {
     background-color: rgb(94, 173, 197);
 }

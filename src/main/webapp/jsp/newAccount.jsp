@@ -3,14 +3,9 @@
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="projectel.projectel.Login" %><%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 18/4/2022
-  Time: 6:57 μ.μ.
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="projectel.projectel.Login" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="el">
 <head>

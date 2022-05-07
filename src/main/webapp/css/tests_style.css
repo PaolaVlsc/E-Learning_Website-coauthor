@@ -1,11 +1,10 @@
 html {
     height: 100%;
 }
+/*put background picture with animals that will appear normal in bigger screens*/
 body {
-    /*background: linear-gradient(to bottom, rgb(253, 220, 220) 15%, rgb(194, 233, 252) 100%);*/
     background-image: url('../assets/ombre4.png');
     background-attachment: fixed;
-
     width:100px;
     height:100px;
     max-width:100px;
@@ -13,11 +12,14 @@ body {
     background-size:cover;
 }
 
+/*fit the visible part of website*/
 .main-wrap {
     position: absolute;
     top: 80px;
     width: 100%;
 }
+
+/*custom button with hover and transition*/
 button {
     background-color: #5cafc6;
     border: none;
@@ -29,7 +31,6 @@ button {
     transition-duration: 0.5s;
     cursor: pointer;
 }
-
 
 button:hover {
     background-color: #a4c4d1;

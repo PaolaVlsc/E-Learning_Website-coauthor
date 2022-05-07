@@ -1,11 +1,6 @@
-<%@ page import="projectel.projectel.Login" %><%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 18/4/2022
-  Time: 4:57 μ.μ.
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="projectel.projectel.Login" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -13,13 +8,14 @@
     <meta charset="UTF-8">
     <title>Σύνδεση | SINP</title>
     <style>
+        /*put background image in login*/
         body {
             background-image: url('../assets/simple_background5.png');
             background-attachment: fixed;
             background-size: 100% 100%;
             font-family: Arial, Helvetica, sans-serif;
         }
-
+        /*form has transparent background*/
         form {
             background: rgba(200, 129, 90, 0.3);
             position: absolute;
@@ -28,7 +24,7 @@
             left: 8%;
             width: 33%;
         }
-
+        /*for username and password*/
         input[type=text],input[type=password] {
               width: 100%;
               padding: 12px 20px;
@@ -37,11 +33,12 @@
               border: 1px solid #ccc;
               box-sizing: border-box;
           }
-
+        /*i has a pointer cursor for clicking on the eye*/
         i{
             cursor: pointer;
         }
 
+        /*custom button for returning back to index*/
         .button1 {
             background-color:rgb(131, 79, 120);
             padding: 8px 16px;/*μέγεθος κουμπιού*/
@@ -52,6 +49,7 @@
             left:38%;
             bottom:1px;
         }
+        /*custom button for login and new account*/
         button {
             background-color: rgb(44, 121, 165);
             color: white;
@@ -61,6 +59,7 @@
             cursor: pointer;
             width: 100%;
         }
+        /*not change a color when visited*/
         a, a:visited {
             color: inherit;
         }
@@ -68,6 +67,8 @@
         button:hover {
             opacity: 0.8;
         }
+
+        /*image*/
         .img-container {
             text-align: center;
             margin: 2px 0 0 0;
@@ -81,6 +82,7 @@
         .container {
             padding: 8px;
         }
+        /**/
         @media (max-width: 680px){
             form {
                 width: 80%;

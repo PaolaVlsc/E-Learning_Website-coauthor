@@ -1,12 +1,7 @@
 <%@ page import="projectel.projectel.Statistics" %>
-<%@ page import="projectel.projectel.Login" %><%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 18/4/2022
-  Time: 2:14 μ.μ.
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="projectel.projectel.Login" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -18,7 +13,9 @@
     <link rel="stylesheet" href="../css/statistics_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body <%if(!Login.isLoggedIn(session)) {%>
+<body <%
+        //if user is not logged then put background picture with dino
+        if(!Login.isLoggedIn(session)) {%>
         style="
         background-image: url('../assets/ombredino3.png');
         background-size: cover;
@@ -84,8 +81,14 @@
     navbar.classList.add("sticky");
 </script>
 
-<%if (Login.isLoggedIn(session)){%>
+<%//if user is logged in then print graphs
+    if (Login.isLoggedIn(session)){
+%>
 <div class="main-wrap">
+    <!--
+         left side will have the different links for the different chapters
+         the current chapter will be blue
+     -->
     <div class="left-side">
         <br><br><h3>Οι βαθμοί στα κεφάλαια σου:</h3>
         <a href="statistics.jsp" style="padding-left:3em; color: #5cafc6"><u>Όλα τα κεφάλαια</u></a>
@@ -98,6 +101,9 @@
         <a href="statisticsChapters.jsp?chapter=4" style="padding-left:3em;"><u>Διαίρεση</u></a>
         <a href="statisticsChapters.jsp?chapter=5" style="padding-left:3em;"><u>Επαναληπτικό</u></a>
     </div>
+    <!--
+        the right side will have a bar graph with the best grades
+    -->
     <div class="right-side">
         <h2 style="color:#ef7f80;width:80%; text-align: center;">Οι καλύτεροι βαθμοί σου σε όλα τα κεφάλαια!</h2>
         <canvas id="myChart" style="width:70%;max-width:80%"></canvas>

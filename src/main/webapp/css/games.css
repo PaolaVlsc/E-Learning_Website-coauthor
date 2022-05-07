@@ -1,12 +1,16 @@
+/*body has gradient background*/
 body {
     background: linear-gradient(to bottom, rgb(254, 220, 220) 15%, rgb(194, 233, 252) 100%) fixed;
 }
 
+/*the following is to put the parts in the visible part of the website*/
 .main-wrap {
     position: absolute;
     top: 80px;
     width: 100%;
 }
+
+/*make custom button with hover and transition*/
 button {
     background-color: #5cafc6;
     border: none;
