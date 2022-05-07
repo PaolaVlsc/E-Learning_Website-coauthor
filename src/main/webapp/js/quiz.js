@@ -20,6 +20,12 @@
                 if(chapter==1){
                     chapter1(currentQuestion,x)
                 }
+                else if(chapter==2){
+                    chapter2(currentQuestion,x)
+                }
+                else if(chapter==3){
+                    chapter3(currentQuestion,x)
+                }
                 else if(chapter==4){
                     chapter4(currentQuestion,x)
                 }
@@ -45,7 +51,7 @@
                                   <tr>
                                   <td id="mat${questionNumber}${abc}" style="text-align:left; padding-right:10px;">${currentQuestion.answers[letter]}</td>
                                   <td style="text-align:left; padding-right:50px;">
-                                    <select id=${abc} style="width: 100px;" name="dropDown${questionNumber}">
+                                    <select id="m${questionNumber}${abc}" style="width: 100px;" name="dropDown${questionNumber}">
                                     <option  selected disabled hidden value="javascript">---</option>                                        
                                     </select>
                                   </td>
@@ -58,8 +64,7 @@
                     });
                 }
                 // add this question and its answers to the output
-                if(!currentQuestion.type.localeCompare("Fill the Gaps")) {
-
+                if(!currentQuestion.type.localeCompare("Fill the Gaps")){
                     output.push(
                         `                              
                                 <div class="slide">
@@ -112,8 +117,10 @@
                 while(!(z=getRandomInt(-10,10))){}
                 currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]+z);
             }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-                currentQuestion.question=x[0]+" + "+x[1]+" = ";
-                currentQuestion.correctAnswer=x[0]+x[1];
+                if(currentQuestion.question===""){
+                    currentQuestion.question=x[0]+" + "+x[1]+" = ";
+                    currentQuestion.correctAnswer=x[0]+x[1];
+                }
             }
         }
         else{
@@ -127,10 +134,108 @@
                 while(!(z=getRandomInt(-10,10))){}
                 currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]-z);
             }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-                currentQuestion.question=x[0]+" - "+x[1]+" = ";
-                currentQuestion.correctAnswer=x[0]-x[1];
+                if(currentQuestion.question===""){
+                    currentQuestion.question=x[0]+" - "+x[1]+" = ";
+                    currentQuestion.correctAnswer=x[0]-x[1];
+                }
             }
         }
+    }function chapter2(currentQuestion,x){
+        let z , flag=0 , number;
+        x=getRandomNumber(currentQuestion)
+        if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+            currentQuestion.question=x[0]+" * "+x[1]+" = "+(x[0]*x[1]);
+        }
+        else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+            while(!(z=getRandomInt(-10,10))){}
+            currentQuestion.question=x[0]+" * "+x[1]+" = "+(x[0]*x[1]+z);
+        }
+        else if(!currentQuestion.type.localeCompare("multipleChoice Generated")){
+            if(currentQuestion.question.includes("6000")){
+                number=6000;
+            }
+            else{
+                number=4000;
+            }
+            for(let j in currentQuestion.answers) {
+                x=getRandomNumber(currentQuestion)
+                if(flag===0){
+                    while(x[0]*x[1]<number) {
+                        x=getRandomNumber(currentQuestion)
+                    }
+                    currentQuestion.answers[j]=x[0]+" x "+x[1]
+                    flag = 1;
+                }
+                else{
+                    while(x[0]*x[1]>number) {
+                        x=getRandomNumber(currentQuestion)
+                    }
+                    currentQuestion.answers[j]=x[0]+" x "+x[1]
+                }
+            }
+        }
+        else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+            currentQuestion.question=x[0]+" x "+x[1]+" = ";
+            currentQuestion.correctAnswer=x[0]*x[1];
+        }
+        else if(!currentQuestion.type.localeCompare("Matching Question")){
+            if(getRandomInt(0,1)){
+                let numberDiv=getRandomInt(1,99);
+                for(let j in currentQuestion.answers) {
+                    currentQuestion.answers[j]=numberDiv+" x 10"
+                    currentQuestion.correctAnswer[j]=numberDiv*10;
+                    numberDiv*=10;
+                }
+            }
+            else{
+                for(let j in currentQuestion.answers) {
+                    x=getRandomNumber(currentQuestion)
+                    let correctAnswer= x[0]*x[1]
+                    currentQuestion.answers[j]=x[0]+" x "+x[1]
+                    currentQuestion.correctAnswer[j]=correctAnswer
+                }
+            }
+
+        }
+    }
+    function chapter3(currentQuestion){
+        if(currentQuestion.type .includes("Right/Wrong")){
+            let division,numberDiv = getRandomInt(3, 1000);
+            currentQuestion.question = currentQuestion.question.replace("number", numberDiv);
+            if(!currentQuestion.type.localeCompare("Right/Wrong Generated 3")) {
+                division=3;
+                currentQuestion.type=currentQuestion.type.replace(" 3","")
+            }else if (!currentQuestion.type.localeCompare("Right/Wrong Generated 2")) {
+                division=2;
+                currentQuestion.type=currentQuestion.type.replace(" 2","")
+
+            }else if(!currentQuestion.type.localeCompare("Right/Wrong Generated 9")) {
+                division=9;
+            }
+            if (numberDiv % division) {
+                currentQuestion.correctAnswer = "b";
+            } else {
+                currentQuestion.correctAnswer = "a";
+            }
+        }
+
+        // if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
+        //     currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]);
+        // }
+        // else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
+        //     while(!(z=getRandomInt(-10,10)) || x[0]/x[1]+z<0){}
+        //     currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]+z);
+        // }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
+        //     currentQuestion.question=x[0]+" / "+x[1]+" = ";
+        //     currentQuestion.correctAnswer=x[0]/x[1];
+        // }else if(!currentQuestion.type.localeCompare("Matching Question")){
+        //     let numberDiv=getRandomInt(1,9);
+        //     for(let j in currentQuestion.answers) {
+        //         currentQuestion.answers[j]=numberDiv*10+" / 10"
+        //         currentQuestion.correctAnswer[j]=numberDiv;
+        //         numberDiv*=10;
+        //     }
+        // }
     }
     function chapter4(currentQuestion,x){
         let z;
@@ -148,7 +253,12 @@
             currentQuestion.question=x[0]+" / "+x[1]+" = ";
             currentQuestion.correctAnswer=x[0]/x[1];
         }else if(!currentQuestion.type.localeCompare("Matching Question")){
-            console.log(currentQuestion.answers[0])
+            let numberDiv=getRandomInt(1,9);
+            for(let j in currentQuestion.answers) {
+                currentQuestion.answers[j]=numberDiv*10+" / 10"
+                currentQuestion.correctAnswer[j]=numberDiv;
+                numberDiv*=10;
+            }
         }
     }
     function getRandomNumber(currentQuestion){
@@ -164,7 +274,9 @@
         }
         return [x,y];
     }
-
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
     function fillDropDown(){
         chosenQuestions.forEach(
             (currentQuestion, questionNumber) => {
@@ -217,6 +329,7 @@
         numCorrect = 0;
         let x, y;
         let i;
+        let num=-9;
         // for each question...
         chosenQuestions.forEach( (currentQuestion, questionNumber) => {
             // find selected answer
@@ -241,7 +354,9 @@
                     y = document.getElementById(idFtG).style.backgroundColor = "LightGreen ";
                 }
                 for (i = 0; i < x.length; i++) {
+                    console.log(x)
                     if(x[i].value===currentQuestion.correctAnswer){
+                        //document.getElementById(idFtG).style.backgroundColor="LightGreen";
                         answerContainer.children[i].style.color = "green";
                     }
                 }
@@ -249,13 +364,15 @@
             }else if(!currentQuestion.type.localeCompare("Matching Question")) {
                 let tagTd=document.getElementsByTagName("td");
                 let flag=0;
+                let abc="a";
+                num+=9;
                 let tempText= "Η σωστή απάντηση είναι : ";
-                for (let i = 0; i < tagTd.length-1; i+=tagTd.length/3) {
+                for (let i = num; i < (num+9); i+=Math.ceil(((tagTd.length-1)/(tagTd.length/3)))) {
                     for(let j in currentQuestion.answers) {
-                        document.getElementById(abc).style.backgroundColor="Tomato";
+                        document.getElementById("m"+questionNumber+abc).style.backgroundColor="Tomato";
                         if(currentQuestion.answers[j]===tagTd[i].innerHTML){
-                            if(j===document.getElementById(abc).options[document.getElementById(abc).selectedIndex].value){
-                                document.getElementById(abc).style.backgroundColor="LightGreen";
+                            if(j===document.getElementById("m"+questionNumber+abc).options[document.getElementById("m"+questionNumber+abc).selectedIndex].value){
+                                document.getElementById("m"+questionNumber+abc).style.backgroundColor="LightGreen";
                             }
                             else{
                                 flag=1;
@@ -272,6 +389,7 @@
                 else{
                     y = document.getElementById("RightAnswer"+questionNumber);
                     y.innerText=tempText;
+                    console.log("segeh="+y.innerText);
                 }
             }
             // if answer is wrong or blank
@@ -313,7 +431,14 @@
             resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}`;
         }
         else if (numCorrect>=0){
-            resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`
+            resultsContainer.innerHTML = `${currentSlide+1} Απο ${chosenQuestions.length}<br> Βρήκες Σωστά ${numCorrect} Απο ${chosenQuestions.length}`;
+            let xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    callback(xmlHttp.responseText);
+            }
+            xmlHttp.open("GET", theUrl, true); // true for asynchronous
+            xmlHttp.send(null);
         }
         if(currentSlide === 0){
             previousButton.style.display = 'none';
@@ -339,9 +464,6 @@
 
     function showPreviousSlide() {
         showSlide(currentSlide - 1);
-    }
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
     }
     function Shuffle(myQuestions) {
         var currentIndex = myQuestions.length, temporaryValue, randomIndex;
@@ -374,38 +496,41 @@
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Who invented JavaScript?",
+            question: "Ένα τρένο ξεκινάει από Αθήνα για Λάρισα με 480 επιβάτες \n" +
+                "\n" +
+                "α) Στη Λειβαδιά ανέβηκαν άλλοι 35 επιβάτες \n" +
+                "\n" +
+                "β) Στο Λιανοκλάδι Λαμίας κατέβηκαν 110 επιβάτες. Οι υπόλοιποι κατέβηκαν στη Λάρισσα. Πόσοι ήταν αυτοί που κατέβηκαν στη Λάρισσα; ",
             answers: {
-                a: "Douglas Crockford",
-                b: "Sheryl Sandberg",
-                c: "Brendan Eich"
+                a: "405",
+                b: "415",
+                c: "305"
             },
-            correctAnswer: "c"
+            correctAnswer: "a"
         },
         {
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Which one of these is a JavaScript package manager?",
+            question: "Ο Πύργος του Άιφελ στη Γαλλία έχει ύψος 320 μέτρα. Ο Λευκός Πύργος της Θεσσαλονίκης έχει ύψος 37 μέτρα. Πόσο πιο ψηλός είναι ο Πύργος του Άιφελ; ",
             answers: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
+                a: "283",
+                b: "290",
+                c: "273"
             },
-            correctAnswer: "c"
+            correctAnswer: "a"
         },
         {
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Which tool can you use to ensure code quality?",
+            question: "Η κυρία Σοφία αγόρασε μια ηλεκτρική κουζίνα 450ευρώ, μία ηλεκτρική σκούπα με 257 ερυρώ και ένα τάμπλετ με 230 ευρώ. Πόσα πλήρωσε συνολικά; ",
             answers: {
-                a: "Angular",
-                b: "jQuery",
-                c: "RequireJS",
-                d: "ESLint"
+                a: "928",
+                b: "937",
+                c: "938"
             },
-            correctAnswer: "d"
+            correctAnswer: "b"
         },
         {
             type:"Right/Wrong",
@@ -481,23 +606,278 @@
             correctAnswer: ""
         },
         {
-            type:"Matching Question",
+            type:"Fill the Gaps",
             chapter:1,
+            shuffle : false,
+            question: "Ένας Νίκος πούλησε στην αγορά 350 κιλά μήλα  165 κιλά αχλάδια και 285 κιλά  πορτοκάλια. Πόσα κιλά φρούτα πούλησε στην αγορά; ",
+            answers: {
+            },
+            correctAnswer: "800"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:1,
+            shuffle : false,
+            question: "Η Πάολα είχε στον κουμπαρά της 250 €.Δάνεισε στον αδερφό της 185€ για ν’αγοράσει ένα καινούριο ποδήλατο. Πόσα χρήματα της έμειναν στον κουμπαρά;",
+            answers: {
+            },
+            correctAnswer: "65"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:1,
+            shuffle : false,
+            question: "Ένα αεροπλάνο έχει 587 θέσεις. Στο πρωϊνό του δρομολόγιο ταξίδεψαν 230 άντρες, 158 γυναίκες και 15 παιδιά. Πόσες θέσεις έμειναν άδειες; ",
+            answers: {
+            },
+            correctAnswer: "184"
+        },
+
+
+        //~~~~~~~~~~~~~~~~~~~~~~ Chapter 2 ~~~~~~~~~~~~~~~~~~~~~~
+
+        {
+            type:"multipleChoice",
+            chapter:2,
+            shuffle : true,
+            question: "Το 1 όταν πολλαπλασιαστεί με έναν φυσικό αριθμο: ",
+            answers: {
+                a: "τον μεταβάλλει",
+                b: "δεν τον μεταβάλλει ",
+                c: "κανένα από τα παραπάνω",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"multipleChoice Generated",
+            chapter:2,
+            shuffle : true,
+            question: "Ποιος από τους παρακάτω παράγοντες έχουν γινόμενο μεγαλύτερο του 6.000; ",
+            answers: {
+                a: "",
+                b: "",
+                c: "",
+                d: "",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"multipleChoice Generated",
+            chapter:2,
+            shuffle : true,
+            question: "Ποιος από τους παρακάτω παράγοντες έχουν γινόμενο μεγαλύτερο του 4.000; ",
+            answers: {
+                a: "",
+                b: "",
+                c: "",
+                d: "",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "Στον πολλαπλασιασμό φυσικών αριθμών ισχύει η αντιμεταθετική ιδιότητα ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "Στον πολλαπλασιασμό φυσικών αριθμών ισχύει η προσεταιρεστική ιδιότητα ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "Στον πολλαπλασιασμό φυσικών αριθμών δεν ισχύει η προσεταιρεστική ιδιότητα ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Right/Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "Στον πολλαπλασιασμό φυσικών αριθμών δεν ισχύει η αντιμεταθετική ιδιότητα ",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Right/Wrong Generated Right",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong Generated Wrong",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:2,
+            shuffle : false,
+            question: "",
+            answers: {
+            },
+            correctAnswer: ""
+        },
+        {
+            type:"Matching Question",
+            chapter:2,
             shuffle : true,
             question: "Αντιστοίχησε τις σωστές απαντήσεις",
             answers: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
+                a: "",
+                b: "",
+                c: ""
             },
             correctAnswer: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
+                a: "",
+                b: "",
+                c: ""
             }
         },
+        {
+            type:"Matching Question",
+            chapter:2,
+            shuffle : true,
+            question: "Αντιστοίχησε τις σωστές απαντήσεις",
+            answers: {
+                a: "",
+                b: "",
+                c: ""
+            },
+            correctAnswer: {
+                a: "",
+                b: "",
+                c: ""
+            }
+        },
+        {
+            type:"Matching Question",
+            chapter:2,
+            shuffle : true,
+            question: "Αντιστοίχησε τις σωστές απαντήσεις",
+            answers: {
+                a: "",
+                b: "",
+                c: ""
+            },
+            correctAnswer: {
+                a: "",
+                b: "",
+                c: ""
+            }
+        },
+        //~~~~~~~~~~~~~~~~~~~~~~ Chapter 3 ~~~~~~~~~~~~~~~~~~~~~~
 
-        //Chapter 4
+        {
+            type:"Right/Wrong Generated 9",
+            chapter:3,
+            shuffle : false,
+            question: "Μπορείς να μοιράσεις εξίσου number καραμέλες σε 3 ή 9 φίλους σου",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
+            type:"Right/Wrong Generated 2",
+            chapter:3,
+            shuffle : false,
+            question: "Αν  έχουμε number κιλά λάδι, μπορούμε να γεμίσουμε τελείως δοχεία των 2 κιλών;",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },{
+            type:"Right/Wrong Generated 3",
+            chapter:3,
+            shuffle : false,
+            question: "Αν  έχουμε number κιλά λάδι, μπορούμε να γεμίσουμε τελείως δοχεία των 3 κιλών;",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:3,
+            shuffle : false,
+            question: "Να συμπληρώσεις το τελευταίο ψηφίο κάθε αριθμού, έτσι ώστε οι αριθμοί που προκύπτουν να διαιρούνται με το 2 και με το 9:  10",
+            answers: {
+            },
+            correctAnswer: "8"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:3,
+            shuffle : false,
+            question: "Να συμπληρώσεις το τελευταίο ψηφίο κάθε αριθμού, έτσι ώστε οι αριθμοί που προκύπτουν να διαιρούνται με το 2 και με το 9:  43",
+            answers: {
+            },
+            correctAnswer: "2"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:3,
+            shuffle : false,
+            question: "Να συμπληρώσεις το τελευταίο ψηφίο κάθε αριθμού, έτσι ώστε οι αριθμοί που προκύπτουν να διαιρούνται με το 2 και με το 9:  95",
+            answers: {
+            },
+            correctAnswer: "4"
+        },
+
+        //~~~~~~~~~~~~~~~~~~~~~~ Chapter 4 ~~~~~~~~~~~~~~~~~~~~~~
 
         {
             type:"multipleChoice",
@@ -648,14 +1028,14 @@
             shuffle : true,
             question: "Αντιστοίχησε τις σωστές απαντήσεις",
             answers: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
+                a: "",
+                b: "",
+                c: ""
             },
             correctAnswer: {
-                a: "Node.js",
-                b: "TypeScript",
-                c: "npm"
+                a: "",
+                b: "",
+                c: ""
             }
         },
     ];
@@ -710,7 +1090,7 @@
     /*btn.onclick = function() {
         modal.style.display = "block";
     }*/
-    backToTestsButton.onclick = function() {
+    lastQuizButton.onclick = function() {
         modal.style.display = "block";
         choice.onclick = function() {
             location.href = "../html/tests.html";

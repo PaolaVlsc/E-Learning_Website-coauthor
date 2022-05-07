@@ -38,10 +38,11 @@ button{
     border-radius: 3px;
     padding: 20px;
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 65px;
     margin-bottom: 20px;
 }
 .button1{
+    margin-top: 40px;
     background-color: lightcoral;
     display: none;
 }
