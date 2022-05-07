@@ -139,9 +139,7 @@
             //Σύνδεση χρήστη
             request.setCharacterEncoding("UTF-8");
             if ("POST".equalsIgnoreCase(request.getMethod())){
-                String userId = Login.checkCredentials(request.getParameter("email"),request.getParameter("password"));
-                if (userId != null){
-                    session.setAttribute("userId",userId);
+                if (Login.checkCredentials(request.getParameter("email"),request.getParameter("password"),session)){
                     response.sendRedirect("../index.jsp");
                 }else{
                     out.println("<FONT COLOR=\"#ff0000\">Λάθος στοιχεία</FONT><br>");

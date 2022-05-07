@@ -84,12 +84,17 @@
         <div id="quiz"></div>
     </div>
     <div class="popup" onclick="hidePopUp()">
-        <span class="popuptext" id="myPopup"><a style="cursor: pointer;position: absolute;right: 12px;top: 0">&times;</a><br>ΜΠΡΑΒΟΟΟΟ<br><br> ΤΑ ΠΑΣ ΤΕΛΕΙΑ ΠΑΜΕΕ</span>
+        <span class="popuptext" id="myPopup"><a style="cursor: pointer;position: absolute;right: 12px;top: 0">&times;</a></span>
     </div>
     <br>
-    <button id="previous">Προηγούμενη ερώτηση</button>
-    <button id="next">Επόμενη ερώτηση</button>
-    <button id="submit">Καταχώρηση απαντήσεων</button>
+    <iframe name="content" style="display:none;">
+    </iframe>
+    <!--<form id="myForm" action="../SaveGradeServlet" method="post" target="content" >-->
+    <form id="myForm" method="post" target="content" >
+        <button type="button" id="previous">Προηγούμενη ερώτηση</button>
+        <button type="button" id="next">Επόμενη ερώτηση</button>
+        <button type="button" id="submitBtn">Καταχώρηση απαντήσεων</button>
+    </form>
     <div id="results"></div>
     <button id="lastQuiz">Προηγούμενο Τεστ</button>
     <button id="tryAgain">Προσπάθησε ξανά</button>
