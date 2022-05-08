@@ -1233,7 +1233,7 @@
                         }
                     });
                     firework.age++;
-                    if (firework.age > 50 && Math.random() < .05) {
+                    if (firework.age > 70 && Math.random() < .05) {
                         canvas.style.display='none';
                         fireworks.length=0;
                         firework.age=0;
