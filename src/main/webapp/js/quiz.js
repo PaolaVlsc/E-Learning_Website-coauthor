@@ -355,6 +355,11 @@
                         }
                     }
                 }
+                else{
+                    y = document.getElementById("RightAnswer"+questionNumber);
+                    y.innerText="Η σωστή απάντηση είναι : "+currentQuestion.correctAnswer;
+                    document.getElementById(idFtG).style.backgroundColor = "Tomato";
+                }
 
             }
             else if(userAnswer === currentQuestion.correctAnswer){
