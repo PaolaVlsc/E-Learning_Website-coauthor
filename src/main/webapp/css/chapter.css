@@ -32,6 +32,24 @@ header {
 
 }
 
+/*make custom button with hover and transition*/
+button {
+    background-color: #5cafc6;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 20px;
+    margin: 8px 2px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #a4c4d1;
+    color: #064e61;
+}
 .wrapper1 {
     display: flex;
 }
