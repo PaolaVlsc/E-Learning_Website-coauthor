@@ -354,11 +354,10 @@
                             document.getElementById(idFtG).style.backgroundColor="LightGreen";
                         }
                     }
-
                 }
 
             }
-            if(userAnswer === currentQuestion.correctAnswer || check){
+            else if(userAnswer === currentQuestion.correctAnswer){
                 // add to the number of correct answers
                 numCorrect++;
 
@@ -401,7 +400,6 @@
                 else{
                     y = document.getElementById("RightAnswer"+questionNumber);
                     y.innerText=tempText;
-                    console.log("segeh="+y.innerText);
                 }
             }
             // if answer is wrong or blank
@@ -500,7 +498,7 @@
                 chosenQuestions[i] = currentQuestion;
                 i++;
             }
-            else if(chapter=="5" && i<10){
+            else if(chapter==="5" && i<10){
                 chosenQuestions[i] = currentQuestion;
                 i++;
             }
