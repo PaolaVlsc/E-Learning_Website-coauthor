@@ -246,7 +246,7 @@ To change this template use File | Settings | File Templates.
                                      style=" box-shadow: 2px 2px 4px #000000;  width: 80%;
   height: auto;"></center>
                     </div>
-                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για την πρόσθεση και την αφαίρεση</h4>
+                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για την πρόσθεση και την αφαίρεση!</h4>
                     <center><iframe style=" box-shadow: 2px 2px 4px #000000;"  width="560" height="315" src="https://www.youtube.com/embed/72ebUe-ONgw"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -260,7 +260,7 @@ To change this template use File | Settings | File Templates.
                     <hr style="color: rgb(10, 132, 100)">
                     <h4 style="text-decoration: underline;">Πώς κάνω μια πρόσθεση;</h4>
                     Για να προσθέσω φυσικούς αριθμούς πρέπει να προσθέσω τις μονάδες των αριθμών αυτών, μετά τις δεκάδες
-                    των αριθμώ, μετά τις εκατοντάδες κλπ. Η πρόσθεση φυσικών αριθμών μπορεί να γίνει ορίζονται και
+                    των αριθμών, μετά τις εκατοντάδες κλπ. Η πρόσθεση φυσικών αριθμών μπορεί να γίνει ορίζονται και
                     κάθετα.
                     <div class="paradeigma-prosthesh-02" style="padding-top: 25px;">
                         <center><img src="../../assets/chapter01/paradeigma.png" style=" box-shadow: 2px 2px 4px #000000;  width: 75%;
