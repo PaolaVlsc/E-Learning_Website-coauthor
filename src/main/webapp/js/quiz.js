@@ -114,7 +114,7 @@
                 currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]);
             }
             else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-                while(!(z=getRandomInt(-10,10))){}
+                while(!(z=getRandomInt(-10,10)|| x[0]+x[1]+z<0)){}
                 currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]+z);
             }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
                 if(currentQuestion.question===""){
@@ -131,8 +131,8 @@
                 currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]);
             }
             else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-                while(!(z=getRandomInt(-10,10))){}
-                currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]-z);
+                while(!(z=getRandomInt(-10,10)|| x[0]-x[1]+z<0)){}
+                currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]+z);
             }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
                 if(currentQuestion.question===""){
                     currentQuestion.question=x[0]+" - "+x[1]+" = ";
@@ -147,7 +147,7 @@
             currentQuestion.question=x[0]+" * "+x[1]+" = "+(x[0]*x[1]);
         }
         else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-            while(!(z=getRandomInt(-10,10))){}
+            while(!(z=getRandomInt(-10,10)|| x[0]*x[1]+z<0)){}
             currentQuestion.question=x[0]+" * "+x[1]+" = "+(x[0]*x[1]+z);
         }
         else if(!currentQuestion.type.localeCompare("multipleChoice Generated")){
@@ -218,24 +218,6 @@
                 currentQuestion.correctAnswer = "a";
             }
         }
-
-        // if(!currentQuestion.type.localeCompare("Right/Wrong Generated Right")){
-        //     currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]);
-        // }
-        // else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-        //     while(!(z=getRandomInt(-10,10)) || x[0]/x[1]+z<0){}
-        //     currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]+z);
-        // }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
-        //     currentQuestion.question=x[0]+" / "+x[1]+" = ";
-        //     currentQuestion.correctAnswer=x[0]/x[1];
-        // }else if(!currentQuestion.type.localeCompare("Matching Question")){
-        //     let numberDiv=getRandomInt(1,9);
-        //     for(let j in currentQuestion.answers) {
-        //         currentQuestion.answers[j]=numberDiv*10+" / 10"
-        //         currentQuestion.correctAnswer[j]=numberDiv;
-        //         numberDiv*=10;
-        //     }
-        // }
     }
     function chapter4(currentQuestion,x){
         let z;
