@@ -53,11 +53,11 @@ To change this template use File | Settings | File Templates.
                 <div class="dropdown">
                     <a href="../../jsp/tests.jsp">Έλεγξε τις γνώσεις σου!</a>
                     <div class="dropdown-content" style="width:100%;">
-                        <a href="../quiz.jsp">Τεστ: Πρόσθεση και Αφαίρεση</a>
-                        <a href="../quiz.jsp">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
-                        <a href="../quiz.jsp">Τεστ: Κριτήρια διαιρετότητας</a>
-                        <a href="../quiz.jsp">Τεστ: Διαίρεση στους φυσικούς</a>
-                        <a href="../quiz.jsp">Τεστ: Επαναληπτικό</a>
+                        <a href="../testsChapter.jsp?chapter=1">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                        <a href="../testsChapter.jsp?chapter=2">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                        <a href="../testsChapter.jsp?chapter=3">Τεστ: Κριτήρια διαιρετότητας</a>
+                        <a href="../testsChapter.jsp?chapter=4">Τεστ: Διαίρεση στους φυσικούς</a>
+                        <a href="../testsChapter.jsp?chapter=5">Τεστ: Επαναληπτικό</a>
                     </div>
                 </div>
             </li>
@@ -362,7 +362,7 @@ To change this template use File | Settings | File Templates.
                     <hr style="color: rgb(10, 132, 100)">
                     <br>
                     <div style="padding-top: 25px;padding-bottom: 25px;   border: 2px solid skyblue;  border-radius: 5px;">
-                        <center><a href="../quiz.jsp"><img src="../../assets/chapter04/nia.png" style=" box-shadow: 2px 2px 4px #000000;  width: 70%;
+                        <center><a href="../testsChapter.jsp?chapter=4"><img src="../../assets/chapter04/nia.png" style=" box-shadow: 2px 2px 4px #000000;  width: 70%;
   height: auto;"></a></center>
                     </div>
 

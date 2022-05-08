@@ -99,11 +99,11 @@
                 <div class="dropdown">
                     <a class="current" href="tests.jsp">Έλεγξε τις γνώσεις σου!</a>
                     <div class="dropdown-content" style="width:100%;">
-                        <a href="quiz.jsp">Τεστ: Πρόσθεση και Αφαίρεση</a>
-                        <a href="quiz.jsp">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
-                        <a href="quiz.jsp">Τεστ: Κριτήρια διαιρετότητας</a>
-                        <a href="quiz.jsp">Τεστ: Διαίρεση στους φυσικούς</a>
-                        <a href="quiz.jsp">Τεστ: Επαναληπτικό</a>
+                        <a href="testsChapter.jsp?chapter=1">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                        <a href="testsChapter.jsp?chapter=2">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                        <a href="testsChapter.jsp?chapter=3">Τεστ: Κριτήρια διαιρετότητας</a>
+                        <a href="testsChapter.jsp?chapter=4">Τεστ: Διαίρεση στους φυσικούς</a>
+                        <a href="testsChapter.jsp?chapter=5">Τεστ: Επαναληπτικό</a>
                     </div>
                 </div>
             </li>

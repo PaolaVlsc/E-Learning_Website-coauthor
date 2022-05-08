@@ -45,11 +45,11 @@
                     <div class="dropdown">
                         <a class="current" href="tests.jsp">Έλεγξε τις γνώσεις σου!</a>
                         <div class="dropdown-content" style="width:100%;">
-                            <a href="quiz.jsp">Τεστ: Πρόσθεση και Αφαίρεση</a>
-                            <a href="quiz.jsp">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
-                            <a href="quiz.jsp">Τεστ: Κριτήρια διαιρετότητας</a>
-                            <a href="quiz.jsp">Τεστ: Διαίρεση στους φυσικούς</a>
-                            <a href="quiz.jsp">Τεστ: Επαναληπτικό</a>
+                            <a href="testsChapter.jsp?chapter=1">Τεστ: Πρόσθεση και Αφαίρεση</a>
+                            <a href="testsChapter.jsp?chapter=2">Τεστ: Πολλαπλασιασμός στους φυσικούς</a>
+                            <a href="testsChapter.jsp?chapter=3">Τεστ: Κριτήρια διαιρετότητας</a>
+                            <a href="testsChapter.jsp?chapter=4">Τεστ: Διαίρεση στους φυσικούς</a>
+                            <a href="testsChapter.jsp?chapter=5">Τεστ: Επαναληπτικό</a>
                         </div>
                     </div>
                 </li>
@@ -70,24 +70,24 @@
     </script>
     <!---------- End: Js navbar ----------->
     <!---------------------------------------- Close of navbar ------------------------------------------->
-    <canvas id='myCanvas' style="position: absolute; left: 0%" width='1500' height='800'></canvas>
+    <canvas id='myCanvas' style="position: absolute; left: 0" width='1500' height='800'></canvas>
     <h1>Τέσταρε τις γνώσεις σου !</h1>
     <div class="quiz-container">
         <div id="quiz"></div>
     </div>
     <div class="popup" onclick="hidePopUp()">
-        <span class="popuptext" id="myPopup"><a style="cursor: pointer;position: absolute;right: 12px;top: 0">&times;</a><br>ΜΠΡΑΒΟΟΟΟ<br><br> ΤΑ ΠΑΣ ΤΕΛΕΙΑ ΠΑΜΕΕ</span>
+        <span class="popuptext" id="myPopup"><a style="cursor: pointer;position: absolute;right: 12px;top: 0">&times;</a></span>
     </div>
     <br>
     <iframe name="content" style="display:none;">
     </iframe>
-    <form action="" method="post" target="content">
-        <button id="previous">Προηγούμενη ερώτηση</button>
-        <button id="next">Επόμενη ερώτηση</button>
-        <button type="submit" id="submit">Καταχώρηση απαντήσεων</button>
+    <form id="myForm" method="post" target="content" >
+        <button type="button" id="previous">Προηγούμενη ερώτηση</button>
+        <button type="button" id="next">Επόμενη ερώτηση</button>
+        <button type="button" id="submitBtn">Καταχώρηση απαντήσεων</button>
     </form>
     <div id="results"></div>
-    <button id="backToTests">Επιστροφή στα Τεστ</button>
+    <button id="lastQuiz">Προηγούμενο Τεστ</button>
     <button id="tryAgain">Προσπάθησε ξανά</button>
     <button id="nextQuiz">Επόμενο Τεστ</button>
     <!-- The Modal for buttons -->

@@ -1150,19 +1150,19 @@
     lastQuizButton.onclick = function() {
         modal.style.display = "block";
         choice.onclick = function() {
-            location.href = "../html/tests.html";
+            location.href = "../jsp/tests.jsp";
         }
     }
     nextQuizButton.onclick = function() {
         modal.style.display = "block";
         choice.onclick = function() {
-            location.href = "../html/quiz.html?chapter="+(parseInt(chapter)+1).toString();
+            location.href = "../jsp/quiz.jsp?chapter="+(parseInt(chapter)+1).toString();
         }
     }
     tryAgainButton.onclick = function() {
         modal.style.display = "block";
         choice.onclick = function() {
-            location.href = "quiz.html?chapter="+chapter;
+            location.href = "quiz.jsp?chapter="+chapter;
         }
     }
     // When the user clicks on <span> (x), close the modal
