@@ -17,16 +17,16 @@
                 if(currentQuestion.shuffle){
                     keys.sort(function() {return Math.random() - 0.5;});
                 }
-                if(chapter==1){
+                if(chapter==="1" || currentQuestion.chapter===1){
                     chapter1(currentQuestion,x)
                 }
-                else if(chapter==2){
+                else if(chapter==="2" || currentQuestion.chapter===2){
                     chapter2(currentQuestion,x)
                 }
-                else if(chapter==3){
+                else if(chapter==="3" || currentQuestion.chapter===3){
                     chapter3(currentQuestion,x)
                 }
-                else if(chapter==4){
+                else if(chapter==="4" || currentQuestion.chapter===4){
                     chapter4(currentQuestion,x)
                 }
                 // and for each available answer...
