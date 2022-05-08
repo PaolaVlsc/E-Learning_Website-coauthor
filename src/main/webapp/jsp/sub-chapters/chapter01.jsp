@@ -246,7 +246,7 @@ To change this template use File | Settings | File Templates.
                                      style=" box-shadow: 2px 2px 4px #000000;  width: 80%;
   height: auto;"></center>
                     </div>
-                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για την πρόσθεση και την αφαίρεση</h4>
+                    <h4>Εμβάθυνε τις γνώσεις σου περισσότερο για την πρόσθεση και την αφαίρεση!</h4>
                     <center><iframe style=" box-shadow: 2px 2px 4px #000000;"  width="560" height="315" src="https://www.youtube.com/embed/72ebUe-ONgw"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
