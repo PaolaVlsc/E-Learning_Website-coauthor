@@ -114,7 +114,7 @@
                 currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]);
             }
             else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-                while(!(z=getRandomInt(-10,10)|| x[0]+x[1]+z<0)){}
+                while(!(z=getRandomInt(0,10))){}
                 currentQuestion.question=x[0]+" + "+x[1]+" = "+(x[0]+x[1]+z);
             }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
                 if(currentQuestion.question===""){
@@ -131,7 +131,7 @@
                 currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]);
             }
             else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-                while(!(z=getRandomInt(-10,10)|| x[0]-x[1]+z<0)){}
+                while(!(z=getRandomInt(0,10))){}
                 currentQuestion.question=x[0]+" - "+x[1]+" = "+(x[0]-x[1]+z);
             }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
                 if(currentQuestion.question===""){
@@ -147,7 +147,7 @@
             currentQuestion.question=x[0]+" * "+x[1]+" = "+(x[0]*x[1]);
         }
         else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-            while(!(z=getRandomInt(-10,10)|| x[0]*x[1]+z<0)){}
+            while(!(z=getRandomInt(0,10))){}
             currentQuestion.question=x[0]+" * "+x[1]+" = "+(x[0]*x[1]+z);
         }
         else if(!currentQuestion.type.localeCompare("multipleChoice Generated")){
@@ -229,7 +229,7 @@
             currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]);
         }
         else if(!currentQuestion.type.localeCompare("Right/Wrong Generated Wrong")){
-            while(!(z=getRandomInt(-10,10)) || x[0]/x[1]+z<0){}
+            while(!(z=getRandomInt(0,10))){}
             currentQuestion.question=x[0]+" / "+x[1]+" = "+(x[0]/x[1]+z);
         }else if(!currentQuestion.type.localeCompare("Fill the Gaps")){
             currentQuestion.question=x[0]+" / "+x[1]+" = ";
