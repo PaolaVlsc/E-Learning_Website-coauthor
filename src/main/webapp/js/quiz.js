@@ -500,8 +500,9 @@
                 chosenQuestions[i] = currentQuestion;
                 i++;
             }
-            else if(chapter==5 && i<10){
+            else if(chapter=="5" && i<10){
                 chosenQuestions[i] = currentQuestion;
+                i++;
             }
         });
     }
