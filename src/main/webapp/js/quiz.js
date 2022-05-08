@@ -342,8 +342,21 @@
             let abc="a";
 
             if(!currentQuestion.type.localeCompare("Fill the Gaps")) {
-                if(document.getElementById(idFtG).value===(currentQuestion.correctAnswer).toString())
-                    check = true;
+                if(document.getElementById(idFtG).value===(currentQuestion.correctAnswer).toString()){
+                    numCorrect++;
+
+                    x = document.getElementsByName("question"+questionNumber);
+                    if(!currentQuestion.type.localeCompare("Fill the Gaps")) {
+                        y = document.getElementById(idFtG).style.backgroundColor = "LightGreen ";
+                    }
+                    for (i = 0; i < x.length; i++) {
+                        if(x[i].value===currentQuestion.correctAnswer){
+                            document.getElementById(idFtG).style.backgroundColor="LightGreen";
+                        }
+                    }
+
+                }
+
             }
             if(userAnswer === currentQuestion.correctAnswer || check){
                 // add to the number of correct answers
@@ -354,7 +367,6 @@
                     y = document.getElementById(idFtG).style.backgroundColor = "LightGreen ";
                 }
                 for (i = 0; i < x.length; i++) {
-                    console.log(x)
                     if(x[i].value===currentQuestion.correctAnswer){
                         //document.getElementById(idFtG).style.backgroundColor="LightGreen";
                         answerContainer.children[i].style.color = "green";
@@ -488,6 +500,9 @@
                 chosenQuestions[i] = currentQuestion;
                 i++;
             }
+            else if(chapter==5 && i<10){
+                chosenQuestions[i] = currentQuestion;
+            }
         });
     }
     // Variables
@@ -500,11 +515,7 @@
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Ένα τρένο ξεκινάει από Αθήνα για Λάρισα με 480 επιβάτες \n" +
-                "\n" +
-                "α) Στη Λειβαδιά ανέβηκαν άλλοι 35 επιβάτες \n" +
-                "\n" +
-                "β) Στο Λιανοκλάδι Λαμίας κατέβηκαν 110 επιβάτες. Οι υπόλοιποι κατέβηκαν στη Λάρισσα. Πόσοι ήταν αυτοί που κατέβηκαν στη Λάρισσα; ",
+            question: "Ένα τρένο έχει 480 επιβάτες α) Ανέβηκαν άλλοι 35 επιβάτες β) Κατέβηκαν 11 επιβάτες. Πόσοι είναι στο τρένο;",
             answers: {
                 a: "405",
                 b: "415",
@@ -516,7 +527,7 @@
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Ο Πύργος του Άιφελ στη Γαλλία έχει ύψος 320 μέτρα. Ο Λευκός Πύργος της Θεσσαλονίκης έχει ύψος 37 μέτρα. Πόσο πιο ψηλός είναι ο Πύργος του Άιφελ; ",
+            question: "Ο Πύργος του Άιφελ έχει ύψος 320 μέτρα. Ο Λευκός Πύργος έχει ύψος 37 μέτρα. Πόσο πιο ψηλός είναι ο Πύργος του Άιφελ;",
             answers: {
                 a: "283",
                 b: "290",
@@ -528,24 +539,13 @@
             type:"multipleChoice",
             chapter:1,
             shuffle : true,
-            question: "Η κυρία Σοφία αγόρασε μια ηλεκτρική κουζίνα 450ευρώ, μία ηλεκτρική σκούπα με 257 ερυρώ και ένα τάμπλετ με 230 ευρώ. Πόσα πλήρωσε συνολικά; ",
+            question: "Η Σοφία αγόρασε μια ηλεκτρική κουζίνα 450€, μία ηλεκτρική σκούπα με 257€ και ένα τάμπλετ με 230€. Πόσα πλήρωσε συνολικά; ",
             answers: {
                 a: "928",
                 b: "937",
                 c: "938"
             },
             correctAnswer: "b"
-        },
-        {
-            type:"Right/Wrong",
-            chapter:1,
-            shuffle : false,
-            question: "Ο γατης αγαπαει τον ιασονα πιο πολυ απο την Σοφια",
-            answers: {
-                a: "Σωστό",
-                b: "Λάθος",
-            },
-            correctAnswer: "a"
         },
         {
             type:"Right/Wrong Generated Wrong",
@@ -613,7 +613,7 @@
             type:"Fill the Gaps",
             chapter:1,
             shuffle : false,
-            question: "Ένας Νίκος πούλησε στην αγορά 350 κιλά μήλα  165 κιλά αχλάδια και 285 κιλά  πορτοκάλια. Πόσα κιλά φρούτα πούλησε στην αγορά; ",
+            question: "Ο Νίκος πούλησε 350 κιλά μήλα, 165 κιλά αχλάδια και 285 κιλά πορτοκάλια. Πόσα κιλά φρούτα πούλησε συνολικά;",
             answers: {
             },
             correctAnswer: "800"
@@ -622,7 +622,7 @@
             type:"Fill the Gaps",
             chapter:1,
             shuffle : false,
-            question: "Η Πάολα είχε στον κουμπαρά της 250 €.Δάνεισε στον αδερφό της 185€ για ν’αγοράσει ένα καινούριο ποδήλατο. Πόσα χρήματα της έμειναν στον κουμπαρά;",
+            question: "Η Πάολα είχε στον κουμπαρά της 250 €. Έδωσε στον αδερφό της 185€ για ν’ αγοράσει ένα καινούριο ποδήλατο. Πόσα χρήματα της έμειναν στον κουμπαρά;",
             answers: {
             },
             correctAnswer: "65"
@@ -631,7 +631,7 @@
             type:"Fill the Gaps",
             chapter:1,
             shuffle : false,
-            question: "Ένα αεροπλάνο έχει 587 θέσεις. Στο πρωϊνό του δρομολόγιο ταξίδεψαν 230 άντρες, 158 γυναίκες και 15 παιδιά. Πόσες θέσεις έμειναν άδειες; ",
+            question: "Ένα αεροπλάνο έχει 587 θέσεις. Μπήκαν στο αεροπλάνο 230 άντρες, 158 γυναίκες και 15 παιδιά. Πόσες θέσεις είναι άδειες;",
             answers: {
             },
             correctAnswer: "184"
@@ -660,8 +660,7 @@
             answers: {
                 a: "",
                 b: "",
-                c: "",
-                d: "",
+                c: ""
             },
             correctAnswer: "a"
         },
@@ -673,8 +672,7 @@
             answers: {
                 a: "",
                 b: "",
-                c: "",
-                d: "",
+                c: ""
             },
             correctAnswer: "a"
         },
@@ -833,6 +831,17 @@
             correctAnswer: "a"
         },
         {
+            type:"Right/Wrong Generated 9",
+            chapter:3,
+            shuffle : false,
+            question: "Μπορείς να μοιράσεις εξίσου number καραμέλες σε 3 ή 9 φίλους σου",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "a"
+        },
+        {
             type:"Right/Wrong Generated 2",
             chapter:3,
             shuffle : false,
@@ -842,7 +851,30 @@
                 b: "Λάθος",
             },
             correctAnswer: "b"
-        },{
+        },
+        {
+            type:"Right/Wrong Generated 2",
+            chapter:3,
+            shuffle : false,
+            question: "Αν  έχουμε number κιλά λάδι, μπορούμε να γεμίσουμε τελείως δοχεία των 2 κιλών;",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
+            type:"Right/Wrong Generated 3",
+            chapter:3,
+            shuffle : false,
+            question: "Αν  έχουμε number κιλά λάδι, μπορούμε να γεμίσουμε τελείως δοχεία των 3 κιλών;",
+            answers: {
+                a: "Σωστό",
+                b: "Λάθος",
+            },
+            correctAnswer: "b"
+        },
+        {
             type:"Right/Wrong Generated 3",
             chapter:3,
             shuffle : false,
@@ -879,6 +911,23 @@
             answers: {
             },
             correctAnswer: "4"
+        },{
+            type:"Fill the Gaps",
+            chapter:3,
+            shuffle : false,
+            question: "Να συμπληρώσεις το τελευταίο ψηφίο κάθε αριθμού, έτσι ώστε οι αριθμοί που προκύπτουν να διαιρούνται με το 2 και με το 9:  32",
+            answers: {
+            },
+            correctAnswer: "4"
+        },
+        {
+            type:"Fill the Gaps",
+            chapter:3,
+            shuffle : false,
+            question: "Να συμπληρώσεις το τελευταίο ψηφίο κάθε αριθμού, έτσι ώστε οι αριθμοί που προκύπτουν να διαιρούνται με το 2 και με το 9:  15",
+            answers: {
+            },
+            correctAnswer: "3"
         },
 
         //~~~~~~~~~~~~~~~~~~~~~~ Chapter 4 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1123,16 +1172,6 @@
             modal.style.display = "none";
         }
     }
-    /*backToTestsButton.onclick = function () {
-        location.href = "../html/tests.html";
-    };*/
-    /*nextQuizButton.onclick = function () {
-        location.href = "../html/quiz.html?chapter="+(parseInt(chapter)+1).toString();
-    };*/
-    /*tryAgainButton.onclick = function () {
-        location.href = "quiz.html?chapter="+chapter;
-    };*/
-
 
     // ~~~~~~~~~~~~~~~ fireworks ~~~~~~~~~~~~~~~
     function fireworks(){
