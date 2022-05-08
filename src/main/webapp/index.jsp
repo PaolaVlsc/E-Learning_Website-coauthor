@@ -10,6 +10,25 @@
     <title>Αρχική Σελίδα | SINP </title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/popup.css">
+    <style>
+        button {
+            background-color: #5cafc6;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 20px;
+            margin: 8px 2px;
+            transition-duration: 0.5s;
+            cursor: pointer;
+        }
+
+
+        button:hover {
+            background-color: #a4c4d1;
+            color: #064e61;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 

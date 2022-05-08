@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/popup.css">
     <link rel="stylesheet" href="../css/quiz_style.css">
-    <link rel="stylesheet" href="../css/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -91,7 +90,7 @@
     <button id="backToTests">Επιστροφή στα Τεστ</button>
     <button id="tryAgain">Προσπάθησε ξανά</button>
     <button id="nextQuiz">Επόμενο Τεστ</button>
-    <!-- The Modal -->
+    <!-- The Modal for buttons -->
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
@@ -101,10 +100,28 @@
                 <h2>Είσαι σίγουρος;</h2>
             </div>
             <div class="modal-body">
-                <p>Είσαι σίγουρος πως θες να αποσυνδεθείς;</p>
+                <p>Εάν φύγεις τώρα δε θα μπορείς να δεις τι έκανες λάθος ή σωστό!</p>
             </div>
             <div class="modal-footer">
-                <button id="choice" class="button button2">Ναι, θέλω να φύγω.</button>
+                <button id="choice" class="button button2">Ναι, θέλω να φύγω</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- The Modal for logout -->
+    <div id="myModalLog" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="closeLog" class="close">&times;</span>
+                <h2>Είσαι σίγουρος;</h2>
+            </div>
+            <div class="modal-body">
+                <p>Εάν φύγεις τώρα ίσως χάσεις την πρόοδό σου!</p>
+            </div>
+            <div class="modal-footer">
+                <button id="choiceLog" class="button button2">Ναι, θέλω να φύγω</button>
             </div>
         </div>
 
@@ -119,28 +136,28 @@
     <script>
         <%if(Login.isLoggedIn(session)){%>
         // Get the modal
-        let modal = document.getElementById("myModal");
-        let choice = document.getElementById("choice");
+        let modalLog = document.getElementById("myModalLog");
+        let choiceLog = document.getElementById("choiceLog");
         let log = document.getElementById("log");
 
         // Get the <span> element that closes the modal
-        let span = document.getElementsByClassName("close")[0];
+        let spanLog = document.getElementById("closeLog");
 
         // When the user clicks the button, open the modal
         log.onclick = function() {
-            modal.style.display = "block";
-            choice.onclick = function() {
+            modalLog.style.display = "block";
+            choiceLog.onclick = function() {
                 location.href ="../logout-servlet";
             }
         }
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
+        spanLog.onclick = function() {
+            modalLog.style.display = "none";
         }
         // When the user clicks anywhere outside the modal, close it
         window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if (event.target == modalLog) {
+                modalLog.style.display = "none";
             }
         }
         <%}%>
