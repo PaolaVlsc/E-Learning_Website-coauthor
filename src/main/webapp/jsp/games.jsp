@@ -67,7 +67,7 @@
     </div>
 </nav>
 <!-- Close Top Nav -->
-
+<!-- show different buttons and links with images for each different games -->
 <div class="main-wrap" style="padding-bottom: 100px;">
     <h1>Διάλεξε ποιο παιχνίδι θέλεις να παίξεις!</h1>
     Μπορείς να παίξεις με φίλους!<br>
@@ -88,7 +88,7 @@
     <a target="_blank" href="http://users.sch.gr/gregzer/M/M-E/%CE%9A%CF%81%CE%B9%CF%84%CE%AE%CF%81%CE%B9%CE%B1%20%CE%B4%CE%B9%CE%B1%CE%B9%CF%81%CE%B5%CF%84%CF%8C%CF%84%CE%B7%CF%84%CE%B1%CF%82%20-%20%CE%95%CE%BE%CE%AC%CF%83%CE%BA%CE%B7%CF%83%CE%B7/story_html5.html">
         <img src="../assets/chap3.jpg" alt="κριτήρια διαιρετότητας" style="width:400px;height:220px;">
     </a><br>
-    <!-- The Modal -->
+    <!-- The Modal for logout -->
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
@@ -129,16 +129,9 @@
     let choice = document.getElementById("choice");
     let log = document.getElementById("log");
 
-    // Get the button that opens the modal
-    //let btn = document.getElementById("backToTests");
-
     // Get the <span> element that closes the modal
     let span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal
-    /*btn.onclick = function() {
-        modal.style.display = "block";
-    }*/
     log.onclick = function() {
         modal.style.display = "block";
         choice.onclick = function() {
