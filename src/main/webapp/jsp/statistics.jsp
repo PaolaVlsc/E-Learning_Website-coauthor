@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="../css/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<!-- when user is not logged in then an image will appear to tell him to login
+    otherwise his grades will appear
+-->
 <body <%
         //if user is not logged then put background picture with dino
         if(!Login.isLoggedIn(session)) {%>
@@ -76,7 +79,7 @@
     </div>
 </nav>
 <script src="../js/app.js"></script>
-<!-- The Modal -->
+<!-- The Modal for logout -->
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
@@ -94,6 +97,7 @@
     </div>
 
 </div>
+<!-- modal script -->
 <script>
     <%if(Login.isLoggedIn(session)){%>
     // Get the modal
@@ -126,6 +130,7 @@
 <script>
     navbar.classList.add("sticky");
 </script>
+
 <%//if user is logged in then print graphs
     if (Login.isLoggedIn(session)){
 %>
