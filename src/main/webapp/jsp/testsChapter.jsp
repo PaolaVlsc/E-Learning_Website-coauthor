@@ -3,12 +3,10 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="java.sql.ResultSet" %><%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 18/4/2022
-  Time: 2:14 μ.μ.
-  To change this template use File | Settings | File Templates.
+<%@ page import="java.sql.ResultSet" %>
+<%--
+  this jsp will have a text and a button with a message
+  that will tell the user the difficulty of the test and a helpful message
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%! String message;
@@ -120,6 +118,7 @@
 </nav>
 <script src="../js/app.js"></script>
 
+<!-- contain the message in space under navbar -->
 <div class="main-wrap">
     <h1><%=message%></h1>
     <br>
@@ -143,6 +142,7 @@
     </div>
 
 </div>
+<!-- script for modal -->
 <script>
     <%if(Login.isLoggedIn(session)){%>
     // Get the modal
