@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/popup.css">
     <style>
+        /*button with hover effect for modal for logout*/
         button {
             background-color: #5cafc6;
             border: none;
@@ -22,7 +23,6 @@
             transition-duration: 0.5s;
             cursor: pointer;
         }
-
 
         button:hover {
             background-color: #a4c4d1;
@@ -39,15 +39,19 @@
         <div class="icon a menu-btn">
             <a><i class="fa fa-list-ul"></i></a>
         </div>
+        <!-- logo for navbar with our company name -->
         <div class="logo">
             ΒΕΜΠΛΗΧΑ
         </div>
+        <!-- menu list will have a dropdown for when window size is too small -->
         <ul class="menu-list">
             <li>
+                <!-- x icon to close menu list -->
                 <div class="icon cancel-btn">
                     <i class="fa fa-close"></i>
                 </div>
             </li>
+            <!-- some buttons have dropdown for the different chapters -->
             <li><a id="startPage" class="current-for-start" href="index.jsp">Αρχική</a></li>
 
             <li>
@@ -77,6 +81,7 @@
             <li><a href="jsp/statistics.jsp">Στατιστικά</a></li>
             <li><a href="jsp/games.jsp">Παιχνίδια</a></li>
         </ul>
+        <!-- if user is logged in then button shows different text -->
         <div class="logout">
             <a id="log" <%if(!Login.isLoggedIn(session)){%>href="jsp/login.jsp"<%}%>>
                 <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
@@ -89,19 +94,20 @@
 
 <!-- Start Header -->
 <div class="banner-area">
-    <h2>Μαθηματικά</h2>
+    <h2>ΜΑΘΗΜΑΤΙΚΑ</h2>
 </div>
 <!-- Close Header -->
 
 <!-- Start Main Container -->
+<!-- This will contain the text that will appear for explaining our site -->
 <div class="content-area">
     <div class="wrapper" style="font-size: 20px;">
         <div class="title">Μαθηματικά Ε΄ Δημοτικού</div>
         <p>Ο σκοπός της διδασκαλίας των Μαθηματικών εντάσσεται στους γενικότερους σκοπούς της Εκπαίδευσης και αφορά τη
             συμβολή στην ολοκλήρωση της προσωπικότητας του μαθητή και την επιτυχή κοινωνική ένταξή του.
         </p>
-        <div style="margin:50px;"><img src="assets/vem.png" alt="quote" style="width:50%;"></div>
-
+        <!-- logo name -->
+        <div style="margin:50px;"><img src="assets/vem.png" alt="logo" style="width:50%;"></div>
 
         <p>Προσφέρουμε θεωρία και ασκήσεις μαθηματικών για την Ε' δημοτικού, καθώς και τη δυνατότητα να ελέγξετε τις
             γνώσεις σας πάνω σε ό,τι σας μάθαμε ή πιθανώς ήδη γνωρίζατε!</p>
@@ -115,9 +121,10 @@
     letter-spacing: 1px;
     padding-left: 20px;">Εάν συνδεθείτε, τότε θα έχετε τη δυνατότητα να βλέπετε τους βαθμούς σας στα κουίζ, καθώς και
             την πρόοδό σας.</h5>
-
+        
+        <!-- quote -->
         <div style="padding-top: 25px;">
-            <center><img src="assets/quote.png" style=" box-shadow: 2px 2px 4px #000000;  width: 80%;  height: auto;">
+            <center><img src="assets/quote.png" alt="quote" style=" box-shadow: 2px 2px 4px #000000;  width: 80%;  height: auto;">
             </center>
         </div>
 
@@ -127,17 +134,22 @@
             3. Κριτήρια διαιρετότητας<br>
             4. Η διαίρεση στους φυσικούς αριθμούς<br>
         </p>
+
+        <!-- photoshopped image -->
         <div style="padding-top: 25px;">
-            <center><img src="assets/b2.png" style="width: 60%;  height: auto;"></center>
+            <center><img src="assets/b2.png" style="width: 60%;  height: auto;" alt="kids"></center>
         </div>
         <p>Μέσα από αυτήν την ιστοσελίδα θα μάθουμε να τα αγαπάμε και
             θα μπορούμε να λύσουμε όλες τις ασκήσεις που θα συναντήσουμε!</p>
+
+        <!-- image for maths -->
         <a href="jsp/chapters.jsp"><img src="assets/bookcover_maths_main.jpg" alt="Μαθηματικά Ε' Δημοτικού"
                                         style="margin-top:50px; width:250px;height:350px;"></a>
         <div>
             <a href="jsp/chapters.jsp">Έλα να μάθουμε Μαθηματικά</a>
         </div>
         <br>
+        <!-- our names -->
         <div style="border: 2px solid skyblue; border-radius: 5px; padding: 5px"><h3 style="font-size: 18px;">Τα μέλη
             της ομάδας που δημιούργησαν αυτήν την ιστοσελίδα είναι(με αλφαβητική
             σειρά):</h3>
@@ -173,21 +185,35 @@
 
 <!-- Start Script -->
 <script src="js/app.js"></script>
+<!--
+    The following script will control the color for the current page
+    Because the navbar has sticky attribute added to it
+    and the navbar colour changes when scrolling, current page's colour must change
+    accordingly.
+    Menu list current must always be salmon
+    -->
 <script>
     let element = document.getElementById("startPage");
 
+    //salmon colour for when menu list is visible,
+    //or for when user scrolls and navbar changes to salmon
     function salmonColour() {
         element.classList.add("current");
         element.classList.remove("current-for-start");
     }
 
+    //blue colour for when start page is at the top
     function blueColour() {
         element.classList.add("current-for-start");
         element.classList.remove("current");
     }
 
+    //colour changing according to width of window
+    //when user minimizes the window, then the colour for current is salmon
+    //but if user opens the width and scrolls up then colour must return to blue
+    //otherwise colour should be salmon
     function changeColourWidth() {
-        if (window.innerWidth < 868) {
+        if (window.innerWidth < 1080) {
             salmonColour();
         } else if (this.scrollY < 20) {
             blueColour();
@@ -196,11 +222,14 @@
         }
     }
 
+    //if user scrolls then navbar should become sticky
+    //if window is not minimised enough then current colour is blue
+    //if it is minimised then current colour is salmon
     function changeColourScroll() {
-        if (this.scrollY < 20 && window.innerWidth > 868) {
+        if (this.scrollY < 20 && window.innerWidth > 1080) {
             navbar.classList.remove("sticky");
             blueColour();
-        } else if (this.scrollY < 20 && window.innerWidth < 868) {
+        } else if (this.scrollY < 20 && window.innerWidth < 1080) {
             navbar.classList.remove("sticky");
             salmonColour();
         } else {
@@ -217,10 +246,12 @@
     window.onscroll = () => {
         changeColourScroll()
     }
+    //when loading we must check windows width
     window.onload = () => {
         changeColourWidth();
     }
 </script>
+<!-- web page element that displays on top when user wants to leave -->
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
