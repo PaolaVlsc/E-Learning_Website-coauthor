@@ -16,6 +16,7 @@ header {
     margin: 0 auto;
 }
 
+/*text that appears on top of page with title*/
 .container1 .my_header {
     display: block;
     font-size: 2em;
@@ -50,15 +51,19 @@ button:hover {
     color: #064e61;
 }
 
+/*will contain the sidebar and the text for each chapter*/
 .wrapper1 {
     display: flex;
 }
 
+/*how far from the side will the sidebar be*/
 .container1 aside {
     width: 30%;
     margin: 35px 50px;
 }
 
+/*sidebar with different options
+where the color changes depending on where the user scrolls*/
 .container1 aside .sidebar1 {
     padding: 5px 50px;
     position: sticky;
@@ -116,6 +121,7 @@ button:hover {
     text-align: justify;
 }
 
+/*theory for each chapter*/
 #theory {
 }
 

@@ -1,12 +1,6 @@
 <%@ page import="projectel.projectel.Login" %>
-<%--
-Created by IntelliJ IDEA.
-User: user
-Date: 18/4/2022
-Time: 2:14 μ.μ.
-To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -27,15 +21,19 @@ To change this template use File | Settings | File Templates.
         <div class="icon a menu-btn">
             <a><i class="fa fa-list-ul"></i></a>
         </div>
+        <!-- logo for navbar with our company name -->
         <div class="logo">
             ΒΕΜΠΛΗΧΑ
         </div>
+        <!-- menu list will have a dropdown for when window size is too small -->
         <ul class="menu-list">
             <li>
+                <!-- x icon to close menu list -->
                 <div class="icon cancel-btn">
                     <i class="fa fa-close"></i>
                 </div>
             </li>
+            <!-- some buttons have dropdown for the different chapters -->
             <li><a href="../../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
@@ -65,6 +63,7 @@ To change this template use File | Settings | File Templates.
             <li><a href="../games.jsp">Παιχνίδια</a></li>
         </ul>
 
+        <!-- if user is logged in then button shows different text -->
         <div class="logout">
             <a id="log" <%if(!Login.isLoggedIn(session)){%>href="../login.jsp"<%}%>>
                 <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
@@ -86,9 +85,8 @@ To change this template use File | Settings | File Templates.
         <div class="my_header">
             ΕΛΑ ΝΑ ΜΑΘΟΥΜΕ ΤΗΝ ΠΡΟΣΘΕΣΗ ΠΑΡΕΑ !
         </div>
-        <!--<div class="my_header2">
-          <pre> </pre>
-        </div>
+        <!--
+        wrapper where the sidebar and theory will be
         -->
         <div class="wrapper1">
             <aside>
@@ -322,6 +320,7 @@ To change this template use File | Settings | File Templates.
 <!-- Link the js -->
 <script src="../../js/subchapters.js"></script>
 <!-- The Modal -->
+<!-- web page element that displays on top when user wants to leave -->
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
