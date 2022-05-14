@@ -70,17 +70,21 @@
     </script>
     <!---------- End: Js navbar ----------->
     <!---------------------------------------- Close of navbar ------------------------------------------->
+    <!-- canvas will be the space or the fireworks that will take the whole screen -->
     <canvas id='myCanvas' style="position: absolute; left: 0" width='1500' height='800'></canvas>
     <h1>Τέσταρε τις γνώσεις σου !</h1>
     <div class="quiz-container">
         <div id="quiz"></div>
     </div>
+    <!-- popup that appears when user finishes quiz -->
     <div class="popup" onclick="hidePopUp()">
         <span class="popuptext" id="myPopup"><a style="cursor: pointer;position: absolute;right: 12px;top: 0">&times;</a></span>
     </div>
     <br>
+    <!-- iframe will exist in order to remain in this page when submitting the form -->
     <iframe name="content" style="display:none;">
     </iframe>
+    <!-- buttons for moving between questions and quiz -->
     <form id="myForm" method="post" target="content" >
         <button type="button" id="previous">Προηγούμενη ερώτηση</button>
         <button type="button" id="next">Επόμενη ερώτηση</button>
@@ -90,7 +94,7 @@
     <button id="lastQuiz">Προηγούμενο Τεστ</button>
     <button id="tryAgain">Προσπάθησε ξανά</button>
     <button id="nextQuiz">Επόμενο Τεστ</button>
-    <!-- The Modal for buttons -->
+    <!-- The Modal for buttons to change quiz -->
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
@@ -133,6 +137,7 @@
             popup.classList.toggle("hide");
         }
     </script>
+    <!-- MODAL SCRIPT -->
     <script>
         <%if(Login.isLoggedIn(session)){%>
         // Get the modal

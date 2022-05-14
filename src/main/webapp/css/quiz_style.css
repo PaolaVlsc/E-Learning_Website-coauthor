@@ -29,6 +29,7 @@ h1{
     display: block;
     margin-bottom: 10px;
 }
+/*button for quiz page*/
 button{
     font-family: 'Work Sans', sans-serif;
     font-size: 22px;
@@ -41,6 +42,7 @@ button{
     margin-top: 75px;
     margin-bottom: 20px;
 }
+/*button1 appears on the modal logout*/
 .button1{
     margin-top: 40px;
     background-color: lightcoral;
