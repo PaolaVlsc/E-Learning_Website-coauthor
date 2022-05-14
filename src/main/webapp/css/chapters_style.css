@@ -1,3 +1,4 @@
+/* div for the cards that will appear for the different chapters */
 .cards {
     width: 100%;
     display: flex;
@@ -5,7 +6,7 @@
     justify-content: space-around;
 }
 
-/*make custom button with hover and transition*/
+/*make custom button with hover and transition for logout*/
 button {
     background-color: #5cafc6;
     border: none;
@@ -18,11 +19,12 @@ button {
     cursor: pointer;
 }
 
-
 button:hover {
     background-color: #a4c4d1;
     color: #064e61;
 }
+
+/* appearance for each individual card */
 .card {
     margin-top: 100px;
     position: relative;
@@ -31,6 +33,7 @@ button:hover {
     box-shadow: 0 40px 40px -6px black;
 }
 
+/*contains the name for each card*/
 .card-title {
     display: block;
     text-align: center;
@@ -42,6 +45,7 @@ button:hover {
     text-shadow: 2px 2px 4px gray;
 }
 
+/* image that appears for each card */
 .card img {
     width: 100%;
     height: 98%;

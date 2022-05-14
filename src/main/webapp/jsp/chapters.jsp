@@ -20,15 +20,19 @@
         <div class="icon a menu-btn">
             <a><i class="fa fa-list-ul"></i></a>
         </div>
+        <!-- logo for navbar with our company name -->
         <div class="logo">
             ΒΕΜΠΛΗΧΑ
         </div>
+        <!-- menu list will have a dropdown for when window size is too small -->
         <ul class="menu-list">
             <li>
+                <!-- x icon to close menu list -->
                 <div class="icon cancel-btn">
                     <i class="fa fa-close"></i>
                 </div>
             </li>
+            <!-- some buttons have dropdown for the different chapters -->
             <li><a href="../index.jsp">Αρχική</a></li>
             <li>
                 <div class="dropdown">
@@ -57,6 +61,7 @@
             <li><a href="../jsp/statistics.jsp">Στατιστικά</a></li>
             <li><a href="../jsp/games.jsp">Παιχνίδια</a></li>
         </ul>
+        <!-- if user is logged in then button shows different text -->
         <div class="logout">
             <a id="log" <%if(!Login.isLoggedIn(session)){%>href="login.jsp"<%}%>>
                 <i class="fa fa-user-circle" ></i><%=Login.isLoggedIn(session)?"Αποσύνδεση":"Σύνδεση"%>
@@ -68,6 +73,7 @@
 <!--------- Start: Js navbar ---------->
 <script src="../js/app.js"></script>
 <!-- The Modal -->
+<!-- web page element that displays on top when user wants to leave -->
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
@@ -115,6 +121,7 @@
     <%}%>
 </script>
 <script>
+    //navbar is visible all the time
     navbar.classList.add("sticky");
 </script>
 <!---------- End: Js navbar ----------->
@@ -123,6 +130,7 @@
 <!------------------------------------ Start Main Container ------------------------------------------>
 <div class="mothership">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- card placement for the chapters, that will be responsive -->
     <div class="cards">
         <div class="card">
             <a href="../jsp/sub-chapters/chapter01.jsp"><h2 class="card-title">ΠΡΟΣΘΕΣΗ & ΑΦΑΙΡΕΣΗ</h2>

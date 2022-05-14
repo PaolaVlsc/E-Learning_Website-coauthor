@@ -9,6 +9,7 @@ header {
     top: 0;
 }
 
+/* main container */
 .mothership {
     top: 50px;
     max-width: 1250px;
@@ -32,7 +33,7 @@ header {
 
 }
 
-/*make custom button with hover and transition*/
+/*make custom button with hover and transition for logout*/
 button {
     background-color: #5cafc6;
     border: none;
@@ -44,12 +45,11 @@ button {
     transition-duration: 0.5s;
     cursor: pointer;
 }
-
-
 button:hover {
     background-color: #a4c4d1;
     color: #064e61;
 }
+
 .wrapper1 {
     display: flex;
 }
