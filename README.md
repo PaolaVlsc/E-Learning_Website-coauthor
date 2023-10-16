@@ -154,3 +154,14 @@ Make sure to install and configure these tools and technologies properly before 
   <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/51075a7e-3761-4501-b844-af43230bcf2d" width="75%">
 </div>
 
+## Contribution
+
+This project was created by:
+- [Me - Velasco Paola](https://github.com/PaolaVlsc)
+- [Sofia Bili](https://github.com/SofiaBili)
+- [Chaniotakis Nikolas](https://github.com/ChaniotakisNikolaos)
+- [Limnos Jason](https://github.com/LimnosJason)
+
+## Extras in greek
+* User Manual: [User Manual](https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/blob/main/User_Manual.pdf)
+* Installation guide: [User Manual](https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/blob/main/InstallationGuide.pdf)
