@@ -51,7 +51,6 @@ List the key features of your project:
 - phpMyAdmin
 - Java Servlet
 
-
 ## Installation Guide
 
 ### Prerequisites
@@ -69,46 +68,60 @@ Make sure to install and configure these tools and technologies properly before 
 - Clone this repository to your local development environment using `git clone`.
 
 #### Step 1: Open your project in IntelliJ app
-![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/8c3ba5fb-76c9-4aa1-a44e-68e26af8e981)
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/8c3ba5fb-76c9-4aa1-a44e-68e26af8e981" width="50%">
+</div>
 
 #### Step 2: Configure Server in IntelliJ
 - Add Configuration
 
-![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/e94f6226-a01f-4407-afd2-263e10c8f9bf)
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/e94f6226-a01f-4407-afd2-263e10c8f9bf" width="50%">
+</div>
 
 - Add new -> GlassFish Server -> Local
 
-![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/e8ead970-b40d-401f-a09c-e1dbf99ca062)
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/e8ead970-b40d-401f-a09c-e1dbf99ca062" width="50%">
+</div>
 
 - Configure and choose the folder glassfish
 
-![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/93781eca-72e6-4a8b-abce-708204cdc13a)
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/93781eca-72e6-4a8b-abce-708204cdc13a" width="50%">
+</div>
 
 - Set Server Domain: domain1
 
-- To fix the problem click on "Fix" and then "ProjectEL: war exploded"
-  
-  ![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/13439423-d164-431e-9bba-a6914e014a26)
+- To fix the problem, click on "Fix" and then "ProjectEL: war exploded"
+
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/13439423-d164-431e-9bba-a6914e014a26" width="50%">
+</div>
 
 #### Step 3: Configure database in IntelliJ
 - file>project structure>libraries
-  
-  ![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/1cc211be-4eec-459c-aef6-010936e469a0)
+
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/1cc211be-4eec-459c-aef6-010936e469a0" width="50%">
+</div>
 
 - choose org.mariadb.jdbc:mariadb-java-client:2.7.0 and download
-  
-  ![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/085c8e63-7510-498c-b503-02c44265871f)
 
-- go on "artifacts" and select the project name: "war exploded" and check if, on the right, under the "available elements," there is the MariaDB. If it doesn't exist, the process ends. If it does exist, then right-click on it and choose "put into /WEB-IN."
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/085c8e63-7510-498c-b503-02c44265871f" width="50%">
+</div>
 
-  ![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/c0caec0b-dcbf-4618-b7f4-ba33085df83c)
-  ![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/1397a746-f23b-487b-9c6a-ee69d47c45a8)
+- go to "artifacts" and select the project name: "war exploded" and check if, on the right, under the "available elements," there is MariaDB. If it doesn't exist, the process ends. If it does exist, then right-click on it and choose "put into /WEB-IN."
+
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/c0caec0b-dcbf-4618-b7f4-ba33085df83c" width="50%">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/1397a746-f23b-487b-9c6a-ee69d47c45a8" width="50%">
+</div>
 
 #### Step 4: Run the project
-![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/79032f4f-aee9-47c1-b2e3-729127514b6d)
-![image](https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/51075a7e-3761-4501-b844-af43230bcf2d)
-
-
-#### Step 5
-
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/79032f4f-aee9-47c1-b2e3-729127514b6d" width="50%">
+  <img src="https://github.com/PaolaVlsc/E-Learning_Website-coauthor/assets/87998374/51075a7e-3761-4501-b844-af43230bcf2d" width="75%">
+</div>
 
