@@ -16,13 +16,42 @@ The subject of the selected project is the implementation of an "E-learning" web
 
 ## Features
 
-List the key features of your project:
+### Feature 1: Create Account and Log In/Out Session
 
-- Feature 1: create account and log in/out session
-- Feature 2: Maths chapters to study 
-- Feature 3: Quiz tests to challenge your knowledge
-- Feature 4: Statistics
-- Feature 5: Games
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/ed840eb4-2bee-4a27-bbf2-4d36af19d999" width="50%">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/22353fcf-bff2-4cd5-84ce-993a1b94f0bb" width="50%">
+</div>
+
+### Feature 2: Maths Chapters to Study
+
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/184eb1d8-187a-46ab-bdf2-444c9bded19d" width="50%">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/5932aa5b-21fe-4790-b47a-53552642451d" width="50%">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/4f14421d-3f49-4020-8b88-c2cbb9b37a2c" width="50%">
+</div>
+
+### Feature 3: Quiz Tests to Challenge Your Knowledge
+
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/25de3f2b-d89c-4e2d-be0c-4842cee77bfc" width="50%">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/e2f0d1ee-3e89-4cc4-9362-a26e9d4fe1bd" width="50%">
+</div>
+
+### Feature 4: Statistics
+
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/3dd16dcd-f4ee-4f9d-b3bd-24ea93f9a5be" width="50%">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/3125c60a-2314-45e5-962c-c2727e7d2e1c" width="50%">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/131f913f-81fc-4a90-a4e8-a52c6c53f057" width="50%">
+</div>
+
+### Feature 5: Games
+
+<div align="center">
+  <img src="https://github.com/PaolaVlsc/E-Learning_WebsitePlatform/assets/87998374/c19e6a3f-d3db-47be-9b1e-bd7774813a7f" width="50%">
+</div>
+
 
 ## Website Development Tools and Technologies
 
